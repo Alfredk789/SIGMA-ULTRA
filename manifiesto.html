@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Manifiesto de Misiones</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Directorio Clasificado - SIGMA ULTRA</title>
   <style>
     body {
+      margin: 0;
       background-color: #000;
-      color: lime;
-      font-family: 'Courier New', monospace;
-      padding: 2em;
+      color: #bfa76f;
+      font-family: Courier, monospace;
+      transition: background-color 0.5s, color 0.5s;
     }
-    a {
-      color: cyan;
+    header {
+      padding: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      border-bottom: 1px solid #bfa76f;
+    }
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .boton-seccion {
+      background-color: transparent;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      text-align: center;
       text-decoration: none;
-      display: block;
-      margin: 0.5em 0;
+      transition: all 0.3s ease;
+      border-radius: 10px;
     }
-    a:hover {
-      color: gold;
+    .boton-seccion:hover {
+      background-color: #1c1c1c;
+      transform: scale(1.05);
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid #bfa76f;
     }
   </style>
 </head>
 <body>
-  <h1>📡 Centro de Misiones SIGMA ULTRA</h1>
-  <p>Selecciona una misión para acceder al informe clasificado:</p>
+  <header>
+    MANIFIESTO SIGMA ULTRA
+  </header>
 
-  <a href="misiones-apolo.html"> Misiones Apolo</a>
-  <a href="hubble.html"> Telescopio Espacial Hubble</a>
-  <a href="jwst.html"> Telescopio James Webb</a>
-  <a href="iss.html">🛰 Estación Espacial Internacional</a>
-  <a href="sondas.html"> Sondas Espaciales</a>
-  <a href="sol.html">☀ Operaciones de Reconocimiento Solar</a>
+  <main class="contenedor">
+    <a href="misiones-no-tripuladas.html" class="boton-seccion">Misiones No Tripuladas</a>
+    <a href="misiones-apollo.html" class="boton-seccion">Misiones Apolo</a>
+    <a href="sondas-espaciales.html" class="boton-seccion">Sondas Espaciales</a>
+    <a href="telescopios.html" class="boton-seccion">Telescopios</a>
+    <a href="radioastronomia.html" class="boton-seccion">Radioastronomía</a>
+  </main>
+
+  <footer>
+    División Educativa | Comandante Científico
+  </footer>
 </body>
 </html>
