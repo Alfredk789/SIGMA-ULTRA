@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA | Centro de Control</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA ULTRA - Centro de Control</title>
   <style>
     body {
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Courier New', monospace;
       margin: 0;
-      padding: 2rem;
+      background-color: #000000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
+
+    header {
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 240px;
+      margin-bottom: 20px;
+    }
+
     h1 {
-      text-align: center;
-      color: #00ffcc;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2em;
+      margin: 0;
+      letter-spacing: 2px;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: 0 auto;
+
+    .subtitulo {
+      font-size: 0.9em;
+      margin-top: 8px;
+      color: #bfa76f;
+      opacity: 0.6;
     }
-    li {
-      margin: 1rem 0;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      padding: 1rem;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    li:hover {
-      background: #262626;
-    }
-    a {
-      color: #00bfff;
+
+    .boton-directorio {
+      margin-top: 40px;
+      padding: 15px 40px;
+      background-color: transparent;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1em;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .boton-directorio:hover {
+      background-color: #bfa76f;
+      color: #000;
+      cursor: pointer;
     }
+
     footer {
-      text-align: center;
-      margin-top: 4rem;
-      font-size: 0.8rem;
-      color: #666;
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8em;
+      color: #bfa76f;
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
-  <h1>🚀 SIGMA ULTRA - Centro de Control</h1>
-  <ul>
-    <li><a href="misiones_no_tripuladas.html">📡 Misiones No Tripuladas</a></li>
-    <li><a href="manifiesto.html">🧭 Menú Principal (Manifiesto)</a></li>
-    <li><a href="misiones%20apolo">🌕 Misiones Apolo</a></li>
-  </ul>
+  <header>
+    <img class="logo" src="tu_escudo.png" alt="Escudo SIGMA ULTRA">
+    <h1>SIGMA ULTRA - Centro de Control</h1>
+    <div class="subtitulo">COMANDANTE CIENTÍFICO – DIVISIÓN EDUCATIVA</div>
+
+    <a href="manifiesto.html" class="boton-directorio">DIRECTORIO CLASIFICADO</a>
+  </header>
 
   <footer>
-    SIGMA ULTRA © 2025 – Clasificado para uso interestelar 🛰️
+    SIGMA ULTRA © 2025 - Clasificado para uso interestelar
   </footer>
 </body>
 </html>
+
