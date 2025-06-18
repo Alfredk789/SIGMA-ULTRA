@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGMA ULTRA - Sputnik 1</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      font-family: 'Courier New', monospace;
+      color: #bfa76f;
+    }
+
+    /* LOADING SCREEN */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: #000;
+      color: #bfa76f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loader h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    #progress-bar {
+      width: 300px;
+      height: 20px;
+      border: 1px solid #bfa76f;
+      background-color: #111;
+      position: relative;
+    }
+
+    #progress {
+      height: 100%;
+      width: 0%;
+      background-color: #bfa76f;
+      animation: fillBar 3s forwards;
+    }
+
+    @keyframes fillBar {
+      to { width: 100%; }
+    }
+
+    /* MAIN CONTENT */
+    #content {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .imagen {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .imagen img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+    }
+
+    .descripcion {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 2rem;
+    }
+
+    .boton-regreso {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .boton-regreso a {
+      padding: 10px 20px;
+      color: #0a0a0a;
+      background-color: #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-regreso a:hover {
+      background-color: #a88e4d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADING -->
+  <div id="loader">
+    <h1>DESCARGANDO ARCHIVO CLASIFICADO: SPUTNIK 1</h1>
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="content">
+    <h1>🛰️ SPUTNIK 1 - MISIÓN NO TRIPULADA</h1>
+    <div class="imagen">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Sputnik_1.jpg" alt="Imagen de Sputnik 1">
+    </div>
+    <div class="descripcion">
+      <p><strong>Lanzamiento:</strong> 4 de octubre de 1957<br>
+         <strong>Agencia:</strong> Unión Soviética (URSS)<br>
+         <strong>Duración:</strong> 21 días en operación (hasta el 26 de octubre de 1957)</p>
+      <p>
+        Sputnik 1 fue el <strong>primer satélite artificial de la historia</strong>. Orbitó la Tierra a una velocidad de aproximadamente 29,000 km/h y enviaba señales de radio que podían captarse desde todo el planeta.
+      </p>
+      <p><strong>Impacto Histórico:</strong><br>
+      Su éxito marcó el inicio de la era espacial y desató la carrera espacial entre la Unión Soviética y Estados Unidos. Fue una demostración tecnológica que estremeció al mundo y cambió para siempre el rumbo de la exploración científica y militar del espacio.</p>
+    </div>
+
+    <div class="boton-regreso">
+      <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+    </div>
+  </div>
+
+  <!-- SCRIPT PARA OCULTAR LOADER -->
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3200);
+  </script>
+
+</body>
+</html>
