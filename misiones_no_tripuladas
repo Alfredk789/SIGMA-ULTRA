@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misiones No Tripuladas - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #bfa76f;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #1a1a1a;
+      color: #bfa76f;
+    }
+    tr:nth-child(even) {
+      background-color: #111;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Misiones No Tripuladas - Archivo SIGMA ULTRA</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Nombre de la Misión</th>
+        <th>Agencia</th>
+        <th>Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1957</td>
+        <td><a href="sputnik1.html">Sputnik 1</a></td>
+        <td>URSS</td>
+        <td>Primer satélite artificial</td>
+      </tr>
+      <tr>
+        <td>1958</td>
+        <td><a href="explorer1.html">Explorer 1</a></td>
+        <td>NASA</td>
+        <td>Descubrimiento de los cinturones de Van Allen</td>
+      </tr>
+      <tr>
+        <td>1959</td>
+        <td><a href="luna2.html">Luna 2</a></td>
+        <td>URSS</td>
+        <td>Primer impacto controlado en la Luna</td>
+      </tr>
+      <tr>
+        <td>1962</td>
+        <td><a href="mariner2.html">Mariner 2</a></td>
+        <td>NASA</td>
+        <td>Primer sobrevuelo exitoso a Venus</td>
+      </tr>
+      <tr>
+        <td>1971</td>
+        <td><a href="mars3.html">Mars 3</a></td>
+        <td>URSS</td>
+        <td>Primer aterrizaje suave en Marte</td>
+      </tr>
+      <tr>
+        <td>1973</td>
+        <td><a href="pioneer11.html">Pioneer 11</a></td>
+        <td>NASA</td>
+        <td>Exploración de Júpiter y Saturno</td>
+      </tr>
+      <tr>
+        <td>1977</td>
+        <td><a href="voyager1.html">Voyager 1</a></td>
+        <td>NASA</td>
+        <td>Exploración de Júpiter, Saturno y espacio interestelar</td>
+      </tr>
+      <tr>
+        <td>1977</td>
+        <td><a href="voyager2.html">Voyager 2</a></td>
+        <td>NASA</td>
+        <td>Única sonda que ha visitado Urano y Neptuno</td>
+      </tr>
+      <tr>
+        <td>1997</td>
+        <td><a href="mars_pathfinder.html">Mars Pathfinder</a></td>
+        <td>NASA</td>
+        <td>Primer rover en Marte (Sojourner)</td>
+      </tr>
+      <tr>
+        <td>2004</td>
+        <td><a href="rosetta.html">Rosetta</a></td>
+        <td>ESA</td>
+        <td>Estudio del cometa 67P/Churyumov–Gerasimenko</td>
+      </tr>
+      <tr>
+        <td>2012</td>
+        <td><a href="curiosity.html">Curiosity</a></td>
+        <td>NASA</td>
+        <td>Estudio geológico de Marte</td>
+      </tr>
+      <tr>
+        <td>2016</td>
+        <td><a href="osirisrex.html">OSIRIS-REx</a></td>
+        <td>NASA</td>
+        <td>Recolección de muestras del asteroide Bennu</td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td><a href="tianwen1.html">Tianwen-1</a></td>
+        <td>CNSA (China)</td>
+        <td>Órbita, aterrizaje y rover en Marte</td>
+      </tr>
+      <tr>
+        <td>2021</td>
+        <td><a href="perseverance.html">Perseverance</a></td>
+        <td>NASA</td>
+        <td>Recolección de muestras y estudio atmosférico</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
