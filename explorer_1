@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explorer 1 | SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #bfa76f;
+    }
+
+    .loading-bar {
+      width: 100%;
+      background-color: #222;
+      border: 1px solid #444;
+      height: 24px;
+      margin: 0.5rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loading-bar::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(to right, #bfa76f, #5c4a24);
+      animation: loading 4s ease-in-out forwards;
+    }
+
+    @keyframes loading {
+      0% { width: 0%; }
+      20% { width: 12%; }
+      40% { width: 46%; }
+      60% { width: 78%; }
+      100% { width: 100%; }
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border: 1px solid #bfa76f;
+      margin-top: 1rem;
+    }
+
+    .button-back {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: transparent;
+      color: #bfa76f;
+      border: 2px solid #bfa76f;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .button-back:hover {
+      background-color: #bfa76f;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SIGMA ULTRA - ARCHIVO CLASIFICADO</h1>
+    <h2>MISIÓN NO TRIPULADA: EXPLORER 1</h2>
+
+    <div class="section">
+      <p>⏳ Iniciando secuencia de acceso...</p>
+      <div class="loading-bar"></div>
+      <p>Decodificando datos de misión Explorer_1...</p>
+      <div class="loading-bar"></div>
+      <p>Cargando imagen satelital histórica...</p>
+      <div class="loading-bar"></div>
+      <p>Acceso autorizado: Comandante Científico Alfredk</p>
+      <div class="loading-bar"></div>
+    </div>
+
+    <div class="section">
+      <img src="explorer_1.png" alt="Lanzamiento Explorer 1" class="mission-img" />
+      <p><em>Lanzamiento histórico desde Cabo Cañaveral, 31 de enero de 1958.</em></p>
+    </div>
+
+    <div class="section">
+      <h3>Datos de misión</h3>
+      <ul>
+        <li><strong>Nombre:</strong> Explorer 1</li>
+        <li><strong>Agencia:</strong> NASA / JPL</li>
+        <li><strong>Lanzamiento:</strong> 31 de enero de 1958</li>
+        <li><strong>Duración:</strong> 111 días (última señal: 23 de mayo de 1958)</li>
+        <li><strong>Órbita:</strong> Terrestre baja (358 km - 2,550 km)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Objetivo principal</h3>
+      <p>
+        Explorar el entorno espacial alrededor de la Tierra y detectar la presencia de radiación cósmica mediante un detector diseñado por el Dr. James Van Allen.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Resultados y legado</h3>
+      <p>
+        Se descubrieron los cinturones de radiación de Van Allen. El Explorer 1 representó el ingreso oficial de EE.UU. a la era espacial, marcando un punto de inflexión tras el Sputnik. El éxito de la misión dio inicio al programa Explorer y consolidó el rol del JPL.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Impacto histórico</h3>
+      <p>
+        Su éxito inspiró la creación formal de la NASA en julio de 1958 y demostró que la exploración científica podía competir con los logros propagandísticos de la Guerra Fría.
+      </p>
+    </div>
+
+    <a href="../maniesto.html" class="button-back">Regresar al Manifiesto Clasificado</a>
+  </div>
+</body>
+</html>
