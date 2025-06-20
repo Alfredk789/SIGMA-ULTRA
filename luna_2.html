@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna 2 - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', monospace;
+    }
 
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .loading-bar {
+      width: 80%;
+      height: 10px;
+      background-color: #333;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .loading-fill {
+      width: 0%;
+      height: 100%;
+      background-color: #bfa76f;
+      animation: fill 3s linear forwards;
+    }
+
+    @keyframes fill {
+      to {
+        width: 100%;
+      }
+    }
+
+    .content {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid #bfa76f;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #bfa76f;
+      padding-bottom: 0.5rem;
+    }
+
+    .mission-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    .mission-quote {
+      font-style: italic;
+      border-left: 3px solid #bfa76f;
+      padding-left: 1rem;
+      color: #999;
+      margin-top: 2rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 3rem;
+      color: #bfa76f;
+      text-decoration: none;
+      border: 1px solid #bfa76f;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-screen" id="loading">
+    <h1>Cargando información clasificada...</h1>
+    <div class="loading-bar">
+      <div class="loading-fill"></div>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <img src="luna_2.png" alt="Luna 2 Impacto Lunar" class="mission-img" />
+
+    <h2 class="section-title">Luna 2 (URSS, 1959)</h2>
+
+    <p class="mission-description"><strong>Nombre en clave:</strong> Luna 2 (también conocida como Lunik 2)</p>
+    <p class="mission-description"><strong>Agencia:</strong> URSS – OKB-1</p>
+    <p class="mission-description"><strong>Fecha de lanzamiento:</strong> 12 de septiembre de 1959</p>
+    <p class="mission-description"><strong>Impacto lunar:</strong> 13 de septiembre de 1959</p>
+    <p class="mission-description"><strong>Duración de la misión:</strong> Aproximadamente 36 horas</p>
+    <p class="mission-description"><strong>Tipo de misión:</strong> Sonda de impacto lunar</p>
+
+    <h3 class="section-title">Objetivo de la misión</h3>
+    <p class="mission-description">
+      Alcanzar la superficie lunar mediante impacto directo. Medir radiación cósmica, partículas solares, detectar la posible existencia de un campo magnético lunar y demostrar la viabilidad técnica de los vuelos interplanetarios.
+    </p>
+
+    <h3 class="section-title">Carga científica</h3>
+    <p class="mission-description">
+      Equipos para detectar rayos cósmicos, campo magnético, protones solares e ionización, además de placas metálicas grabadas con el escudo de la URSS que fueron dispersadas cerca del punto de impacto como símbolo nacional.
+    </p>
+
+    <h3 class="section-title">Impacto histórico</h3>
+    <p class="mission-description">
+      Primera nave humana en alcanzar la Luna. Confirmó la ausencia de un campo magnético lunar. La misión consolidó la supremacía soviética en los inicios de la carrera espacial, siendo verificada incluso por estaciones occidentales.
+    </p>
+
+    <p class="mission-quote">
+      "La Luna fue alcanzada por primera vez no con pasos humanos, sino con precisión balística. El vacío recibió nuestra señal." — Archivo SIGMA ULTRA
+    </p>
+
+    <a href="manifiesto.html" class="back-button">Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
