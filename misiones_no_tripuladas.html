@@ -15,8 +15,36 @@
       text-align: center;
       color: #bfa76f;
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
+
+    /* Animación de tipo máquina de escribir */
+    .typewriter-container {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 auto 2rem auto;
+      width: fit-content;
+      border-right: 0.15em solid transparent;
+      text-align: center;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.2em;
+      background-color: #bfa76f;
+      margin-left: 5px;
+      animation: blink 0.7s step-start infinite;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -47,6 +75,13 @@
 </head>
 <body>
   <h1>Misiones No Tripuladas - Archivo SIGMA ULTRA</h1>
+
+  <!-- Línea animada tipo máquina de escribir -->
+  <div class="typewriter-container">
+    <span id="typewriter"></span><span class="cursor"></span>
+  </div>
+
+  <!-- Tabla original -->
   <table>
     <thead>
       <tr>
@@ -59,7 +94,7 @@
     <tbody>
       <tr>
         <td>1957</td>
-        <td><a href="sputnik.html">Sputnik </a></td>
+        <td><a href="sputnik.html">Sputnik</a></td>
         <td>URSS</td>
         <td>Primer satélite artificial</td>
       </tr>
@@ -143,5 +178,27 @@
       </tr>
     </tbody>
   </table>
+
+  <!-- Script animador -->
+  <script>
+    const texto = "Seleccione una misión";
+    const elemento = document.getElementById("typewriter");
+
+    function escribirTexto(index = 0) {
+      if (index <= texto.length) {
+        elemento.textContent = texto.slice(0, index);
+        setTimeout(() => escribirTexto(index + 1), 100);
+      } else {
+        setTimeout(() => reiniciar(), 5000);
+      }
+    }
+
+    function reiniciar() {
+      elemento.textContent = "";
+      escribirTexto(0);
+    }
+
+    escribirTexto();
+  </script>
 </body>
 </html>
