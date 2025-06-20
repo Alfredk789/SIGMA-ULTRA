@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariner 2 - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', monospace;
+    }
+
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .loading-bar {
+      width: 80%;
+      height: 10px;
+      background-color: #333;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .loading-fill {
+      width: 0%;
+      height: 100%;
+      background-color: #bfa76f;
+      animation: fill 3s linear forwards;
+    }
+
+    @keyframes fill {
+      to {
+        width: 100%;
+      }
+    }
+
+    .content {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid #bfa76f;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #bfa76f;
+      padding-bottom: 0.5rem;
+    }
+
+    .mission-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    .mission-quote {
+      font-style: italic;
+      border-left: 3px solid #bfa76f;
+      padding-left: 1rem;
+      color: #999;
+      margin-top: 2rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 3rem;
+      color: #bfa76f;
+      text-decoration: none;
+      border: 1px solid #bfa76f;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-screen" id="loading">
+    <h1>Cargando información clasificada...</h1>
+    <div class="loading-bar">
+      <div class="loading-fill"></div>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <img src="mariner_2.png" alt="Mariner 2 rumbo a Venus" class="mission-img" />
+
+    <h2 class="section-title">Mariner 2 (NASA, 1962)</h2>
+
+    <p class="mission-description"><strong>Nombre en clave:</strong> Mariner 2</p>
+    <p class="mission-description"><strong>Agencia:</strong> NASA</p>
+    <p class="mission-description"><strong>Fecha de lanzamiento:</strong> 27 de agosto de 1962</p>
+    <p class="mission-description"><strong>Encuentro con Venus:</strong> 14 de diciembre de 1962</p>
+    <p class="mission-description"><strong>Duración de la misión:</strong> Aprox. 110 días</p>
+    <p class="mission-description"><strong>Tipo de misión:</strong> Sobrevuelo interplanetario</p>
+
+    <h3 class="section-title">Objetivo de la misión</h3>
+    <p class="mission-description">
+      Realizar un sobrevuelo cercano a Venus, midiendo viento solar, radiación, campos magnéticos y temperaturas atmosféricas, comparando los entornos de la Tierra y Venus.
+    </p>
+
+    <h3 class="section-title">Carga científica</h3>
+    <p class="mission-description">
+      Radiómetro infrarrojo, sensores de microondas para medir la temperatura superficial de Venus, magnetómetro, detectores de partículas cargadas, y sensores de plasma solar.
+    </p>
+
+    <h3 class="section-title">Impacto histórico</h3>
+    <p class="mission-description">
+      Mariner 2 fue la primera sonda exitosa en alcanzar otro planeta. Confirmó temperaturas superiores a 400 °C en la superficie de Venus, detectó el viento solar y validó la existencia de campos magnéticos interplanetarios. Inició la era de misiones científicas interplanetarias de la NASA.
+    </p>
+
+    <p class="mission-quote">
+      "El planeta vecino no ocultó su fuego. Desde el vacío, Mariner 2 encendió la era de la exploración interplanetaria." — Archivo SIGMA ULTRA
+    </p>
+
+    <a href="manifiesto.html" class="back-button">Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
