@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pioneer 10 y 11 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+      border: 1px solid #bfa76f;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 140px;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+    .btn {
+      margin-top: 3rem;
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      color: #bfa76f;
+      background-color: transparent;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-family: 'Courier New', Courier, monospace;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      color: #000;
+      background-color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Pioneer 10 y 11</h1>
+    <img src="pioneer.png" alt="Sondas Pioneer 10 y 11" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Lanzamientos:</b> Pioneer 10: 2 de marzo de 1972 | Pioneer 11: 6 de abril de 1973</p>
+
+      <h2>Pioneer 10</h2>
+      <p>
+        Fue la primera nave en atravesar el cinturón de asteroides y en realizar un sobrevuelo cercano a Júpiter.
+        Captó imágenes detalladas del planeta y estudió su entorno magnético y su radiación.
+        Su última señal fue recibida en 2003, cuando ya había salido del Sistema Solar.
+      </p>
+
+      <h2>Pioneer 11</h2>
+      <p>
+        Utilizó la gravedad de Júpiter para viajar hacia Saturno, siendo la primera nave en explorar ese planeta.
+        Descubrió anillos nuevos, lunas y recopiló datos sobre el campo magnético y atmósfera.
+        Se recibió su última transmisión en 1995.
+      </p>
+
+      <h2>Impacto histórico</h2>
+      <p>
+        Ambas sondas allanaron el camino para la exploración interestelar. Fueron precursoras de las misiones Voyager y portadoras de una placa con información sobre la humanidad dirigida a posibles civilizaciones extraterrestres.
+      </p>
+    </div>
+    <a href="manifiesto.html" class="btn">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
