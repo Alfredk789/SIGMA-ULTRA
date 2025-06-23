@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voyager 1 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+    a.btn {
+      color: #bfa76f;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #bfa76f;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    a.btn:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Voyager 1</h1>
+    <img src="voyager1.png" alt="Voyager 1" class="mission-img" />
+
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 5 de septiembre de 1977</p>
+      <p><b>Duración de la misión:</b> En operación (más de 45 años)</p>
+      <p><b>Tipo de misión:</b> Exploración planetaria y espacio interestelar</p>
+      <p><b>Objetivo:</b> Estudiar los planetas exteriores del sistema solar, principalmente Júpiter y Saturno, y luego continuar hacia el medio interestelar.</p>
+      <p><b>Carga científica:</b> Cámara de imágenes, espectrómetros, magnetómetro, detectores de plasma, rayos cósmicos, y más. Incluye el famoso Disco de Oro con sonidos e imágenes de la Tierra.</p>
+      
+      <h2>Impacto histórico</h2>
+      <p>
+        Voyager 1 fue la primera sonda en alcanzar el espacio interestelar, superando los límites del sistema solar en 2012. En 1990 tomó la famosa imagen conocida como <i>“Pale Blue Dot”</i>, mostrando la Tierra como un punto diminuto. 
+        Su legado es tanto científico como cultural, llevando el mensaje de la humanidad más lejos que cualquier otro objeto construido por el ser humano.
+      </p>
+
+      <h2>Mensaje interestelar</h2>
+      <p>
+        Voyager 1 lleva consigo el <b>Disco de Oro</b>, un mensaje interestelar elaborado por Carl Sagan y su equipo. Contiene saludos en 55 idiomas, sonidos naturales de la Tierra, música de distintas culturas y más de 100 imágenes representativas de la vida en nuestro planeta. El disco fue diseñado como una cápsula del tiempo, una muestra de lo que somos... por si alguien, algún día, lo encuentra.
+      </p>
+      <img src="disco_dorado.png" alt="Disco de Oro - Voyager" class="mission-img" />
+    </div>
+
+    <a href="manifiesto.html" class="btn">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
+
