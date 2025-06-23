@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mars Pathfinder - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    a.button:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Mars Pathfinder</h1>
+    <img src="mars_pathfinder.png" alt="Mars Pathfinder" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 4 de diciembre de 1996</p>
+      <p><b>Duración:</b> 85 días (operación principal)</p>
+      <p><b>Tipo de misión:</b> Aterrizaje + rover en Marte</p>
+      <p><b>Objetivo:</b> Demostrar tecnologías para aterrizajes económicos en Marte y recolectar datos científicos de la superficie</p>
+      <p><b>Carga científica:</b> Estación fija (Pathfinder) con sensores meteorológicos, y el rover Sojourner con cámaras, espectrómetro APXS y sensores de navegación</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Mars Pathfinder marcó el regreso exitoso de EE.UU. a Marte tras el fracaso de misiones anteriores. Fue la **primera misión en desplegar un rover en otro planeta**, captando la atención del público mundial. Demostró la viabilidad de enviar exploradores robóticos de bajo costo a Marte y recopiló datos sobre composición de rocas, clima y polvo marciano. Sentó las bases tecnológicas y científicas para las futuras misiones como Spirit, Opportunity y Curiosity.</p>
+
+      <h2>Mensaje interestelar</h2>
+      <p>Aunque Mars Pathfinder no portaba un disco interestelar como las Voyager, fue **el primer mensaje moderno de retorno exitoso desde Marte** en la era digital. Sus transmisiones y fotografías fueron recibidas por millones en todo el mundo, convirtiéndose en una forma simbólica de comunicación entre planetas.</p>
+
+      <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
