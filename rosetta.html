@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rosetta - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    a.button:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Rosetta</h1>
+    <img src="rosetta.png" alt="Rosetta" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> ESA (Agencia Espacial Europea)</p>
+      <p><b>Fecha de lanzamiento:</b> 2 de marzo de 2004</p>
+      <p><b>Duración de misión:</b> 12 años (2004–2016)</p>
+      <p><b>Tipo de misión:</b> Orbitador + módulo de aterrizaje (cometa)</p>
+      <p><b>Objetivo:</b> Estudiar de cerca al cometa 67P/Churyumov–Gerasimenko y su evolución al acercarse al Sol</p>
+      <p><b>Carga científica:</b> 21 instrumentos científicos entre la sonda y el módulo Philae: espectrómetros, sensores de polvo y gas, cámaras, magnetómetros, taladro, analizadores químicos y sensores térmicos</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Rosetta fue la **primera sonda en orbitar un cometa** y desplegar un módulo de aterrizaje (Philae). La misión revolucionó nuestro conocimiento sobre la estructura, composición y comportamiento de los cometas. Aunque Philae tuvo dificultades tras aterrizar en sombra, logró transmitir datos históricos.</p>
+      <p>Rosetta demostró con precisión la complejidad de las operaciones en cuerpos pequeños y dejó un legado técnico y científico que influenciará futuras misiones a objetos primitivos del Sistema Solar.</p>
+
+      <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
