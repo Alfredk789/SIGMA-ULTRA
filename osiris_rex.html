@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSIRIS-REx - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 140px;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #bfa76f;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    a:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>OSIRIS-REx</h1>
+    <img src="osirisrex.png" alt="Sonda OSIRIS-REx" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 8 de septiembre de 2016</p>
+      <p><b>Duración:</b> 7 años (misión primaria)</p>
+      <p><b>Tipo de misión:</b> Retorno de muestras</p>
+      <p><b>Objetivo:</b> Recoger muestras del asteroide Bennu y traerlas a la Tierra para su análisis.</p>
+      <p><b>Carga científica:</b> Cámaras ópticas, espectrómetros infrarrojos y de rayos X, altímetro láser, sistema de muestreo TAGSAM.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>OSIRIS-REx marcó un hito en la exploración de asteroides. Su éxito al recolectar y regresar muestras ofrece una oportunidad única para estudiar los materiales primigenios del sistema solar y comprender mejor los riesgos de impacto de objetos cercanos a la Tierra.</p>
+
+      <h2>📡 Mensaje Interestelar</h2>
+      <p>La sonda lleva consigo una cápsula del tiempo digital con mensajes, imágenes y obras de arte cargados por personas de todo el mundo. Aunque no fue diseñada para abandonar el sistema solar como las Voyager, esta "postal cósmica" representa un gesto simbólico de humanidad hacia el universo. Su contenido fue seleccionado a través de la campaña <b>“Messages to Bennu!”</b>.</p>
+    </div>
+    <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
