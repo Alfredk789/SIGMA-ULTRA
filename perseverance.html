@@ -12,10 +12,12 @@
       padding: 2rem;
       text-align: center;
     }
+
     .loading {
       font-size: 1.5rem;
       margin-top: 2rem;
     }
+
     .bar {
       width: 80%;
       height: 8px;
@@ -23,21 +25,25 @@
       margin: 10px auto;
       overflow: hidden;
     }
+
     .bar-fill {
       height: 100%;
       width: 0;
       background-color: #bfa76f;
       animation: load 3s forwards;
     }
+
     @keyframes load {
       to {
         width: 100%;
       }
     }
+
     .content {
       display: none;
       margin-top: 2rem;
     }
+
     .mission-img {
       width: 100%;
       max-width: 400px;
@@ -45,6 +51,7 @@
       margin: 1rem auto;
       display: block;
     }
+
     .info {
       text-align: left;
       max-width: 700px;
@@ -52,10 +59,12 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .info b {
       display: inline-block;
       width: 150px;
     }
+
     a {
       color: #bfa76f;
       text-decoration: none;
@@ -66,14 +75,17 @@
       border-radius: 8px;
       transition: background-color 0.3s, color 0.3s;
     }
+
     a:hover {
       background-color: #bfa76f;
       color: #000;
     }
+
     h1 {
       margin-top: 1rem;
       font-size: 2rem;
     }
+
     h2 {
       margin-top: 2rem;
       font-size: 1.4rem;
@@ -82,31 +94,47 @@
   </style>
 </head>
 <body>
-  <div class="loading">
+
+  <!-- Animación de carga -->
+  <div class="loading" id="loader">
     <div>LOADING</div>
     <div class="bar"><div class="bar-fill"></div></div>
     <div class="bar"><div class="bar-fill"></div></div>
   </div>
 
-<div class="info">
-  <p><b>Agencia:</b> NASA</p>
-  <p><b>Fecha de lanzamiento:</b> 30 de julio de 2020</p>
-  <p><b>Aterrizaje:</b> 18 de febrero de 2021 en el cráter Jezero</p>
-  <p><b>Duración:</b> Misión activa (más de 3 años terrestres)</p>
-  <p><b>Tipo de misión:</b> Rover científico con recolección de muestras</p>
-  <p><b>Objetivo:</b> Buscar signos de vida microbiana pasada, recolectar y almacenar muestras marcianas para una futura misión de retorno, y estudiar el clima y la geología.</p>
-  <p><b>Carga científica:</b> SuperCam, SHERLOC, PIXL, MOXIE (oxígeno desde CO₂), cámaras Mastcam-Z, RIMFAX (radar de subsuelo), y el helicóptero <b>Ingenuity</b> como demostrador tecnológico.</p>
-  
-  <h2>Impacto histórico</h2>
-  <p>
-    Perseverance representa el inicio de una nueva era en la exploración marciana.  
-    Es el primer rover en <b>preparar muestras para su retorno a la Tierra</b>,  
-    y su compañero <b>Ingenuity</b> realizó los primeros vuelos controlados en otro planeta.  
-    Ha establecido nuevas fronteras tecnológicas en navegación autónoma,  
-    análisis espectral y construcción de hábitats futuros mediante producción in-situ.
-  </p>
-</div>
+  <!-- Contenido oculto al principio -->
+  <div class="content" id="content">
+    <h1>Perseverance</h1>
+    <img src="perseverance.png" alt="Rover Perseverance en Marte" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 30 de julio de 2020</p>
+      <p><b>Aterrizaje:</b> 18 de febrero de 2021 en el cráter Jezero</p>
+      <p><b>Duración:</b> Misión activa (más de 3 años terrestres)</p>
+      <p><b>Tipo de misión:</b> Rover científico con recolección de muestras</p>
+      <p><b>Objetivo:</b> Buscar signos de vida microbiana pasada, recolectar y almacenar muestras marcianas para una futura misión de retorno, y estudiar el clima y la geología.</p>
+      <p><b>Carga científica:</b> SuperCam, SHERLOC, PIXL, MOXIE (oxígeno desde CO₂), cámaras Mastcam-Z, RIMFAX (radar de subsuelo), y el helicóptero <b>Ingenuity</b> como demostrador tecnológico.</p>
 
-<a href="manifiesto.html">⬅ Regresar al Manifiesto</a>  
-    
+      <h2>Impacto histórico</h2>
+      <p>
+        Perseverance representa el inicio de una nueva era en la exploración marciana.  
+        Es el primer rover en <b>preparar muestras para su retorno a la Tierra</b>,  
+        y su compañero <b>Ingenuity</b> realizó los primeros vuelos controlados en otro planeta.  
+        Ha establecido nuevas fronteras tecnológicas en navegación autónoma,  
+        análisis espectral y construcción de hábitats futuros mediante producción in-situ.
+      </p>
+    </div>
+    <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <!-- Script de transición -->
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+
+</body>
+</html>
 
