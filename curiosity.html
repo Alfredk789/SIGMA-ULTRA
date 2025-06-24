@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curiosity - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 140px;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #bfa76f;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    a:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Curiosity</h1>
+    <img src="curiosity.png" alt="Curiosity Rover en Marte" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 26 de noviembre de 2011</p>
+      <p><b>Duración:</b> Operativa desde 2012 (misión extendida)</p>
+      <p><b>Tipo de misión:</b> Rover de exploración</p>
+      <p><b>Objetivo:</b> Investigar si Marte pudo haber albergado vida microbiana en el pasado, estudiar el clima y la geología marciana y preparar el camino para futuras misiones humanas.</p>
+      <p><b>Carga científica:</b> Espectrómetros, cámaras de alta resolución, estación meteorológica, laboratorio químico (SAM), detector de radiación, sonda de neutrones y más.</p>
+      
+      <h2>Impacto histórico</h2>
+      <p>Curiosity revolucionó nuestro conocimiento sobre Marte. Demostró que el planeta rojo tuvo agua líquida en el pasado y ambientes potencialmente habitables. Ha enviado miles de imágenes y datos científicos clave, siendo un emblema de la exploración robótica moderna y un puente hacia futuras misiones humanas.</p>
+    </div>
+    <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
