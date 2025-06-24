@@ -85,6 +85,61 @@
 <body>
 
   <h1>MISIONES APOLO - ARCHIVO SIGMA ULTRA</h1>
+  <div class="typewriter-container">
+  <span id="typewriter"></span><span class="cursor">█</span>
+</div>
+
+<style>
+  .typewriter-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: #bfa76f;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    animation: blink 0.8s infinite;
+    font-weight: bold;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+<script>
+  const texto = "SELECCIONE UNA MISIÓN";
+  const velocidad = 100; // velocidad por letra
+  const pausa = 5000; // pausa entre repeticiones (5 segundos)
+  let i = 0;
+
+  function escribirTexto() {
+    const elemento = document.getElementById("typewriter");
+    elemento.innerHTML = "";
+    i = 0;
+
+    const escribir = () => {
+      if (i < texto.length) {
+        elemento.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(escribir, velocidad);
+      } else {
+        setTimeout(() => {
+          elemento.innerHTML = "";
+          escribirTexto(); // Reinicia después de 5 segundos
+        }, pausa);
+      }
+    };
+
+    escribir();
+  }
+
+  document.addEventListener("DOMContentLoaded", escribirTexto);
+</script>
 
   <div class="typewriter-wrapper">
     <div class="typewriter">SELECCIONE UNA MISIÓN</div>
