@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tianwen-1 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #bfa76f;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    a:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Tianwen-1</h1>
+    <img src="tianwen_1.png" alt="Tianwen-1 sobre Marte" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> CNSA (Agencia Espacial China)</p>
+      <p><b>Fecha de lanzamiento:</b> 23 de julio de 2020</p>
+      <p><b>Duración:</b> Misión activa desde 2021</p>
+      <p><b>Tipo de misión:</b> Orbital, aterrizaje y exploración por rover</p>
+      <p><b>Objetivo:</b> Estudiar la geología marciana, el clima, el campo magnético y posibles reservorios de agua subterránea.</p>
+      <p><b>Carga científica:</b> Radar de penetración, espectrómetros, magnetómetro, cámaras de alta resolución, meteorológicos y multispectrales.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Tianwen-1 convirtió a China en el primer país en lograr <b>órbita, aterrizaje y operación de un rover en una sola misión</b>. El rover **Zhurong** operó exitosamente durante más de un año marciano. Esta misión marcó el ingreso formal de China a la élite de la exploración interplanetaria autónoma.</p>
+    </div>
+    <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
