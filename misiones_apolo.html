@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Misiones Apolo - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .typewriter {
+      font-size: 1.2rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 10px solid #bfa76f;
+      width: 0;
+      margin: 0 auto 2rem;
+      animation: typing 3s steps(30, end), blink 0.8s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 22ch }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Reinicio del efecto cada 5 segundos */
+    .typewriter-wrapper {
+      animation: reset 5s infinite;
+    }
+
+    @keyframes reset {
+      0% { visibility: hidden; }
+      10% { visibility: visible; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1a1a1a;
+      color: #bfa76f;
+    }
+
+    tr:nth-child(even) {
+      background-color: #111;
+    }
+
+    tr:hover {
+      background-color: #222;
+    }
+
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MISIONES APOLO - ARCHIVO SIGMA ULTRA</h1>
+
+  <div class="typewriter-wrapper">
+    <div class="typewriter">SELECCIONE UNA MISIÓN</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Nombre de la Misión</th>
+        <th>Agencia</th>
+        <th>Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1967</td>
+        <td><a href="apolo_1.html">Apolo 1</a></td>
+        <td>NASA</td>
+        <td>Prueba en tierra (accidente)</td>
+      </tr>
+      <tr>
+        <td>1968</td>
+        <td><a href="apolo_7.html">Apolo 7</a></td>
+        <td>NASA</td>
+        <td>Prueba orbital tripulada</td>
+      </tr>
+      <tr>
+        <td>1968</td>
+        <td><a href="apolo_8.html">Apolo 8</a></td>
+        <td>NASA</td>
+        <td>Órbita lunar tripulada</td>
+      </tr>
+      <tr>
+        <td>1969</td>
+        <td><a href="apolo_11.html">Apolo 11</a></td>
+        <td>NASA</td>
+        <td>Primer alunizaje tripulado</td>
+      </tr>
+      <tr>
+        <td>1970</td>
+        <td><a href="apolo_13.html">Apolo 13</a></td>
+        <td>NASA</td>
+        <td>Misión abortada por emergencia</td>
+      </tr>
+      <tr>
+        <td>1971</td>
+        <td><a href="apolo_15.html">Apolo 15</a></td>
+        <td>NASA</td>
+        <td>Exploración lunar con rover</td>
+      </tr>
+      <tr>
+        <td>1972</td>
+        <td><a href="apolo_17.html">Apolo 17</a></td>
+        <td>NASA</td>
+        <td>Última misión tripulada a la Luna</td>
+      </tr>
+      <tr>
+        <td>1981</td>
+        <td><a href="columbia.html">Columbia (STS-1)</a></td>
+        <td>NASA</td>
+        <td>Primer vuelo del transbordador</td>
+      </tr>
+      <tr>
+        <td>1983</td>
+        <td><a href="challenger.html">Challenger</a></td>
+        <td>NASA</td>
+        <td>Misiones múltiples (destruida en 1986)</td>
+      </tr>
+      <tr>
+        <td>1984</td>
+        <td><a href="discovery.html">Discovery</a></td>
+        <td>NASA</td>
+        <td>Satélites, ISS, Hubble</td>
+      </tr>
+      <tr>
+        <td>1985</td>
+        <td><a href="atlantis.html">Atlantis</a></td>
+        <td>NASA</td>
+        <td>ISS, Mir, Galileo, Magellan</td>
+      </tr>
+      <tr>
+        <td>1992</td>
+        <td><a href="endeavour.html">Endeavour</a></td>
+        <td>NASA</td>
+        <td>Reemplazo del Challenger</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
