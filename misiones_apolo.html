@@ -227,6 +227,29 @@
       </tr>
     </tbody>
   </table>
+<!-- Botón de control de audio -->
+<div style="position: fixed; top: 1rem; left: 1rem; z-index: 1000;">
+  <button id="audioToggle" style="background: none; border: none; color: #bfa76f; font-size: 1.5rem;">
+    🔊
+  </button>
+</div>
 
+<!-- Audio de comunicación Apolo-Houston -->
+<audio id="apolloAudio" autoplay loop>
+  <source src="audio/apollo_houston_loop.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+<script>
+  const audio = document.getElementById('apolloAudio');
+  const toggle = document.getElementById('audioToggle');
+  let isMuted = false;
+
+  toggle.addEventListener('click', () => {
+    isMuted = !isMuted;
+    audio.muted = isMuted;
+    toggle.textContent = isMuted ? '🔇' : '🔊';
+  });
+</script>
 </body>
 </html>
