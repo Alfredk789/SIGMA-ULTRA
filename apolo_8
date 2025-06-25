@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apolo 8 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      color: #000;
+      background-color: #bfa76f;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 2rem;
+      display: inline-block;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 8</h1>
+    <img src="apolo8.png" alt="Apolo 8 en órbita lunar" class="mission-img" />
+    
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 21 de diciembre de 1968</p>
+      <p><b>Duración:</b> 6 días, 3 horas y 42 segundos</p>
+      <p><b>Tipo de misión:</b> Tripulada (órbita lunar)</p>
+      <p><b>Objetivo:</b> Realizar la primera misión tripulada que orbitara la Luna y regresar a salvo a la Tierra.</p>
+      <p><b>Carga científica:</b> Cámaras para observación lunar, sensores de navegación y comunicaciones, mediciones de radiación, pruebas de sistemas del módulo de mando.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Apolo 8 fue la primera misión en enviar humanos más allá de la órbita terrestre baja, y la primera en orbitar la Luna. Los astronautas Frank Borman, James Lovell y William Anders capturaron la icónica imagen <i>"Earthrise"</i> y leyeron en vivo desde el Génesis durante la Nochebuena de 1968. Marcó el éxito técnico clave previo al alunizaje del Apolo 11, y demostró la capacidad de navegación y supervivencia del sistema Apolo en órbita lunar.</p>
+    </div>
+
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
