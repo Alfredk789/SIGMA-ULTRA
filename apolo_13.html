@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apolo 13 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding: 2rem;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 13</h1>
+    <img src="apolo13.png" alt="Misión Apolo 13" class="mission-img" />
+
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 11 de abril de 1970</p>
+      <p><b>Duración:</b> 5 días, 22 horas, 54 minutos</p>
+      <p><b>Tipo de misión:</b> Vuelo lunar tripulado (abortado)</p>
+      <p><b>Objetivo:</b> Aterrizaje lunar en la región Fra Mauro</p>
+      <p><b>Carga científica:</b> Instrumentos para experimentos geológicos y sísmicos (no utilizados)</p>
+
+      <h2>⚠️ Emergencia en el espacio</h2>
+      <p>Durante el viaje a la Luna, un tanque de oxígeno explotó en el módulo de servicio, dejando a la tripulación sin energía eléctrica y soporte vital adecuados. La misión fue abortada y los astronautas usaron el módulo lunar como bote salvavidas para regresar a la Tierra. Fue una odisea de supervivencia que desafió cada procedimiento técnico.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Apolo 13 no logró su objetivo científico, pero se convirtió en un símbolo de ingenio, trabajo en equipo y supervivencia bajo presión extrema. La frase “Houston, we’ve had a problem” quedó en la historia. Su regreso exitoso pese a la emergencia es considerado uno de los mayores logros de la ingeniería espacial.</p>
+    </div>
+
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
