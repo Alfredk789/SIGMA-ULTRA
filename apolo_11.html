@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apolo 11 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+    .quote {
+      font-style: italic;
+      margin-top: 1rem;
+      color: #f0e68c;
+      font-size: 1.2rem;
+    }
+    a.button {
+      color: #000;
+      background-color: #bfa76f;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 2rem;
+      display: inline-block;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 11</h1>
+    <img src="apolo11.png" alt="Apolo 11 en la Luna" class="mission-img" />
+
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 16 de julio de 1969</p>
+      <p><b>Duración:</b> 8 días, 3 horas, 18 minutos</p>
+      <p><b>Tipo de misión:</b> Tripulada (alunizaje)</p>
+      <p><b>Objetivo:</b> Lograr el primer alunizaje tripulado y regreso seguro a la Tierra.</p>
+      <p><b>Carga científica:</b> Sismógrafos, retrorreflectores láser, experimentos solares, cámaras fotográficas, muestras lunares (más de 21 kg).</p>
+
+      <div class="quote">
+        “That's one small step for a man, one giant leap for mankind.”<br>
+        — Neil Armstrong, 20 de julio de 1969
+      </div>
+
+      <h2>Impacto histórico</h2>
+      <p>Apolo 11 fue la primera misión tripulada en aterrizar en la Luna. El comandante Neil Armstrong y el piloto Edwin "Buzz" Aldrin descendieron en el módulo lunar *Eagle*, mientras Michael Collins orbitaba en el módulo de comando. Este hito tecnológico y humano marcó la culminación de la carrera espacial, demostrando la capacidad de exploración interplanetaria. El momento fue seguido en vivo por más de 500 millones de personas en todo el mundo.</p>
+
+      <img src="armstrong_descenso.png" alt="Armstrong descendiendo del módulo lunar" class="mission-img" />
+
+    </div>
+
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
