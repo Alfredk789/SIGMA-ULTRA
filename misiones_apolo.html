@@ -234,22 +234,27 @@
   </button>
 </div>
 
-<!-- Audio de comunicación Apolo-Houston -->
 <audio id="apolloAudio" autoplay loop>
-  <source src="audio/apollo_houston_loop.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
+  <source src="https://www.hq.nasa.gov/alsj/a11/a11transmission.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
 </audio>
+
+<!-- Botón para silenciar -->
+<button id="muteBtn" style="position: fixed; top: 10px; left: 10px; background-color: transparent; border: none; font-size: 1.5rem; color: #bfa76f; cursor: pointer;">
+  🔊
+</button>
 
 <script>
   const audio = document.getElementById('apolloAudio');
-  const toggle = document.getElementById('audioToggle');
+  const muteBtn = document.getElementById('muteBtn');
   let isMuted = false;
 
-  toggle.addEventListener('click', () => {
+  muteBtn.addEventListener('click', () => {
     isMuted = !isMuted;
     audio.muted = isMuted;
-    toggle.textContent = isMuted ? '🔇' : '🔊';
+    muteBtn.textContent = isMuted ? '🔇' : '🔊';
   });
 </script>
+  
 </body>
 </html>
