@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apolo 1 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 140px;
+    }
+    a {
+      color: #bfa76f;
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      border: 1px solid #bfa76f;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 1</h1>
+    <img src="apolo_1.png" alt="Apolo 1" class="mission-img">
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha prevista de lanzamiento:</b> 21 de febrero de 1967</p>
+      <p><b>Tipo de misión:</b> Prueba en tierra (tripulada)</p>
+      <p><b>Objetivo:</b> Ensayo de lanzamiento y chequeo del sistema de control ambiental, comunicaciones y protocolos de seguridad en tierra.</p>
+      <p><b>Carga científica:</b> N/A (fase de pruebas pre-misión)</p>
+      
+      <h2>Accidente</h2>
+      <p>El 27 de enero de 1967, durante una prueba en tierra dentro del módulo de comando en la plataforma LC-34, un incendio devastador consumió la cápsula en segundos. Los astronautas Virgil "Gus" Grissom, Edward White y Roger Chaffee perdieron la vida.</p>
+      
+      <h2>Impacto histórico</h2>
+      <p>Apolo 1 marcó un punto de inflexión en el programa espacial estadounidense. El desastre llevó a una revisión completa de los sistemas eléctricos, materiales inflamables y protocolos de seguridad de la NASA. A pesar de no haber volado, su legado fue vital para el éxito de las misiones posteriores del Programa Apolo.</p>
+    </div>
+    <a href="manifiesto.html">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
