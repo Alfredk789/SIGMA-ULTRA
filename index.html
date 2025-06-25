@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <img src="insignia_sigma_ultra.png" alt="Insignia SIGMA ULTRA" width="250" style="margin-bottom: 1rem;">
   <title>SIGMA ULTRA - Centro de Control</title>
   <style>
     body {
@@ -26,13 +25,36 @@
       opacity: 0.8;
     }
 
-    img {
-      width: 120px;
-      margin-bottom: 10px;
+    .insignia {
+      width: 90vw;
+      max-width: 350px;
+      height: auto;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .insignia::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: brillo 4s infinite;
+      transform: rotate(25deg);
+    }
+
+    @keyframes brillo {
+      0% { top: -100%; left: -100%; }
+      50% { top: 100%; left: 100%; }
+      100% { top: 200%; left: 200%; }
     }
 
     .boton-directorio {
-      margin-top: 40px; /* Aumentado para separar del subtítulo */
+      margin-top: 40px;
       padding: 12px 24px;
       border: 1px solid #bfa76f;
       background-color: transparent;
@@ -51,6 +73,10 @@
   </style>
 </head>
 <body>
+  <div class="insignia">
+    <img src="insignia_sigma_ultra.png" alt="Insignia SIGMA ULTRA" style="width: 100%; height: auto;" />
+  </div>
+
   <h1>SIGMA ULTRA – Centro de Control</h1>
   <div class="subtitulo">COMANDANTE CIENTÍFICO – DIVISIÓN EDUCATIVA</div>
 
