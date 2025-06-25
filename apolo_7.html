@@ -1,0 +1,116 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apolo 7 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      margin-top: 2rem;
+      padding: 0.7rem 2rem;
+      background-color: #bfa76f;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    a.button:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 7</h1>
+    <img src="apolo7.png" alt="Apolo 7 en órbita" class="mission-img" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 11 de octubre de 1968</p>
+      <p><b>Duración:</b> 10 días, 20 horas, 9 minutos</p>
+      <p><b>Tipo de misión:</b> Orbital tripulada de prueba</p>
+      <p><b>Tripulación:</b> Walter M. Schirra, Donn F. Eisele, Walter Cunningham</p>
+      <p><b>Objetivo:</b> Probar el módulo de comando y servicio (CSM) en órbita terrestre baja</p>
+      <p><b>Carga científica:</b> Sistema de soporte vital, comunicaciones, cámaras, procedimientos de acoplamiento</p>
+      <h2>Impacto histórico</h2>
+      <p>
+        Apolo 7 fue la primera misión tripulada del programa Apolo tras el accidente del Apolo 1. Marcó un retorno exitoso a los vuelos tripulados para la NASA. Demostró el desempeño del módulo de comando en condiciones reales, permitiendo validar sistemas críticos antes del intento de alunizaje. También fue la primera transmisión televisiva en vivo desde el espacio por parte de astronautas estadounidenses.
+      </p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
