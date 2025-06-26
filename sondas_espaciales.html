@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sondas Espaciales - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #0a0a0a;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
-      padding: 2rem;
+      padding: 1rem;
     }
     h1 {
       text-align: center;
-      color: #bfa76f;
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
     }
-
     .typewriter-container {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       white-space: nowrap;
       overflow: hidden;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 1.5rem auto;
       width: fit-content;
       border-right: 0.15em solid transparent;
       text-align: center;
     }
-
     .cursor {
       display: inline-block;
       width: 1ch;
@@ -37,36 +34,46 @@
       animation: blink 0.7s step-start infinite;
       vertical-align: bottom;
     }
-
     @keyframes blink {
-      50% {
-        background-color: transparent;
-      }
+      50% { background-color: transparent; }
+    }
+
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      min-width: 600px;
     }
+
     th, td {
       border: 1px solid #444;
-      padding: 1rem;
+      padding: 0.8rem;
       text-align: left;
+      font-size: 0.95rem;
     }
+
     th {
       background-color: #1a1a1a;
       color: #bfa76f;
     }
+
     tr:nth-child(even) {
       background-color: #111;
     }
+
     tr:hover {
       background-color: #222;
     }
+
     a {
       color: #bfa76f;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -79,83 +86,85 @@
     <span id="typewriter"></span><span class="cursor"></span>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Año</th>
-        <th>Nombre de la Misión</th>
-        <th>Agencia</th>
-        <th>Objetivo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1974</td>
-        <td><a href="helios_1.html">Helios 1</a></td>
-        <td>NASA / DLR</td>
-        <td>Estudio del viento solar y proximidad al Sol</td>
-      </tr>
-      <tr>
-        <td>1976</td>
-        <td><a href="helios_2.html">Helios 2</a></td>
-        <td>NASA / DLR</td>
-        <td>Medición de partículas solares en órbita elíptica</td>
-      </tr>
-      <tr>
-        <td>1978</td>
-        <td><a href="venera.html">Venera</a></td>
-        <td>URSS</td>
-        <td>Aterrizaje en Venus y análisis de su atmósfera</td>
-      </tr>
-      <tr>
-        <td>1990</td>
-        <td><a href="ulyses.html">Ulysses</a></td>
-        <td>NASA / ESA</td>
-        <td>Exploración de los polos solares</td>
-      </tr>
-      <tr>
-        <td>1995</td>
-        <td><a href="soho.html">SOHO</a></td>
-        <td>NASA / ESA</td>
-        <td>Observación solar continua desde el punto L1</td>
-      </tr>
-      <tr>
-        <td>1989</td>
-        <td><a href="galileo.html">Galileo</a></td>
-        <td>NASA</td>
-        <td>Estudio de Júpiter y sus lunas</td>
-      </tr>
-      <tr>
-        <td>1997</td>
-        <td><a href="cassini.html">Cassini-Huygens</a></td>
-        <td>NASA / ESA / ASI</td>
-        <td>Exploración de Saturno y Titán</td>
-      </tr>
-      <tr>
-        <td>2003</td>
-        <td><a href="hayabusa1.html">Hayabusa 1</a></td>
-        <td>JAXA</td>
-        <td>Recolección de muestras del asteroide Itokawa</td>
-      </tr>
-      <tr>
-        <td>2011</td>
-        <td><a href="juno.html">Juno</a></td>
-        <td>NASA</td>
-        <td>Estudio del campo magnético y atmósfera de Júpiter</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Nombre de la Misión</th>
+          <th>Agencia</th>
+          <th>Objetivo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1974 / 1976</td>
+          <td><a href="helios.html">Helios 1 y 2</a></td>
+          <td>NASA / DLR</td>
+          <td>Estudio del viento solar y entorno cercano al Sol</td>
+        </tr>
+        <tr>
+          <td>1978</td>
+          <td><a href="venera.html">Venera</a></td>
+          <td>URSS</td>
+          <td>Aterrizaje y análisis atmosférico en Venus</td>
+        </tr>
+        <tr>
+          <td>1989</td>
+          <td><a href="galileo.html">Galileo</a></td>
+          <td>NASA</td>
+          <td>Estudio profundo de Júpiter y sus lunas</td>
+        </tr>
+        <tr>
+          <td>1990</td>
+          <td><a href="ulyses.html">Ulysses</a></td>
+          <td>NASA / ESA</td>
+          <td>Exploración de los polos solares</td>
+        </tr>
+        <tr>
+          <td>1995</td>
+          <td><a href="soho.html">SOHO</a></td>
+          <td>NASA / ESA</td>
+          <td>Observación solar continua desde L1</td>
+        </tr>
+        <tr>
+          <td>1997</td>
+          <td><a href="cassini.html">Cassini-Huygens</a></td>
+          <td>NASA / ESA / ASI</td>
+          <td>Exploración de Saturno y aterrizaje en Titán</td>
+        </tr>
+        <tr>
+          <td>2003</td>
+          <td><a href="hayabusa1.html">Hayabusa 1</a></td>
+          <td>JAXA</td>
+          <td>Recolecta de muestras del asteroide Itokawa</td>
+        </tr>
+        <tr>
+          <td>2011</td>
+          <td><a href="juno.html">Juno</a></td>
+          <td>NASA</td>
+          <td>Estudio del campo magnético y atmósfera de Júpiter</td>
+        </tr>
+        <tr>
+          <td>2018</td>
+          <td><a href="parker.html">Parker Solar Probe</a></td>
+          <td>NASA</td>
+          <td>Exploración directa de la corona solar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <script>
-    const texto = "Seleccione una sonda para acceso clasificado";
+    const texto = "Seleccione una sonda para acceder a su archivo clasificado";
     const elemento = document.getElementById("typewriter");
 
     function escribirTexto(index = 0) {
       if (index <= texto.length) {
         elemento.textContent = texto.slice(0, index);
-        setTimeout(() => escribirTexto(index + 1), 100);
+        setTimeout(() => escribirTexto(index + 1), 80);
       } else {
-        setTimeout(() => reiniciar(), 5000);
+        setTimeout(() => reiniciar(), 4000);
       }
     }
 
