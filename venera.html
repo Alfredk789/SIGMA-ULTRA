@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venera - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Programa Venera</h1>
+    <img src="venera.png" class="mission-img" alt="Imagen de la sonda Venera" />
+    <div class="info">
+      <p><b>Agencia:</b> URSS (Roscosmos)</p>
+      <p><b>Período de actividad:</b> 1961 – 1984</p>
+      <p><b>Tipo de misión:</b> Exploración interplanetaria – Venus</p>
+      <p><b>Vehículos clave:</b> Venera 7, Venera 9, Venera 13</p>
+      <p><b>Logros principales:</b> Primer aterrizaje suave en otro planeta (Venera 7, 1970), primeras imágenes desde la superficie de Venus (Venera 9, 1975), análisis de suelo y audio desde otro planeta (Venera 13, 1982)</p>
+      <p><b>Duración en superficie:</b> Desde 23 minutos (Venera 7) hasta 127 minutos (Venera 13)</p>
+      <p><b>Instrumentación:</b> Cámaras panorámicas, espectrómetros, penetrómetros, transmisores, sensores térmicos y de presión</p>
+
+      <h2>Impacto histórico</h2>
+      <p>La serie soviética Venera marcó un hito en la exploración planetaria, siendo el primer programa en lograr aterrizajes exitosos en un mundo distinto a la Tierra. Sus naves sobrevivieron condiciones extremas de temperatura (465°C) y presión (90 atm), entregando imágenes, datos atmosféricos y registros sonoros únicos desde la superficie de Venus. La ingeniería del programa desafió los límites tecnológicos de la época, consolidando a la URSS como pionera de la exploración planetaria temprana.</p>
+    </div>
+    <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
