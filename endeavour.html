@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Endeavour STS-49 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>STS-49 – Endeavour</h1>
+    <img src="endeavour.png" class="mission-img" alt="Imagen STS-49 Endeavour" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Lanzamiento:</b> 7 de mayo de 1992 – 23:40 UTC</p>
+      <p><b>Duración total:</b> 8 días, 21 horas, 17 minutos</p>
+      <p><b>Tipo de misión:</b> Captura y reparación satelital</p>
+      <p><b>Vehículo:</b> Endeavour (OV-105)</p>
+      <p><b>Centro de lanzamiento:</b> Kennedy Space Center – Plataforma 39B</p>
+
+      <h2>Tripulación</h2>
+      <ul>
+        <li>Daniel C. Brandenstein – Comandante</li>
+        <li>Kevin P. Chilton – Piloto</li>
+        <li>Richard Hieb – Especialista de misión</li>
+        <li>Bruce E. Melnick – Especialista de misión</li>
+        <li>Pierre J. Thuot – Especialista de misión</li>
+        <li>Thomas D. Akers – Especialista de misión</li>
+        <li>Kathryn Thornton – Especialista de misión</li>
+      </ul>
+
+      <h2>Objetivos de la misión</h2>
+      <p>Recapturar, reparar y relanzar el satélite de comunicaciones INTELSAT VI-F3, que no alcanzó la órbita geoestacionaria por una falla en 1990. STS-49 también probó nuevas técnicas de ensamblaje orbital con la primera caminata espacial (EVA) de tres astronautas en simultáneo.</p>
+
+      <h2>Datos clave</h2>
+      <p><b>Órbitas completadas:</b> 141</p>
+      <p><b>Altitud orbital promedio:</b> 304 km</p>
+      <p><b>Velocidad orbital:</b> 27,780 km/h</p>
+      <p><b>Reingreso y aterrizaje:</b> 16 de mayo de 1992 en Edwards Air Force Base</p>
+
+      <h2>Legado histórico</h2>
+      <p>STS-49 fue la misión inaugural del transbordador Endeavour, construido para reemplazar al Challenger. Representó un logro técnico sobresaliente al realizar una reparación compleja en órbita y establecer récords EVA. Endeavour se convertiría en pieza clave en misiones ISS y Hubble en años posteriores.</p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
