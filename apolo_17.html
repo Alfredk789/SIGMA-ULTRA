@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apolo 17 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Apolo 17 – SIGMA ULTRA</h1>
+    <img src="apolo_17.png" class="mission-img" alt="Imagen Apolo 17" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Lanzamiento:</b> 7 de diciembre de 1972 – 23:33 UTC</p>
+      <p><b>Duración total:</b> 12 días, 13 horas, 52 minutos</p>
+      <p><b>Tipo de misión:</b> Misión tripulada lunar (última del programa Apolo)</p>
+      <p><b>Objetivo:</b> Explorar el valle Taurus–Littrow, realizar estudios geológicos y desplegar experimentos científicos</p>
+      <p><b>Vehículo lanzador:</b> Saturno V</p>
+      <p><b>Módulo lunar:</b> Challenger</p>
+      <p><b>Tripulación:</b> Eugene Cernan (comandante), Harrison Schmitt (piloto LEM, geólogo), Ronald Evans (piloto Módulo de Comando)</p>
+      <h2>Actividades en la superficie lunar</h2>
+      <p>Duración en la Luna: 3 días, 2 horas</p>
+      <p>Número de paseos lunares (EVA): 3</p>
+      <p>Tiempo total de EVA: 22 horas, 4 minutos</p>
+      <p>Distancia recorrida con vehículo lunar (LRV): 35.9 km</p>
+      <p>Muestras recolectadas: 110.4 kg</p>
+      <h2>Carga científica y experimentos</h2>
+      <ul>
+        <li>Estación ALSEP: experimentos sismográficos, magnetómetro, medidor de calor lunar</li>
+        <li>Experimentos de perfil sísmico (LSPE)</li>
+        <li>Mediciones gravitatorias</li>
+        <li>Experimentos geofísicos con geófonos</li>
+      </ul>
+      <h2>Legado histórico</h2>
+      <p>Última misión tripulada lunar del programa Apolo y hasta ahora la última visita humana a la Luna.</p>
+      <p>Harrison Schmitt fue el primer y único geólogo profesional en pisar la Luna.</p>
+      <p>Eugene Cernan pronunció la frase histórica: "We leave as we came, and, God willing, as we shall return."</p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
