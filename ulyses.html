@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ulysses - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Sonda Ulysses</h1>
+    <img src="ulyses.png" class="mission-img" alt="Imagen de la sonda Ulysses" />
+    <div class="info">
+      <p><b>Agencias:</b> NASA / ESA</p>
+      <p><b>Fecha de lanzamiento:</b> 6 de octubre de 1990</p>
+      <p><b>Duración:</b> 18 años (finalizó en junio de 2009)</p>
+      <p><b>Tipo de misión:</b> Exploración solar de polos heliográficos</p>
+      <p><b>Trayectoria:</b> Asistencia gravitacional con Júpiter para salir del plano eclíptico</p>
+      <p><b>Instrumentos:</b> Magnetómetro, espectrómetros de viento solar, detectores de partículas y polvo cósmico, antena de plasma</p>
+
+      <h2>Origen del nombre</h2>
+      <p>
+        <b>Ulysses</b> toma su nombre del legendario **Ulises**, héroe griego de la <i>Odisea</i> de Homero, conocido por sus extensos y arriesgados viajes por lo desconocido, enfrentando monstruos, tormentas y misterios mitológicos.
+        En este caso, la sonda fue bautizada así porque:
+      </p>
+      <ul style="margin-left: 1rem; line-height: 1.6;">
+        <li>No fue dirigida a un planeta o luna específica.</li>
+        <li>Viajó hacia los <b>polos del Sol</b>, un territorio inexplorado hasta ese momento.</li>
+        <li>Se desvió del <b>plano eclíptico</b> (como Ulises desviándose del camino a casa), usando el tirón gravitacional de <b>Júpiter</b> para elevar su trayectoria por encima del Sol y observarlo desde un ángulo completamente nuevo.</li>
+      </ul>
+
+      <h2>Impacto histórico</h2>
+      <p>Ulysses fue la primera y única misión en observar el Sol desde sus polos. Estudió el viento solar, los campos magnéticos y la heliosfera en tres dimensiones, revolucionando nuestra comprensión del comportamiento solar a gran escala. La nave realizó tres órbitas solares completas, recopilando datos vitales durante más de 18 años. Ulysses abrió una nueva perspectiva del Sol, lejos del enfoque exclusivamente ecuatorial de las misiones anteriores.</p>
+    </div>
+    <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
