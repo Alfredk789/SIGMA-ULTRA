@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atlantis STS-51-J - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>STS-51-J – Atlantis</h1>
+    <img src="atlantis.png" class="mission-img" alt="Imagen STS-51-J Atlantis" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA / Departamento de Defensa de EE.UU.</p>
+      <p><b>Lanzamiento:</b> 3 de octubre de 1985 – 15:15 UTC</p>
+      <p><b>Duración total:</b> 4 días, 1 hora, 44 minutos</p>
+      <p><b>Tipo de misión:</b> Misión clasificada del Pentágono (seguridad nacional)</p>
+      <p><b>Vehículo:</b> Atlantis (OV-104)</p>
+      <p><b>Centro de lanzamiento:</b> Kennedy Space Center – Plataforma 39A</p>
+
+      <h2>Tripulación</h2>
+      <ul>
+        <li>Karol J. Bobko – Comandante</li>
+        <li>Ronald J. Grabe – Piloto</li>
+        <li>David C. Hilmers – Especialista de misión</li>
+        <li>Robert L. Stewart – Especialista de misión</li>
+        <li>William A. Pailes – Especialista militar</li>
+      </ul>
+
+      <h2>Objetivos de la misión</h2>
+      <p>STS-51-J fue la primera misión del Atlantis y la segunda misión del programa del Transbordador en apoyo al Departamento de Defensa. El contenido, carga útil y operación fueron clasificados. Se cree que incluyó el despliegue de satélites de comunicaciones militares (DSCS).</p>
+
+      <h2>Datos clave</h2>
+      <p><b>Órbitas completadas:</b> 64</p>
+      <p><b>Altitud orbital promedio:</b> 346 km</p>
+      <p><b>Velocidad orbital:</b> 27,780 km/h</p>
+      <p><b>Reingreso y aterrizaje:</b> 7 de octubre de 1985 en Edwards Air Force Base</p>
+
+      <h2>Legado histórico</h2>
+      <p>STS-51-J marcó el inicio de servicio del orbitador Atlantis, una nave clave en operaciones militares, científicas y misiones de largo alcance. Atlantis realizaría más adelante misiones icónicas como la entrega de módulos a la ISS y la última misión del programa STS.</p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
