@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galileo - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Sonda Galileo</h1>
+    <img src="galileo.png" class="mission-img" alt="Imagen de la sonda Galileo" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 18 de octubre de 1989</p>
+      <p><b>Arribo a Júpiter:</b> 7 de diciembre de 1995</p>
+      <p><b>Duración total:</b> 14 años (incluye sobrevuelo de Venus, Tierra y asteroides)</p>
+      <p><b>Tipo de misión:</b> Orbitador y sonda atmosférica de Júpiter</p>
+      <p><b>Órbita:</b> Heliocéntrica → Júpiter (orbital)</p>
+      <p><b>Instrumentación:</b> Espectrómetros infrarrojos y ultravioleta, magnetómetro, cámaras multiespectrales, medidor de plasma, sonda atmosférica</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Galileo fue la primera sonda en entrar en órbita alrededor de Júpiter y estudiar de cerca sus lunas más grandes: Ío, Europa, Ganímedes y Calisto. Su módulo atmosférico penetró la densa atmósfera joviana en 1995, enviando los primeros datos directos de un planeta gigante. La misión reveló volcanismo activo en Ío, hielo y posible océano en Europa, y sorprendentes estructuras magnéticas en Ganímedes. Galileo transformó por completo el conocimiento sobre el sistema joviano antes de finalizar su viaje impactando Júpiter en 2003 para evitar contaminación biológica en lunas potencialmente habitables.</p>
+    </div>
+    <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
