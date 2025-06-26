@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Helios 1 y 2 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Helios 1 y Helios 2</h1>
+    <img src="helios.png" class="mission-img" alt="Imagen de las sondas Helios" />
+    <div class="info">
+      <p><b>Agencias:</b> NASA / DLR (Alemania Occidental)</p>
+      <p><b>Fechas de lanzamiento:</b> Helios 1: 10 de diciembre de 1974 / Helios 2: 15 de enero de 1976</p>
+      <p><b>Duración de misión:</b> Helios 1: hasta 1986 / Helios 2: hasta 1980</p>
+      <p><b>Tipo de misión:</b> Sondas solares – estudio del entorno cercano al Sol</p>
+      <p><b>Distancia al Sol:</b> Helios 1: 0.31 UA / Helios 2: 0.29 UA (récord en su tiempo)</p>
+      <p><b>Velocidad máxima:</b> Helios 2: ~274,000 km/h (récord de velocidad orbital hasta Parker Solar Probe)</p>
+      <p><b>Instrumentos:</b> Magnetómetro, detectores de partículas solares, espectrómetros de plasma, detectores de polvo cósmico</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Las sondas Helios fueron pioneras en la exploración del entorno solar más cercano. Desarrolladas conjuntamente entre NASA y la agencia espacial alemana DLR, proporcionaron datos críticos sobre el viento solar, las partículas de alta energía y los campos magnéticos interplanetarios. Helios 2 fue la primera en acercarse a menos de 0.3 UA del Sol y fue, durante décadas, la sonda más rápida jamás construida. Sus observaciones sentaron las bases para misiones más recientes como Parker Solar Probe.</p>
+    </div>
+    <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
