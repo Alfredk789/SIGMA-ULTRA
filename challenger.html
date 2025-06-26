@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Challenger STS-51-L - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>STS-51-L – Challenger</h1>
+    <img src="challenger.png" class="mission-img" alt="Imagen STS-51-L Challenger" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Lanzamiento:</b> 28 de enero de 1986 – 16:38 UTC</p>
+      <p><b>Duración:</b> 1 minuto 13 segundos (misión abortada por accidente)</p>
+      <p><b>Tipo de misión:</b> Lanzamiento de satélites y experimento educativo</p>
+      <p><b>Vehículo:</b> Challenger (OV-099)</p>
+      <p><b>Centro de lanzamiento:</b> Kennedy Space Center – Plataforma 39B</p>
+
+      <h2>Tripulación</h2>
+      <ul>
+        <li>Francis R. Scobee – Comandante</li>
+        <li>Michael J. Smith – Piloto</li>
+        <li>Judith A. Resnik – Especialista de misión</li>
+        <li>Ellison S. Onizuka – Especialista de misión</li>
+        <li>Ronald McNair – Especialista de misión</li>
+        <li>Gregory Jarvis – Especialista de carga útil</li>
+        <li>Christa McAuliffe – Maestra en el espacio (civil)</li>
+      </ul>
+
+      <h2>Objetivos de la misión</h2>
+      <p>Desplegar satélites de comunicaciones (TDRS-B), realizar experimentos con estudiantes y educar en tiempo real desde el espacio con la participación de una civil en la tripulación.</p>
+
+      <h2>Evento catastrófico</h2>
+      <p>La misión fue abortada 73 segundos después del despegue debido a una falla en una junta tórica del propulsor derecho (SRB), lo que provocó la desintegración del orbitador. Toda la tripulación falleció.</p>
+
+      <h2>Legado histórico</h2>
+      <p>STS-51-L marcó un antes y un después en la historia aeroespacial. El accidente llevó a una profunda revisión del programa del transbordador, mejoras en seguridad y rediseño de los SRB. La misión es recordada con solemnidad y respeto en cada referencia histórica.</p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
