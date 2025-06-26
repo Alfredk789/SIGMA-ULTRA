@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discovery STS-41-D - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto 2rem auto;
+      display: block;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+      text-align: center;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.4rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>STS-41-D – Discovery</h1>
+    <img src="discovery.png" class="mission-img" alt="Imagen STS-41-D Discovery" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Lanzamiento:</b> 30 de agosto de 1984 – 12:41 UTC</p>
+      <p><b>Duración total:</b> 6 días, 0 horas, 56 minutos</p>
+      <p><b>Tipo de misión:</b> Lanzamiento de satélites y pruebas del sistema Discovery</p>
+      <p><b>Vehículo:</b> Discovery (OV-103)</p>
+      <p><b>Centro de lanzamiento:</b> Kennedy Space Center – Plataforma 39A</p>
+
+      <h2>Tripulación</h2>
+      <ul>
+        <li>Henry Hartsfield – Comandante</li>
+        <li>Michael L. Coats – Piloto</li>
+        <li>Judith Resnik – Especialista de misión</li>
+        <li>Steven Hawley – Especialista de misión</li>
+        <li>Richard Mullane – Especialista de misión</li>
+        <li>Charles D. Walker – Especialista de carga útil (McDonnell Douglas)</li>
+      </ul>
+
+      <h2>Objetivos de la misión</h2>
+      <p>Verificar el funcionamiento del orbitador Discovery en su primer vuelo. Lanzar tres satélites de comunicaciones (SBS-D, SYNCOM IV-2, TELSTAR 3C) y realizar experimentos técnicos y biomédicos en órbita.</p>
+      <p>Realizar observaciones con la cámara IMAX para uso documental.</p>
+
+      <h2>Datos clave</h2>
+      <p><b>Órbitas completadas:</b> 97</p>
+      <p><b>Altitud orbital promedio:</b> 301 km</p>
+      <p><b>Velocidad orbital:</b> 27,780 km/h</p>
+      <p><b>Reingreso y aterrizaje:</b> 5 de septiembre de 1984 en Edwards Air Force Base</p>
+
+      <h2>Legado histórico</h2>
+      <p>Discovery se convirtió en el transbordador más utilizado del programa STS, con 39 misiones. STS-41-D marcó el inicio de su legado operativo, estableciendo estándares de fiabilidad y versatilidad. Judith Resnik participó en esta misión antes de formar parte de la tripulación del Challenger en STS-51-L.</p>
+    </div>
+    <a href="manifiesto.html" class="button">⬅ Regresar al Manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
