@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Juno - SIGMA ULTRA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #bfa76f;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2rem;
+            text-align: center;
+        }
+        .loading {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        .bar {
+            width: 80%;
+            height: 8px;
+            background-color: #1a1a1a;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            width: 0;
+            background-color: #bfa76f;
+            animation: load 3s forwards;
+        }
+        @keyframes load {
+            to {
+                width: 100%;
+            }
+        }
+        .content {
+            display: none;
+            margin-top: 2rem;
+        }
+        .mission-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+        .info {
+            text-align: justify;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .info b {
+            display: inline-block;
+            width: 160px; /* Asegura alineación para las etiquetas */
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #1a1a1a;
+            color: #bfa76f;
+            border: 1px solid #bfa76f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a.button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        h1, h2 {
+            color: #bfa76f;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .info h2 { /* Estilo específico para los subtítulos dentro de .info */
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #bfa76f;
+            padding-bottom: 0.3rem;
+            display: block;
+            width: 100%;
+        }
+        .info ul {
+            margin-left: 1.5rem;
+            list-style-type: disc; /* Opcional: para usar viñetas si no está ya en el estilo general */
+        }
+        .info li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">
+        <div>CARGANDO DATOS DE LA MISIÓN </div>
+        <div class="bar"><div class="bar-fill"></div></div>
+        <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Sonda Juno</h1>
+        <!-- Image of Juno -->
+        <img src="juno.png" class="mission-img" alt="Imagen de la sonda Juno" />
+        <div class="info">
+            <p><b>Agencia:</b> NASA (Administración Nacional de Aeronáutica y el Espacio)</p>
+            <p><b>Fecha de lanzamiento:</b> 5 de agosto de 2011</p>
+            <p><b>Tipo de misión:</b> Orbitador de Júpiter</p>
+
+            <h2>Instrumentación</h2>
+            <p>Juno está equipada con nueve instrumentos científicos para investigar el origen, la evolución, la atmósfera y la magnetosfera de Júpiter:</p>
+            <ul>
+                <li>JunoCam: Cámara de luz visible para obtener imágenes de la atmósfera de Júpiter.</li>
+                <li>MWR (Microwave Radiometer): Para medir la composición y temperatura de la atmósfera profunda.</li>
+                <li>JADE (Jovian Auroral Distributions Experiment) y JEDI (Jovian Energetic Particle Detector Instrument): Para estudiar las auroras de Júpiter.</li>
+                <li>Magnetómetro (MAG): Para mapear el campo magnético de Júpiter.</li>
+                <li>Gravitational Science: Utiliza el sistema de radio de la nave para mapear el campo gravitatorio de Júpiter.</li>
+                <li>UVS (Ultraviolet Spectrograph) y JIRAM (Jovian Infrared Auroral Mapper): Para investigar la atmósfera y las auroras en diferentes longitudes de onda.</li>
+            </ul>
+
+            <h2>Actividades Notables</h2>
+            <p>
+                La misión Juno está diseñada para estudiar Júpiter de una manera única:
+            </p>
+            <ul>
+                <li>Llegó a Júpiter el 4 de julio de 2016 y entró en órbita polar.</li>
+                <li>Realiza sobrevuelos cercanos y altamente elípticos de Júpiter cada 53 días, pasando a poca distancia de las cimas de las nubes.</li>
+                <li>Recopila datos sobre el campo gravitatorio y magnético del planeta, la distribución de agua y amoníaco en su atmósfera, y las regiones polares y auroras.</li>
+                <li>Ha capturado imágenes impresionantes y de alta resolución de las nubes de Júpiter.</li>
+            </ul>
+
+            <h2>Impacto Histórico y Descubrimientos</h2>
+            <p>
+                Juno está proporcionando información sin precedentes sobre el gigante gaseoso:
+            </p>
+            <ul>
+                <li>Ha revelado detalles asombrosos de los ciclones polares de Júpiter, con estructuras complejas y persistentes.</li>
+                <li>Ha mapeado el campo magnético de Júpiter con una precisión nunca antes vista, mostrando que es más grumoso y asimétrico de lo esperado.</li>
+                <li>Ha proporcionado datos clave sobre la composición atmosférica y los patrones de circulación, ayudando a entender la formación de las bandas de Júpiter.</li>
+                <li>Está arrojando luz sobre si Júpiter tiene un núcleo sólido.</li>
+            </ul>
+
+            <h2>Estado Actual</h2>
+            <p>
+                La sonda Juno se encuentra actualmente ACTIVA y en órbita alrededor de Júpiter, continuando su misión extendida.
+            </p>
+            <p>
+                A pesar de haber completado su misión principal, la NASA ha aprobado extensiones para que Juno continúe su estudio, permitiendo nuevos descubrimientos sobre el sistema joviano, incluyendo sobrevuelos a lunas como Ganímedes, Europa e Io. Su robusta operación sigue enviando datos cruciales sobre el planeta más grande de nuestro sistema solar.
+            </p>
+        </div>
+        <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+    </div>
+
+    <script>
+        // Script para mostrar el contenido después de la animación de carga
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000); // La animación dura 3 segundos
+    </script>
+</body>
+</html>
