@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Telescopios - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #bfa76f;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .typewriter-container {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 auto 2rem auto;
+      width: fit-content;
+      border-right: 0.15em solid transparent;
+      text-align: center;
+    }
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.2em;
+      background-color: #bfa76f;
+      margin-left: 5px;
+      animation: blink 0.7s step-start infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #1a1a1a;
+      color: #bfa76f;
+    }
+    tr:nth-child(even) {
+      background-color: #111;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Telescopios - Archivo SIGMA ULTRA</h1>
+
+  <div class="typewriter-container">
+    <span id="typewriter"></span><span class="cursor"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Nombre del Telescopio</th>
+        <th>Agencia</th>
+        <th>Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1990</td>
+        <td><a href="hubble.html">Hubble Space Telescope</a></td>
+        <td>NASA/ESA</td>
+        <td>Observaciones en visible, ultravioleta e infrarrojo cercano</td>
+      </tr>
+      <tr>
+        <td>1999</td>
+        <td><a href="chandra.html">Chandra X-Ray Observatory</a></td>
+        <td>NASA</td>
+        <td>Observación del universo en rayos X</td>
+      </tr>
+      <tr>
+        <td>2009</td>
+        <td><a href="herschel.html">Herschel Space Observatory</a></td>
+        <td>ESA</td>
+        <td>Estudio del infrarrojo lejano y submilimétrico</td>
+      </tr>
+      <tr>
+        <td>2009</td>
+        <td><a href="kepler.html">Kepler</a></td>
+        <td>NASA</td>
+        <td>Descubrimiento de exoplanetas por tránsito</td>
+      </tr>
+      <tr>
+        <td>2013</td>
+        <td><a href="gaia.html">Gaia</a></td>
+        <td>ESA</td>
+        <td>Cartografía 3D de la Vía Láctea con precisión astrométrica</td>
+      </tr>
+      <tr>
+        <td>2008</td>
+        <td><a href="fermi.html">Fermi Gamma-ray Space Telescope</a></td>
+        <td>NASA</td>
+        <td>Observación de fuentes de rayos gamma</td>
+      </tr>
+      <tr>
+        <td>2022</td>
+        <td><a href="james_webb.html">James Webb Space Telescope</a></td>
+        <td>NASA/ESA/CSA</td>
+        <td>Estudio del infrarrojo cercano y medio para cosmología y formación estelar</td>
+      </tr>
+      <tr>
+        <td>2023</td>
+        <td><a href="euclid.html">Euclid</a></td>
+        <td>ESA</td>
+        <td>Mapeo del universo para investigar energía y materia oscura</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const texto = "Seleccione un telescopio";
+    const elemento = document.getElementById("typewriter");
+
+    function escribirTexto(index = 0) {
+      if (index <= texto.length) {
+        elemento.textContent = texto.slice(0, index);
+        setTimeout(() => escribirTexto(index + 1), 100);
+      } else {
+        setTimeout(() => reiniciar(), 5000);
+      }
+    }
+
+    function reiniciar() {
+      elemento.textContent = "";
+      escribirTexto(0);
+    }
+
+    escribirTexto();
+  </script>
+</body>
+</html>
