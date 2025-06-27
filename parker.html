@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Parker Solar Probe - SIGMA ULTRA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #bfa76f;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2rem;
+            text-align: center;
+        }
+        .loading {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        .bar {
+            width: 80%;
+            height: 8px;
+            background-color: #1a1a1a;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            width: 0;
+            background-color: #bfa76f;
+            animation: load 3s forwards;
+        }
+        @keyframes load {
+            to {
+                width: 100%;
+            }
+        }
+        .content {
+            display: none;
+            margin-top: 2rem;
+        }
+        .mission-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+        .info {
+            text-align: justify;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .info b {
+            display: inline-block;
+            width: 160px; /* Asegura alineación para las etiquetas */
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #1a1a1a;
+            color: #bfa76f;
+            border: 1px solid #bfa76f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a.button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        h1, h2 {
+            color: #bfa76f;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .info h2 { /* Estilo específico para los subtítulos dentro de .info */
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #bfa76f;
+            padding-bottom: 0.3rem;
+            display: block;
+            width: 100%;
+        }
+        .info ul {
+            margin-left: 1.5rem;
+            list-style-type: disc; /* Opcional: para usar viñetas si no está ya en el estilo general */
+        }
+        .info li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">
+        <div>CARGANDO DATOS DE LA MISIÓN PARKER</div>
+        <div class="bar"><div class="bar-fill"></div></div>
+        <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Sonda Parker Solar Probe</h1>
+        <!-- Image of Parker Solar Probe -->
+        <img src="parker.png" class="mission-img" alt="Imagen de la sonda Parker Solar Probe" />
+        <div class="info">
+            <p><b>Agencia:</b> NASA (Administración Nacional de Aeronáutica y el Espacio)</p>
+            <p><b>Fecha de lanzamiento:</b> 12 de agosto de 2018</p>
+            <p><b>Tipo de misión:</b> Sonda solar, la primera nave espacial en "tocar" el Sol</p>
+
+            <h2>Instrumentación</h2>
+            <p>Parker Solar Probe está equipada con un escudo térmico de carbono de 4.5 pulgadas de espesor y una serie de instrumentos robustos para operar en condiciones extremas cerca del Sol:</p>
+            <ul>
+                <li>FIELDS: Mide campos eléctricos y magnéticos, ondas de radio y la densidad de electrones.</li>
+                <li>SWEAP (Solar Wind Electrons Alphas and Protons): Mide las propiedades de los electrones, protones e iones de helio del viento solar.</li>
+                <li>IS☉IS (Integrated Science Investigation of the Sun): Estudia las partículas energéticas del Sol.</li>
+                <li>WISPR (Wide-field Imager for Parker Solar Probe): Un telescopio para tomar imágenes de la corona solar y el viento solar.</li>
+            </ul>
+
+            <h2>Actividades Notables</h2>
+            <p>
+                La Parker Solar Probe realiza una serie de sobrevuelos cercanos al Sol, cada vez acercándose más:
+            </p>
+            <ul>
+                <li>Realiza maniobras de asistencia gravitatoria con Venus para acercarse al Sol.</li>
+                <li>Se sumerge repetidamente en la atmósfera exterior del Sol (la corona).</li>
+                <li>Ha establecido récords de velocidad y proximidad al Sol para cualquier objeto hecho por el hombre.</li>
+                <li>Recopila datos directamente de la corona solar para comprender el viento solar y el calentamiento coronal.</li>
+            </ul>
+
+            <h2>Impacto Histórico y Descubrimientos</h2>
+            <p>
+                Parker Solar Probe está revolucionando nuestra comprensión de nuestra estrella:
+            </p>
+            <ul>
+                <li>Está proporcionando mediciones directas de la atmósfera externa del Sol, un entorno nunca antes explorado.</li>
+                <li>Ha descubierto el origen de los "switchbacks" (inversiones repentinas en el campo magnético del Sol).</li>
+                <li>Está ayudando a resolver el misterio de por qué la corona solar es mucho más caliente que la superficie del Sol.</li>
+                <li>Sus datos son cruciales para mejorar las predicciones del clima espacial, que afectan la tecnología en la Tierra.</li>
+            </ul>
+
+            <h2>Estado Actual</h2>
+            <p>
+                La Parker Solar Probe se encuentra actualmente ACTIVA Y EN MISION, continuando sus sobrevuelos orbitales alrededor del Sol.
+            </p>
+            <p>
+                La misión está programada para continuar hasta al menos 2025, realizando acercamientos cada vez más cercanos a la superficie solar. Sigue enviando datos valiosos que están transformando nuestra comprensión del Sol y sus fenómenos. Su escudo térmico y su ingeniería avanzada le permiten sobrevivir en un entorno de calor y radiación extremos.
+            </p>
+        </div>
+        <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+    </div>
+
+    <script>
+        // Script para mostrar el contenido después de la animación de carga
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000); // La animación dura 3 segundos
+    </script>
+</body>
+</html>
