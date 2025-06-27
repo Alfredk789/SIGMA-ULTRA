@@ -1,160 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Telescopios - SIGMA ULTRA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hubble Space Telescope - SIGMA ULTRA</title>
   <style>
     body {
-      background-color: #0a0a0a;
+      background-color: #000;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
       padding: 2rem;
-    }
-    h1 {
       text-align: center;
-      color: #bfa76f;
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
-    .typewriter-container {
+    .loading {
       font-size: 1.5rem;
-      white-space: nowrap;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
       overflow: hidden;
-      margin: 0 auto 2rem auto;
-      width: fit-content;
-      border-right: 0.15em solid transparent;
-      text-align: center;
     }
-    .cursor {
-      display: inline-block;
-      width: 1ch;
-      height: 1.2em;
+    .bar-fill {
+      height: 100%;
+      width: 0;
       background-color: #bfa76f;
-      margin-left: 5px;
-      animation: blink 0.7s step-start infinite;
-      vertical-align: bottom;
+      animation: load 3s forwards;
     }
-    @keyframes blink {
-      50% {
-        background-color: transparent;
+    @keyframes load {
+      to {
+        width: 100%;
       }
     }
-    table {
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
       width: 100%;
-      border-collapse: collapse;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
     }
-    th, td {
-      border: 1px solid #444;
-      padding: 1rem;
+    .info {
       text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    th {
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
       background-color: #1a1a1a;
       color: #bfa76f;
-    }
-    tr:nth-child(even) {
-      background-color: #111;
-    }
-    tr:hover {
-      background-color: #222;
-    }
-    a {
-      color: #bfa76f;
+      border: 1px solid #bfa76f;
       text-decoration: none;
+      font-weight: bold;
     }
-    a:hover {
-      text-decoration: underline;
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
     }
   </style>
 </head>
 <body>
-  <h1>Telescopios - Archivo SIGMA ULTRA</h1>
 
-  <div class="typewriter-container">
-    <span id="typewriter"></span><span class="cursor"></span>
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Año</th>
-        <th>Nombre del Telescopio</th>
-        <th>Agencia</th>
-        <th>Objetivo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1990</td>
-        <td><a href="hubble.html">Hubble Space Telescope</a></td>
-        <td>NASA/ESA</td>
-        <td>Observaciones en visible, ultravioleta e infrarrojo cercano</td>
-      </tr>
-      <tr>
-        <td>1999</td>
-        <td><a href="chandra.html">Chandra X-Ray Observatory</a></td>
-        <td>NASA</td>
-        <td>Observación del universo en rayos X</td>
-      </tr>
-      <tr>
-        <td>2009</td>
-        <td><a href="herschel.html">Herschel Space Observatory</a></td>
-        <td>ESA</td>
-        <td>Estudio del infrarrojo lejano y submilimétrico</td>
-      </tr>
-      <tr>
-        <td>2009</td>
-        <td><a href="kepler.html">Kepler</a></td>
-        <td>NASA</td>
-        <td>Descubrimiento de exoplanetas por tránsito</td>
-      </tr>
-      <tr>
-        <td>2013</td>
-        <td><a href="gaia.html">Gaia</a></td>
-        <td>ESA</td>
-        <td>Cartografía 3D de la Vía Láctea con precisión astrométrica</td>
-      </tr>
-      <tr>
-        <td>2008</td>
-        <td><a href="fermi.html">Fermi Gamma-ray Space Telescope</a></td>
-        <td>NASA</td>
-        <td>Observación de fuentes de rayos gamma</td>
-      </tr>
-      <tr>
-        <td>2022</td>
-        <td><a href="james_webb.html">James Webb Space Telescope</a></td>
-        <td>NASA/ESA/CSA</td>
-        <td>Estudio del infrarrojo cercano y medio para cosmología y formación estelar</td>
-      </tr>
-      <tr>
-        <td>2023</td>
-        <td><a href="euclid.html">Euclid</a></td>
-        <td>ESA</td>
-        <td>Mapeo del universo para investigar energía y materia oscura</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="content" id="content">
+    <h1>Hubble Space Telescope</h1>
+    <img src="hubble.png" class="mission-img" alt="Imagen Hubble" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA / ESA</p>
+      <p><b>Fecha de lanzamiento:</b> 24 de abril de 1990</p>
+      <p><b>Duración de misión:</b> Operativo (más de 30 años en servicio)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial en órbita baja terrestre</p>
+      <p><b>Objetivo:</b> Observación astronómica en espectro ultravioleta, visible e infrarrojo cercano</p>
+      <p><b>Carga científica:</b> Espejo de 2.4 m, cámaras de alta resolución, espectrógrafos, sensores de guía fina</p>
+
+      <h2>Impacto histórico</h2>
+      <p>El Telescopio Espacial Hubble ha transformado la astronomía desde su lanzamiento en 1990. Fue diseñado para evitar las distorsiones atmosféricas de la Tierra y obtener imágenes de altísima resolución del cosmos. Ha proporcionado datos esenciales sobre la expansión del universo, galaxias lejanas, nebulosas, cúmulos estelares y exoplanetas. Gracias a sus misiones de servicio, se ha mantenido actualizado durante décadas, convirtiéndose en un ícono de la exploración científica.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
 
   <script>
-    const texto = "Seleccione un telescopio";
-    const elemento = document.getElementById("typewriter");
-
-    function escribirTexto(index = 0) {
-      if (index <= texto.length) {
-        elemento.textContent = texto.slice(0, index);
-        setTimeout(() => escribirTexto(index + 1), 100);
-      } else {
-        setTimeout(() => reiniciar(), 5000);
-      }
-    }
-
-    function reiniciar() {
-      elemento.textContent = "";
-      escribirTexto(0);
-    }
-
-    escribirTexto();
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
   </script>
 </body>
 </html>
