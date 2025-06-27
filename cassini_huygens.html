@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cassini-Huygens - SIGMA ULTRA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #bfa76f;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2rem;
+            text-align: center;
+        }
+        .loading {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        .bar {
+            width: 80%;
+            height: 8px;
+            background-color: #1a1a1a;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            width: 0;
+            background-color: #bfa76f;
+            animation: load 3s forwards;
+        }
+        @keyframes load {
+            to {
+                width: 100%;
+            }
+        }
+        .content {
+            display: none;
+            margin-top: 2rem;
+        }
+        .mission-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+        .info {
+            text-align: justify;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .info b {
+            display: inline-block;
+            width: 160px; /* Asegura alineación para las etiquetas */
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #1a1a1a;
+            color: #bfa76f;
+            border: 1px solid #bfa76f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a.button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        h1, h2 {
+            color: #bfa76f;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .info h2 { /* Estilo específico para los subtítulos dentro de .info */
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #bfa76f;
+            padding-bottom: 0.3rem;
+            display: block;
+            width: 100%;
+        }
+        .info ul {
+            margin-left: 1.5rem;
+            list-style-type: disc; /* Opcional: para usar viñetas si no está ya en el estilo general */
+        }
+        .info li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">
+        <div>CARGANDO DATOS DE LA MISIÓN CASSINI-HUYGENS</div>
+        <div class="bar"><div class="bar-fill"></div></div>
+        <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Sonda Cassini-Huygens</h1>
+        <!-- Image of Cassini-Huygens -->
+        <img src="cassini.png text=CASSINI-HUYGENS" class="mission-img" alt="Imagen de la sonda Cassini-Huygens" />
+        <div class="info">
+            <p><b>Agencia:</b> NASA / ESA / ASI</p>
+            <p><b>Fecha de lanzamiento:</b> 15 de octubre de 1997</p>
+            <p><b>Tipo de misión:</b> Orbitador (Cassini) y Sonda de Aterrizaje (Huygens)</p>
+
+            <h2>Instrumentación</h2>
+            <p>El orbitador Cassini estaba equipado con 12 instrumentos científicos avanzados para estudiar Saturno, sus anillos y sus lunas. La sonda Huygens llevaba instrumentos para analizar la atmósfera y superficie de Titán.</p>
+            <ul>
+                <li>Telescopios y espectrómetros para estudio atmosférico y de anillos.</li>
+                <li>Radar para mapear la superficie de Titán.</li>
+                <li>Detectores de partículas y campos para la magnetosfera.</li>
+                <li>Cámaras de alta resolución para imágenes detalladas.</li>
+            </ul>
+
+            <h2>Actividades Notables</h2>
+            <p>
+                Durante sus 13 años en el sistema de Saturno, Cassini realizó miles de órbitas y llevó a cabo:
+            </p>
+            <ul>
+                <li>Numerosos sobrevuelos a lunas como Titán y Encélado.</li>
+                <li>Envío de cientos de miles de imágenes y gigabytes de datos.</li>
+                <li>Despliegue exitoso de la sonda Huygens sobre Titán el 14 de enero de 2005.</li>
+                <li>Monitoreo de tormentas gigantescas y auroras polares en Saturno.</li>
+            </ul>
+
+            <h2>Impacto Histórico</h2>
+            <p>
+                La misión Cassini-Huygens revolucionó nuestra comprensión del sistema de Saturno con descubrimientos clave:
+            </p>
+            <ul>
+                <li>**Titán:** Confirmó ríos, lagos y mares de metano/etano, revelando un ciclo hidrológico.</li>
+                <li>**Encélado:** Descubrió plumas de vapor de agua y partículas de hielo, indicando un océano subsuperficial de agua líquida salada con posible actividad hidrotermal.</li>
+                <li>**Anillos de Saturno:** Proporcionó imágenes detalladas de sus complejas estructuras dinámicas.</li>
+                <li>Revelaciones sobre la geología y origen de muchas otras lunas.</li>
+            </ul>
+
+            <h2>Estado Actual</h2>
+            <p>
+                Después de más de dos décadas de servicio, la misión concluyó de manera planificada.
+            </p>
+            <p>
+                El <b>15 de septiembre de 2017</b>, la sonda Cassini fue dirigida para sumergirse en la atmósfera superior de Saturno, desintegrándose mientras enviaba datos hasta el último momento. Esto se hizo para evitar la posible contaminación de lunas con potencial de albergar vida, como Encélado. Su final fue un testimonio de la ingeniería robusta y una operación impecable.
+            </p>
+        </div>
+        <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+    </div>
+
+    <script>
+        // Script para mostrar el contenido después de la animación de carga
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000); // La animación dura 3 segundos
+    </script>
+</body>
+</html>
