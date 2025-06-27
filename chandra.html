@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chandra X-Ray Observatory - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Chandra X-Ray Observatory</h1>
+    <img src="chandra.png" class="mission-img" alt="Imagen Chandra" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 23 de julio de 1999</p>
+      <p><b>Duración de misión:</b> Más de 20 años en servicio</p>
+      <p><b>Tipo de misión:</b> Observatorio espacial de rayos X</p>
+      <p><b>Objetivo:</b> Estudiar fuentes de rayos X en el universo, como agujeros negros, estrellas de neutrones, supernovas y cúmulos de galaxias</p>
+      <p><b>Carga científica:</b> Espejos de precisión, cámaras CCD avanzadas, espectrómetros de alta resolución</p>
+      
+      <h2>Significado del nombre</h2>
+      <p>“Chandra” significa “Luna” en sánscrito. El nombre fue elegido en honor al astrofísico Subrahmanyan Chandrasekhar (1910–1995), ganador del Premio Nobel en 1983. Chandrasekhar fue célebre por descubrir el límite que lleva su nombre (aprox. 1.4 masas solares), que define cuándo una estrella enana blanca colapsa en una estrella de neutrones o agujero negro.</p>
+      <p>El observatorio fue nombrado así para homenajear su legado en la física estelar y su trabajo pionero sobre la evolución de las estrellas, ya que Chandra estudia precisamente esos objetos extremos en rayos X.</p>
+      
+      <h2>Impacto histórico</h2>
+      <p>Chandra ha revolucionado nuestra comprensión del universo de alta energía. Ha observado con gran detalle remanentes de supernovas, ha confirmado la existencia de agujeros negros supermasivos en centros galácticos y ha permitido medir la materia oscura en cúmulos de galaxias. Sus imágenes complementan observaciones ópticas e infrarrojas, ofreciendo una visión completa de fenómenos extremos.</p>
+      
+      <h2><b>Estado actual</b></h2>
+      <p>Chandra sigue operativo y en servicio activo. A pesar de que su vida útil original era de 5 años, ha superado dos décadas de funcionamiento estable gracias a su diseño robusto y una planificación eficiente de sus observaciones.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
