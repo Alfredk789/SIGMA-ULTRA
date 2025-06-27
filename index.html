@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA   Aeronautica Espacial</title>
+  <title>SIGMA ULTRA - Aeronáutica Espacial</title>
   <style>
     body {
       background-color: #000;
@@ -16,6 +16,7 @@
     h1 {
       font-size: 2.5em;
       margin: 20px 0;
+      color: #bfa76f;
     }
 
     .subtitulo {
@@ -23,34 +24,63 @@
       margin-top: -10px;
       letter-spacing: 2px;
       opacity: 0.8;
+      color: #bfa76f;
     }
 
-    .insignia {
-      width: 90vw;
-      max-width: 350px;
-      height: auto;
-      margin-bottom: 20px;
+    .insignia-container {
       position: relative;
       display: inline-block;
       overflow: hidden;
+      border-radius: 50%;
+      width: 90vw;
+      max-width: 350px;
+      height: auto;
     }
 
-    .insignia::after {
-      content: "";
+    .insignia-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .reflejo {
       position: absolute;
-      top: -100%;
+      top: 0;
       left: -100%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation: brillo 4s infinite;
-      transform: rotate(25deg);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(191, 167, 111, 0.5) 50%,
+        transparent 70%
+      );
+      animation: brilloDorado 5s infinite;
+      pointer-events: none;
     }
 
-    @keyframes brillo {
-      0% { top: -100%; left: -100%; }
-      50% { top: 100%; left: 100%; }
-      100% { top: 200%; left: 200%; }
+    @keyframes brilloDorado {
+      0% {
+        left: -100%;
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      50% {
+        left: 100%;
+        opacity: 1;
+      }
+      60% {
+        opacity: 1;
+      }
+      100% {
+        left: 100%;
+        opacity: 0.8;
+        box-shadow: 0 0 20px #bfa76f;
+      }
     }
 
     .boton-directorio {
@@ -73,12 +103,13 @@
   </style>
 </head>
 <body>
-  <div class="insignia">
-    <img src="insignia_oro.png" alt="Insignia SIGMA ULTRA" style="width: 100%; height: auto;" />
+  <div class="insignia-container">
+    <img src="insignia_oro.png" alt="Insignia SIGMA ULTRA" />
+    <div class="reflejo"></div>
   </div>
 
-  <h1>SIGMA ULTRA   Aeronautica Espacial</h1>
-  <div class="subtitulo">COMANDANTE CIENTÍFICO   DIVISIÓN EDUCATIVA</div>
+  <h1>SIGMA ULTRA - Aeronáutica Espacial</h1>
+  <div class="subtitulo">COMANDANTE CIENTÍFICO - DIVISIÓN EDUCATIVA</div>
 
   <a href="manifiesto.html">
     <button class="boton-directorio">DIRECTORIO CLASIFICADO</button>
