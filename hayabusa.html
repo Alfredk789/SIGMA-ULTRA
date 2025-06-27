@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hayabusa 1 - SIGMA ULTRA</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #bfa76f;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2rem;
+            text-align: center;
+        }
+        .loading {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        .bar {
+            width: 80%;
+            height: 8px;
+            background-color: #1a1a1a;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            width: 0;
+            background-color: #bfa76f;
+            animation: load 3s forwards;
+        }
+        @keyframes load {
+            to {
+                width: 100%;
+            }
+        }
+        .content {
+            display: none;
+            margin-top: 2rem;
+        }
+        .mission-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+        .info {
+            text-align: justify;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .info b {
+            display: inline-block;
+            width: 160px; /* Asegura alineación para las etiquetas */
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #1a1a1a;
+            color: #bfa76f;
+            border: 1px solid #bfa76f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a.button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        h1, h2 {
+            color: #bfa76f;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .info h2 { /* Estilo específico para los subtítulos dentro de .info */
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #bfa76f;
+            padding-bottom: 0.3rem;
+            display: block;
+            width: 100%;
+        }
+        .info ul {
+            margin-left: 1.5rem;
+            list-style-type: disc; /* Opcional: para usar viñetas si no está ya en el estilo general */
+        }
+        .info li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">
+        <div>CARGANDO DATOS DE LA MISIÓN HAYABUSA 1</div>
+        <div class="bar"><div class="bar-fill"></div></div>
+        <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Sonda Hayabusa 1</h1>
+        <!-- Image of Hayabusa 1 -->
+        <img src="hayabusa1.png" class="mission-img" alt="Imagen de la sonda Hayabusa 1" />
+        <div class="info">
+            <p><b>Agencia:</b> JAXA (Agencia Japonesa de Exploración Aeroespacial)</p>
+            <p><b>Fecha de lanzamiento:</b> 9 de mayo de 2003</p>
+            <p><b>Tipo de misión:</b> Misión de retorno de muestras de asteroide</p>
+
+            <h2>Instrumentación</h2>
+            <p>Hayabusa 1 estaba equipada con varios instrumentos para estudiar el asteroide Itokawa y recolectar muestras:</p>
+            <ul>
+                <li>Cámaras ópticas para navegación y observación de la superficie.</li>
+                <li>Láser altímetro (LIDAR) para mediciones de distancia y topografía.</li>
+                <li>Espectrómetro de rayos X y de infrarrojos cercanos para análisis de composición.</li>
+                <li>Dispositivo de muestreo de impacto (Sampler Horn) para recoger partículas de la superficie.</li>
+                <li>MINERVA (MIcro/Nano Experimental Robot Vehicle for Asteroid): un pequeño rover experimental.</li>
+            </ul>
+
+            <h2>Actividades Notables</h2>
+            <p>
+                La misión Hayabusa 1 fue pionera y enfrentó numerosos desafíos:
+            </p>
+            <ul>
+                <li>Llegó al asteroide Itokawa en septiembre de 2005.</li>
+                <li>Realizó observaciones detalladas de la superficie del asteroide.</li>
+                <li>Intentó la recolección de muestras mediante un "toque y vuela" en la superficie del asteroide. Aunque el mecanismo de disparo del proyectil no funcionó como se esperaba, se cree que se recogió polvo de la superficie.</li>
+                <li>Desplegó con éxito el pequeño rover MINERVA (aunque su operación fue limitada).</li>
+                <li>Realizó el viaje de retorno a la Tierra con la cápsula de muestras.</li>
+            </ul>
+
+            <h2>Impacto Histórico y Descubrimientos</h2>
+            <p>
+                Hayabusa 1 hizo historia al ser la primera misión en:
+            </p>
+            <ul>
+                <li>Aterrizar y despegar de la superficie de un asteroide.</li>
+                <li>Regresar muestras de un asteroide a la Tierra.</li>
+                <li>Proporcionó datos cruciales sobre la geología y composición del asteroide tipo S Itokawa.</li>
+                <li>Demostró la viabilidad de misiones de retorno de muestras complejas desde cuerpos pequeños del sistema solar.</li>
+            </ul>
+
+            <h2>Estado Actual</h2>
+            <p>
+                La misión Hayabusa 1 regresó a la Tierra el 13 de junio de 2010. La cápsula de retorno de muestras aterrizó en Woomera, Australia.
+            </p>
+            <p>
+                Aunque la sonda principal se quemó en la atmósfera terrestre al regresar, la cápsula de muestras fue recuperada exitosamente. Contenía partículas microscópicas del asteroide Itokawa, que han sido analizadas y proporcionado valiosa información a la comunidad científica. La misión fue un éxito rotundo a pesar de los desafíos técnicos enfrentados.
+            </p>
+        </div>
+        <a href="sondas_espaciales.html" class="button">⬅ Regresar al Archivo</a>
+    </div>
+
+    <script>
+        // Script para mostrar el contenido después de la animación de carga
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3000); // La animación dura 3 segundos
+    </script>
+</body>
+</html>
