@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fermi Gamma-ray Space Telescope - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Fermi Gamma-ray Space Telescope</h1>
+    <img src="fermi.png" class="mission-img" alt="Imagen Fermi" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 11 de junio de 2008</p>
+      <p><b>Duración de misión:</b> Operativa (más de 15 años en servicio)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial de rayos gamma</p>
+      <p><b>Objetivo:</b> Estudiar fenómenos de alta energía del universo como púlsares, agujeros negros, brotes de rayos gamma y materia oscura</p>
+      <p><b>Carga científica:</b> Gran Telescopio de Área (LAT) y Monitor de Explosiones de Rayos Gamma (GBM)</p>
+
+      <h2>Significado del nombre</h2>
+      <p>El telescopio lleva el nombre de Enrico Fermi, físico italiano pionero en la física nuclear y en la teoría de partículas. Su legado en la comprensión de procesos de alta energía inspira el objetivo de la misión: investigar los fenómenos más extremos del cosmos en rayos gamma.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Fermi ha revolucionado la astronomía de rayos gamma. Ha descubierto miles de fuentes gamma, monitoreado estallidos cósmicos, mapeado la Vía Láctea en alta energía y contribuido a estudios sobre la materia oscura. Sus datos son fundamentales para la astrofísica contemporánea.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo y operativo. Continúa recolectando datos científicos con excelente desempeño. NASA ha prolongado su misión varias veces debido a la demanda de datos y la buena salud de sus instrumentos.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
