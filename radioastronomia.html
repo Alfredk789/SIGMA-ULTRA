@@ -1,54 +1,154 @@
-<table>
-  <thead>
-    <tr>
-      <th>Año</th>
-      <th>Nombre del Observatorio</th>
-      <th>País / Agencia</th>
-      <th>Características</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1963</td>
-      <td><a href="arecibo.html">Arecibo</a></td>
-      <td>Puerto Rico (NSF/NAIC)</td>
-      <td>Plato fijo de 305 m (colapsado en 2020)</td>
-    </tr>
-    <tr>
-      <td>1980</td>
-      <td><a href="vla.html">Very Large Array (VLA)</a></td>
-      <td>EE.UU. (NRAO)</td>
-      <td>27 antenas móviles en forma de Y</td>
-    </tr>
-    <tr>
-      <td>2000</td>
-      <td><a href="gtm.html">Gran Telescopio Milimétrico Alfonso Serrano (GTM)</a></td>
-      <td>México (INAOE/UMass)</td>
-      <td>Plato de 50 m para ondas milimétricas, activo y operativo</td>
-    </tr>
-    <tr>
-      <td>2013</td>
-      <td><a href="alma.html">ALMA</a></td>
-      <td>Chile (ESO/NAOJ/NRAO)</td>
-      <td>66 antenas en el desierto de Atacama</td>
-    </tr>
-    <tr>
-      <td>2016</td>
-      <td><a href="fast.html">FAST</a></td>
-      <td>China</td>
-      <td>Plato único de 500 m, mayor del mundo</td>
-    </tr>
-    <tr>
-      <td>2018</td>
-      <td><a href="meerkat.html">MeerKAT</a></td>
-      <td>Sudáfrica</td>
-      <td>64 antenas, precursor del SKA</td>
-    </tr>
-    <tr>
-      <td>En construcción</td>
-      <td><a href="ska.html">Square Kilometre Array (SKA)</a></td>
-      <td>Internacional</td>
-      <td>Red de miles de antenas en varios continentes</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radioastronomía - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #bfa76f;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .typewriter-container {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 auto 2rem auto;
+      width: fit-content;
+      border-right: 0.15em solid transparent;
+      text-align: center;
+    }
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.2em;
+      background-color: #bfa76f;
+      margin-left: 5px;
+      animation: blink 0.7s step-start infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #1a1a1a;
+      color: #bfa76f;
+    }
+    tr:nth-child(even) {
+      background-color: #111;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Radioastronomía - Archivo SIGMA ULTRA</h1>
+
+  <div class="typewriter-container">
+    <span id="typewriter"></span><span class="cursor"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Nombre del Telescopio</th>
+        <th>Agencia o País</th>
+        <th>Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1963</td>
+        <td>Arecibo Observatory</td>
+        <td>EE.UU. / Puerto Rico</td>
+        <td>Radioastronomía, radar planetario, señales interestelares</td>
+      </tr>
+      <tr>
+        <td>1965</td>
+        <td>Parkes Observatory</td>
+        <td>Australia</td>
+        <td>Radioastronomía general, soporte a misiones espaciales</td>
+      </tr>
+      <tr>
+        <td>1971</td>
+        <td>Effelsberg Radio Telescope</td>
+        <td>Alemania</td>
+        <td>Observaciones en radio en frecuencias bajas y altas</td>
+      </tr>
+      <tr>
+        <td>1980</td>
+        <td>Very Large Array (VLA)</td>
+        <td>EE.UU.</td>
+        <td>Interferometría, formación estelar, galaxias distantes</td>
+      </tr>
+      <tr>
+        <td>2000</td>
+        <td>Gran Telescopio Milimétrico Alfonso Serrano (GTM)</td>
+        <td>México</td>
+        <td>Ondas milimétricas, formación estelar, galaxias</td>
+      </tr>
+      <tr>
+        <td>2016</td>
+        <td>MeerKAT</td>
+        <td>Sudáfrica</td>
+        <td>Precursor del SKA, estudios de pulsar, formación galáctica</td>
+      </tr>
+      <tr>
+        <td>2019</td>
+        <td>Event Horizon Telescope (EHT)</td>
+        <td>Internacional</td>
+        <td>Imagen de agujeros negros, interferometría global</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const texto = "Seleccione un observatorio o misión";
+    const elemento = document.getElementById("typewriter");
+
+    function escribirTexto(index = 0) {
+      if (index <= texto.length) {
+        elemento.textContent = texto.slice(0, index);
+        setTimeout(() => escribirTexto(index + 1), 100);
+      } else {
+        setTimeout(() => reiniciar(), 5000);
+      }
+    }
+
+    function reiniciar() {
+      elemento.textContent = "";
+      escribirTexto(0);
+    }
+
+    escribirTexto();
+  </script>
+</body>
+</html>
