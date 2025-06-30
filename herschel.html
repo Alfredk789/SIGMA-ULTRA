@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Herschel Space Observatory - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Herschel Space Observatory</h1>
+    <img src="herschel.png" class="mission-img" alt="Imagen Herschel" />
+    <div class="info">
+      <p><b>Agencia:</b> ESA (Agencia Espacial Europea)</p>
+      <p><b>Fecha de lanzamiento:</b> 14 de mayo de 2009</p>
+      <p><b>Duración de misión:</b> 2009–2013</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial infrarrojo lejano y submilimétrico</p>
+      <p><b>Objetivo:</b> Estudiar la formación de estrellas y galaxias, composición de nubes moleculares frías, evolución del polvo cósmico</p>
+      <p><b>Carga científica:</b> Espejo de 3.5 m (el mayor en su momento para astronomía espacial), espectrómetros, cámaras infrarrojas de alta sensibilidad</p>
+
+      <h2>Impacto histórico</h2>
+      <p>El Observatorio Espacial Herschel permitió ver el universo frío, revelando regiones donde nacen estrellas y galaxias. Su capacidad para detectar longitudes de onda submilimétricas abrió nuevas ventanas para estudiar el polvo cósmico y los procesos de formación estelar en detalle inédito. Fue uno de los mayores proyectos científicos de la ESA y dejó un legado de datos esenciales para el estudio del cosmos.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
