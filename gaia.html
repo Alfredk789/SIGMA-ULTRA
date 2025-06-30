@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaia - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Gaia</h1>
+    <img src="gaia.png" class="mission-img" alt="Imagen Gaia" />
+    <div class="info">
+      <p><b>Agencia:</b> ESA</p>
+      <p><b>Fecha de lanzamiento:</b> 19 de diciembre de 2013</p>
+      <p><b>Duración de misión:</b> Operativa (más de 10 años en servicio)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial de astrometría</p>
+      <p><b>Objetivo:</b> Cartografiar en 3D más de mil millones de estrellas de la Vía Láctea con precisión astrométrica sin precedentes</p>
+      <p><b>Carga científica:</b> Telescopio de astrometría con dos campos de visión, fotómetros, espectrómetros, sensores CCD de alta resolución</p>
+
+      <h2>Significado del nombre</h2>
+      <p>Gaia toma su nombre de la diosa griega de la Tierra, simbolizando su misión de mapear el hogar galáctico de la humanidad. Además, es el acrónimo de "Global Astrometric Interferometer for Astrophysics", reflejando su precisión para medir posiciones y movimientos estelares.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Gaia ha transformado la comprensión de la estructura y evolución de la Vía Láctea. Sus catálogos han revelado corrientes estelares, cúmulos abiertos, movimientos propios y distancias de miles de millones de estrellas. Es fundamental para estudios sobre la dinámica galáctica, la materia oscura y la formación estelar.</p>
+
+      <h2>Estado actual</h2>
+      <p>Operativo y activo. Gaia continúa enviando datos de alta calidad, con futuras liberaciones de catálogos planificadas. Su misión fue extendida oficialmente hasta al menos 2025, con posibilidad de nuevas extensiones si los instrumentos siguen en buen estado.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
