@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Euclid - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Euclid</h1>
+    <img src="euclid.png" class="mission-img" alt="Imagen Euclid" />
+    <div class="info">
+      <p><b>Agencia:</b> ESA</p>
+      <p><b>Fecha de lanzamiento:</b> 1 de julio de 2023</p>
+      <p><b>Duración de misión:</b> Planeada para 6 años (activo)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial de cartografía cosmológica</p>
+      <p><b>Objetivo:</b> Mapear la geometría del universo, estudiar la energía y materia oscura mediante lentes gravitacionales y distribución galáctica</p>
+      <p><b>Carga científica:</b> Telescopio de 1.2 m, cámaras ópticas y de infrarrojo cercano, espectrómetro de infrarrojo cercano</p>
+
+      <h2>Significado del nombre</h2>
+      <p>Nombrado en honor a Euclides de Alejandría, matemático griego considerado el padre de la geometría. El telescopio se llama así porque su misión es trazar con extrema precisión la estructura y forma del cosmos, como Euclides sistematizó el espacio y la geometría.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>Euclid es la misión más avanzada para estudiar la energía oscura y la materia oscura, elementos que constituyen alrededor del 95% del universo pero cuya naturaleza sigue siendo un misterio. Mediante lentes gravitacionales débiles y mapeo de más de mil millones de galaxias, busca reconstruir la expansión cósmica y la estructura a gran escala con precisión sin precedentes.</p>
+      <p>Sus primeros datos ya están afinando modelos cosmológicos y ayudando a entender cómo la energía oscura influye en la aceleración de la expansión del universo. Es un pilar esencial para la cosmología del siglo XXI.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo, en su fase de operaciones científicas desde fines de 2023. Envía datos regularmente a la ESA, con mapeo y calibraciones en curso. Se espera que complete su misión hacia finales de la década de 2020.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
