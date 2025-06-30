@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James Webb Space Telescope - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>James Webb Space Telescope</h1>
+    <img src="james_webb.png" class="mission-img" alt="Imagen James Webb" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA / ESA / CSA</p>
+      <p><b>Fecha de lanzamiento:</b> 25 de diciembre de 2021</p>
+      <p><b>Duración de misión:</b> Planeada para mínimo 10 años (activo)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial de infrarrojo cercano y medio</p>
+      <p><b>Objetivo:</b> Estudiar la formación de estrellas y galaxias, caracterizar exoplanetas, explorar el universo temprano y su evolución</p>
+      <p><b>Carga científica:</b> Espejo primario segmentado de 6.5 m, NIRCam, NIRSpec, MIRI, FGS/NIRISS</p>
+
+      <h2>Significado del nombre</h2>
+      <p>Nombrado en honor a James E. Webb, administrador de la NASA durante la carrera lunar, quien consolidó el programa Apolo y fortaleció la ciencia espacial. El telescopio honra su legado al ser la misión científica más ambiciosa de la agencia.</p>
+
+      <h2>Impacto histórico</h2>
+      <p>James Webb ha revolucionado la astronomía con imágenes infrarrojas de altísima resolución. Ha observado galaxias formadas apenas 300 millones de años después del Big Bang, estudiado discos protoplanetarios con detalles sin precedentes y analizado atmósferas de exoplanetas en busca de trazas químicas complejas.</p>
+      <p>Sus primeros resultados revelaron estructuras cósmicas jamás vistas, permitiendo redefinir modelos de formación galáctica y evolución estelar. Es especialmente valorado por su capacidad para detectar agua, dióxido de carbono, metano y otras moléculas en atmósferas de exoplanetas potencialmente habitables.</p>
+      <p>Hasta 2024, no ha confirmado señales de vida o "captaciones extraterrestres" directas, pero ha detectado firmas químicas sugerentes (como CO₂ y agua) en exoplanetas gigantes y supertierras. Webb sigue ampliando el censo de exoplanetas y midiendo sus climas, avanzando la búsqueda de habitabilidad en sistemas lejanos.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo y en óptimo estado. Opera desde el punto L2 de Lagrange, enviando datos a diario. Se espera que continúe funcionando al menos hasta 2030 gracias a su combustible excedente y excelente salud de sus instrumentos.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
