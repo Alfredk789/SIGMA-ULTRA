@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kepler - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 150px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Kepler</h1>
+    <img src="kepler.png" class="mission-img" alt="Imagen Kepler" />
+    <div class="info">
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 7 de marzo de 2009</p>
+      <p><b>Duración de misión:</b> 9 años (2009–2018)</p>
+      <p><b>Tipo de misión:</b> Telescopio espacial para búsqueda de exoplanetas</p>
+      <p><b>Objetivo:</b> Identificar planetas del tamaño de la Tierra en zonas habitables alrededor de otras estrellas</p>
+      <p><b>Carga científica:</b> Fotómetro de alta precisión capaz de monitorear la luminosidad de más de 150,000 estrellas simultáneamente</p>
+
+      <h2>Impacto histórico</h2>
+      <p>La misión Kepler revolucionó la astronomía exoplanetaria al descubrir miles de exoplanetas y candidatos. Confirmó la existencia de mundos del tamaño de la Tierra en zonas habitables, demostrando que los planetas son comunes en la galaxia. Su legado continúa con misiones sucesoras que refinan y amplían su catálogo, transformando nuestra visión del cosmos y las posibilidades de vida más allá de nuestro sistema solar.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>El telescopio Kepler fue nombrado en honor a Johannes Kepler, astrónomo y matemático alemán del siglo XVII, conocido por sus leyes del movimiento planetario. Su trabajo sobre órbitas elípticas fue esencial para la mecánica celeste y la búsqueda de exoplanetas, inspirando el objetivo de la misión de encontrar sistemas planetarios lejanos.</p>
+
+      <h2>Estado actual</h2>
+      <p>Kepler finalizó oficialmente sus operaciones en octubre de 2018 tras quedarse sin combustible. Aunque ya no está activo, su enorme base de datos continúa siendo analizada por astrónomos, produciendo nuevos descubrimientos y confirmaciones de exoplanetas hasta hoy.</p>
+    </div>
+    <a href="telescopios.html" class="button">⬅ Regresar al Archivo de Telescopios</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
