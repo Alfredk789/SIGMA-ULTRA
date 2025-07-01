@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gran Telescopio Milimétrico - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Gran Telescopio Milimétrico Alfonso Serrano</h1>
+    <img src="gran_telescopio.png" class="mission-img" alt="Imagen Gran Telescopio Milimétrico" />
+
+    <div class="info">
+      <p><b>Ubicación:</b> Volcán Sierra Negra, Puebla, México</p>
+      <p><b>Inicio de operaciones:</b> 2011 (activo)</p>
+      <p><b>Tipo de instalación:</b> Radiotelescopio milimétrico</p>
+
+      <h2>Objetivo</h2>
+      <p>Observar el universo en longitudes de onda milimétricas para estudiar la formación de galaxias, nubes moleculares, regiones de formación estelar y discos protoplanetarios.</p>
+
+      <h2>Principales descubrimientos</h2>
+      <p>
+        - Observaciones de polvo y gas interestelar en nuestra galaxia y otras galaxias.<br>
+        - Participación en la colaboración del Event Horizon Telescope (EHT) para obtener la primera imagen de un agujero negro.<br>
+        - Estudios sobre el medio interestelar y su composición.
+      </p>
+
+      <h2>Aportación histórica</h2>
+      <p>Es el telescopio más grande de su tipo en el mundo dedicado a longitudes de onda milimétricas. Ha impulsado la capacidad de México en astronomía de frontera y colaboración internacional. Su participación en el EHT marcó un hito en la ciencia mexicana.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>Nombrado en honor a Alfonso Serrano Pérez-Grovas, destacado astrónomo mexicano y promotor del proyecto. Su visión permitió consolidar el desarrollo de la radioastronomía en México.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo y en continuo desarrollo, con actualizaciones para mejorar su sensibilidad y participación en redes de interferometría global como el Event Horizon Telescope.</p>
+    </div>
+
+    <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
