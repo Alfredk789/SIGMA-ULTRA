@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANIK - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 2rem auto;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 400px;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>ANIK</h1>
+    <img src="anik.png" alt="Imagen del satélite ANIK" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> 9 de noviembre de 1972 (ANIK A1)</p>
+      <p><b>Agencia o país:</b> Telesat Canada / Canadá</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Brindar servicios de telecomunicaciones nacionales en Canadá, conectando comunidades remotas con telefonía, televisión y datos. Fue el primer sistema satelital del mundo en cubrir todo un país.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Desde 1972, la serie ANIK ha tenido múltiples generaciones (A, B, C, D, E, F y G). Ha impulsado la cobertura de televisión vía satélite, servicios telefónicos, Internet rural y comunicaciones empresariales. Ayudó a conectar el norte canadiense con enlaces confiables.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Activo con satélites de última generación (ANIK F1R, F2, G1) en operación. Sigue siendo uno de los pilares de las telecomunicaciones canadienses, con capacidad para telefonía, Internet, televisión en HD y transmisión de datos de alto ancho de banda.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
