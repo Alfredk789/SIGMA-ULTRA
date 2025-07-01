@@ -12,10 +12,12 @@
       padding: 2rem;
       text-align: center;
     }
+
     .loading {
       font-size: 1.5rem;
       margin-top: 2rem;
     }
+
     .bar {
       width: 80%;
       height: 8px;
@@ -23,19 +25,23 @@
       margin: 10px auto;
       overflow: hidden;
     }
+
     .bar-fill {
       height: 100%;
       width: 0;
       background-color: #bfa76f;
       animation: load 3s forwards;
     }
+
     @keyframes load {
       to { width: 100%; }
     }
+
     .content {
       display: none;
       margin-top: 2rem;
     }
+
     .mission-img {
       width: 100%;
       max-width: 400px;
@@ -45,6 +51,7 @@
       border: 2px solid #bfa76f;
       border-radius: 8px;
     }
+
     .info {
       text-align: left;
       max-width: 700px;
@@ -52,10 +59,32 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .info b {
       display: inline-block;
       width: 180px;
     }
+
+    .oscilloscope-divider {
+      width: 100%;
+      max-width: 700px;
+      height: 40px;
+      margin: 2rem auto;
+      background: repeating-linear-gradient(
+        90deg,
+        #bfa76f,
+        #bfa76f 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      animation: oscilloscope 2s infinite linear;
+    }
+
+    @keyframes oscilloscope {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 0; }
+    }
+
     a.button {
       display: inline-block;
       margin-top: 2rem;
@@ -66,10 +95,12 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     a.button:hover {
       background-color: #333;
       color: #fff;
     }
+
     h1, h2 {
       color: #bfa76f;
     }
@@ -91,23 +122,43 @@
       <p><b>Ubicación:</b> Volcán Sierra Negra, Puebla, México</p>
       <p><b>Inicio de operaciones:</b> 2011 (activo)</p>
       <p><b>Tipo de instalación:</b> Radiotelescopio milimétrico</p>
+    </div>
 
+    <div class="oscilloscope-divider"></div>
+
+    <div class="info">
       <h2>Objetivo</h2>
       <p>Observar el universo en longitudes de onda milimétricas para estudiar la formación de galaxias, nubes moleculares, regiones de formación estelar y discos protoplanetarios.</p>
+    </div>
 
+    <div class="oscilloscope-divider"></div>
+
+    <div class="info">
       <h2>Principales descubrimientos</h2>
       <p>
         - Observaciones de polvo y gas interestelar en nuestra galaxia y otras galaxias.<br>
         - Participación en la colaboración del Event Horizon Telescope (EHT) para obtener la primera imagen de un agujero negro.<br>
         - Estudios sobre el medio interestelar y su composición.
       </p>
+    </div>
 
+    <div class="oscilloscope-divider"></div>
+
+    <div class="info">
       <h2>Aportación histórica</h2>
       <p>Es el telescopio más grande de su tipo en el mundo dedicado a longitudes de onda milimétricas. Ha impulsado la capacidad de México en astronomía de frontera y colaboración internacional. Su participación en el EHT marcó un hito en la ciencia mexicana.</p>
+    </div>
 
+    <div class="oscilloscope-divider"></div>
+
+    <div class="info">
       <h2>Significado del nombre</h2>
       <p>Nombrado en honor a Alfonso Serrano Pérez-Grovas, destacado astrónomo mexicano y promotor del proyecto. Su visión permitió consolidar el desarrollo de la radioastronomía en México.</p>
+    </div>
 
+    <div class="oscilloscope-divider"></div>
+
+    <div class="info">
       <h2>Estado actual</h2>
       <p>Activo y en continuo desarrollo, con actualizaciones para mejorar su sensibilidad y participación en redes de interferometría global como el Event Horizon Telescope.</p>
     </div>
