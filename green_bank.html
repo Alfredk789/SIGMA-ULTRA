@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Bank Observatory - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Green Bank Observatory</h1>
+    <img src="green_bank.png" class="mission-img" alt="Imagen Green Bank Observatory" />
+
+    <div class="info">
+      <p><b>Ubicación:</b> West Virginia, Estados Unidos</p>
+      <p><b>Inicio de operaciones:</b> 1958 (activo hasta hoy)</p>
+      <p><b>Tipo de instalación:</b> Radiotelescopio direccional de gran apertura</p>
+
+      <h2>Objetivo</h2>
+      <p>Explorar el universo en radiofrecuencias para estudiar formación estelar, galaxias, púlsares, moléculas interestelares y realizar búsquedas de inteligencia extraterrestre (SETI).</p>
+
+      <h2>Principales descubrimientos</h2>
+      <p>
+        - Detección de moléculas complejas en nubes interestelares.<br>
+        - Estudios de púlsares y de la estructura de la Vía Láctea.<br>
+        - Participación en experimentos del programa SETI.<br>
+        - Observaciones detalladas de galaxias cercanas.
+      </p>
+
+      <h2>Aportación histórica</h2>
+      <p>El Green Bank Telescope (GBT) es el radiotelescopio totalmente direccionable más grande del mundo (100 m de apertura). Es un ícono de la radioastronomía moderna, con avances en astroquímica, formación estelar y la búsqueda de vida inteligente. Forma parte de la "zona de silencio de radio" en Virginia Occidental, donde se minimiza la interferencia.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>El observatorio toma su nombre del pueblo de Green Bank, donde se encuentra ubicado. "Green Bank" alude al paisaje verde y montañoso de la región, ideal para aislar señales de radio terrestres.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo y operativo. El Green Bank Observatory sigue siendo uno de los centros de radioastronomía más avanzados del mundo. Participa en proyectos internacionales como Breakthrough Listen para buscar señales de civilizaciones avanzadas.</p>
+    </div>
+
+    <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
