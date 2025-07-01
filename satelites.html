@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satélites de Comunicaciones - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #bfa76f;
+    }
+    .typewriter-container {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0 auto 2rem auto;
+      width: fit-content;
+      border-right: 0.15em solid transparent;
+      text-align: center;
+    }
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      height: 1.2em;
+      background-color: #bfa76f;
+      margin-left: 5px;
+      animation: blink 0.7s step-start infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #1a1a1a;
+      color: #bfa76f;
+    }
+    tr:nth-child(even) {
+      background-color: #111;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Satélites de Comunicaciones - Archivo SIGMA ULTRA</h1>
+
+  <div class="typewriter-container">
+    <span id="typewriter"></span><span class="cursor"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Año</th>
+        <th>Nombre del Satélite</th>
+        <th>Agencia / País</th>
+        <th>Propósito u Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1962</td>
+        <td><a href="telstar.html">Telstar 1</a></td>
+        <td>USA</td>
+        <td>Primer satélite de comunicaciones activas</td>
+      </tr>
+      <tr>
+        <td>1964</td>
+        <td><a href="intelsat.html">Intelsat I (Early Bird)</a></td>
+        <td>USA / Internacional</td>
+        <td>Primer satélite comercial geoestacionario</td>
+      </tr>
+      <tr>
+        <td>1976</td>
+        <td><a href="anik.html">Anik A1</a></td>
+        <td>Canadá</td>
+        <td>Primer satélite nacional geoestacionario</td>
+      </tr>
+      <tr>
+        <td>1985</td>
+        <td><a href="morelos.html">Morelos 1 y 2</a></td>
+        <td>México</td>
+        <td>Comunicaciones nacionales y rurales</td>
+      </tr>
+      <tr>
+        <td>1997</td>
+        <td><a href="thuraya.html">Thuraya 1</a></td>
+        <td>UAE</td>
+        <td>Cobertura móvil satelital regional</td>
+      </tr>
+      <tr>
+        <td>2000</td>
+        <td><a href="iridium.html">Iridium NEXT</a></td>
+        <td>Internacional</td>
+        <td>Telefonía satelital global</td>
+      </tr>
+      <tr>
+        <td>2010</td>
+        <td><a href="inmarsat.html">Inmarsat-4 F3</a></td>
+        <td>Internacional</td>
+        <td>Comunicaciones móviles de datos y voz</td>
+      </tr>
+      <tr>
+        <td>2015</td>
+        <td><a href="hispasat.html">Hispasat Amazonas 3</a></td>
+        <td>España / Brasil</td>
+        <td>Cobertura de América y Europa</td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td><a href="starlink.html">Starlink (constelación)</a></td>
+        <td>USA (SpaceX)</td>
+        <td>Internet satelital de alta velocidad global</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const texto = "Seleccione un satélite";
+    const elemento = document.getElementById("typewriter");
+
+    function escribirTexto(index = 0) {
+      if (index <= texto.length) {
+        elemento.textContent = texto.slice(0, index);
+        setTimeout(() => escribirTexto(index + 1), 100);
+      } else {
+        setTimeout(() => reiniciar(), 5000);
+      }
+    }
+
+    function reiniciar() {
+      elemento.textContent = "";
+      escribirTexto(0);
+    }
+
+    escribirTexto();
+  </script>
+</body>
+</html>
