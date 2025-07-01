@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Allen Telescope Array - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Allen Telescope Array</h1>
+    <img src="allen.png" class="mission-img" alt="Imagen Allen Telescope Array" />
+
+    <div class="info">
+      <p><b>Ubicación:</b> Hat Creek, California, Estados Unidos</p>
+      <p><b>Inicio de operaciones:</b> 2007 (activo)</p>
+      <p><b>Tipo de instalación:</b> Interferómetro de radiotelescopios</p>
+
+      <h2>Objetivo</h2>
+      <p>Realizar observaciones astronómicas en radiofrecuencias y búsqueda sistemática de señales de inteligencia extraterrestre (SETI).</p>
+
+      <h2>Principales descubrimientos</h2>
+      <p>
+        - Estudios de formación de galaxias y estructuras cósmicas.<br>
+        - Observaciones de nubes moleculares y regiones de formación estelar.<br>
+        - Amplio trabajo de exploración de señales artificiales como parte del programa SETI.
+      </p>
+
+      <h2>Aportación histórica</h2>
+      <p>El Allen Telescope Array (ATA) fue uno de los primeros radiotelescopios diseñados específicamente para exploración SETI en paralelo con estudios astronómicos tradicionales. Su arquitectura de matriz permite observar múltiples puntos del cielo al mismo tiempo. Ha impulsado el desarrollo de técnicas avanzadas de interferometría y análisis de datos.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>El telescopio lleva el nombre de Paul Allen, cofundador de Microsoft, quien financió gran parte del proyecto. Su visión permitió crear un sistema dedicado a la exploración astronómica y la búsqueda de vida inteligente en el universo.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo con una parte de sus antenas operativas. Aunque ha tenido dificultades presupuestales, sigue siendo usado para observaciones SETI y radioastronomía tradicional, con planes para expandir o mejorar su capacidad.</p>
+    </div>
+
+    <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
