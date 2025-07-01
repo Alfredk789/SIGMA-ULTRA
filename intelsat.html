@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Intelsat - SIGMA ULTRA</title>
+  <title>INTELSAT - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
@@ -12,70 +12,61 @@
       padding: 2rem;
       text-align: center;
     }
-    .loading {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-    .bar {
-      width: 80%;
-      height: 8px;
-      background-color: #1a1a1a;
-      margin: 10px auto;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      width: 0;
-      background-color: #bfa76f;
-      animation: load 3s forwards;
-    }
-    @keyframes load {
-      to { width: 100%; }
-    }
-    .content {
-      display: none;
-      margin-top: 2rem;
-    }
-    .mission-img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      margin: 1rem auto;
-      display: block;
-    }
-    .info {
-      text-align: left;
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .info b {
-      display: inline-block;
-      width: 160px;
-    }
-    .transmission-line {
+
+    .divider {
       display: flex;
       justify-content: center;
-      margin: 2rem 0;
+      gap: 6px;
+      margin: 2rem auto;
     }
+
     .dot {
       width: 12px;
       height: 12px;
-      background-color: #bfa76f;
-      border-radius: 50%;
-      margin: 0 5px;
-      opacity: 0.2;
-      animation: blink 1.5s infinite alternate;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
     }
-    .dot:nth-child(2) { animation-delay: 0.3s; }
-    .dot:nth-child(3) { animation-delay: 0.6s; }
-    .dot:nth-child(4) { animation-delay: 0.9s; }
-    .dot:nth-child(5) { animation-delay: 1.2s; }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
     @keyframes blink {
-      from { opacity: 0.2; }
-      to { opacity: 1; }
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
     }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 400px;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
     a.button {
       display: inline-block;
       margin-top: 2rem;
@@ -86,83 +77,57 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     a.button:hover {
       background-color: #333;
       color: #fff;
-    }
-    h1, h2 {
-      color: #bfa76f;
     }
   </style>
 </head>
 <body>
 
-  <div class="loading">
-    <div>LOADING</div>
-    <div class="bar"><div class="bar-fill"></div></div>
-    <div class="bar"><div class="bar-fill"></div></div>
+  <div class="content">
+    <h1>INTELSAT</h1>
+    <img src="intelsat.png" alt="Imagen del satélite INTELSAT" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> 6 de abril de 1965 (Intelsat I “Early Bird”)</p>
+      <p><b>Agencia o país:</b> Organización internacional INTELSAT (inicialmente EE. UU. y países miembros)</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Establecer una red global de satélites de comunicaciones para servicios de telefonía, televisión y transmisión de datos. INTELSAT fue el pionero en conectar el planeta con infraestructura orbital comercial.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Desde 1965, INTELSAT ha desplegado múltiples generaciones de satélites. Actualmente opera satélites geoestacionarios de alto rendimiento, brindando conectividad global a gobiernos, aerolíneas, medios y proveedores de internet. La organización se privatizó en 2001.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      INTELSAT continúa activo, operando más de 50 satélites. Participa en redes 5G, cobertura marítima y soluciones aeroespaciales. Se ha consolidado como un actor esencial en el ecosistema global de telecomunicaciones satelitales.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
   </div>
 
-  <div class="content" id="content">
-    <h1>Intelsat</h1>
-    <img src="intelsat.png" class="mission-img" alt="Imagen Intelsat" />
-
-    <div class="info">
-      <p><b>Fecha de lanzamiento inicial:</b> 6 de abril de 1965 (Intelsat I "Early Bird")</p>
-    </div>
-
-    <div class="transmission-line">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
-    <div class="info">
-      <p><b>Agencia / País:</b> Consorcio internacional (hoy Intelsat S.A., sede en EE.UU.)</p>
-    </div>
-
-    <div class="transmission-line">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
-    <div class="info">
-      <h2>Objetivo y actividad</h2>
-      <p>
-        Proveer comunicaciones satelitales globales, transmisión de datos, televisión, internet y telefonía. 
-        Intelsat fue pionero en interconectar continentes por enlace satelital geoestacionario.
-      </p>
-    </div>
-
-    <div class="transmission-line">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
-    <div class="info">
-      <h2>Estado actual</h2>
-      <p>
-        Activo. Intelsat opera una de las mayores flotas de satélites geoestacionarios del mundo, con servicios comerciales en todo el planeta. Su flota incluye decenas de satélites en servicio continuo.
-      </p>
-    </div>
-
-    <a href="satelites.html" class="button">⬅ Regresar al Archivo de Satélites</a>
-  </div>
-
-  <script>
-    setTimeout(() => {
-      document.querySelector('.loading').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-    }, 3000);
-  </script>
 </body>
 </html>
 
