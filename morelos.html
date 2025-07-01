@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morelos - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 2rem auto;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Morelos 1 y 2</h1>
+    <img src="morelos.png" alt="Imagen de los satélites Morelos 1 y 2" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> Morelos 1: 17 de junio de 1985 | Morelos 2: 27 de noviembre de 1985</p>
+      <p><b>Agencia o país:</b> México / Secretaría de Comunicaciones y Transportes (con apoyo de NASA y Hughes Aircraft)</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Proveer cobertura nacional de telecomunicaciones: telefonía rural, televisión educativa, transmisión de datos y enlaces gubernamentales. Permitió interconectar regiones aisladas y modernizar la infraestructura de comunicaciones en México.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Ambos satélites fueron construidos por Hughes Aircraft. Operaron en órbita geoestacionaria brindando servicios de comunicación satelital a todo México. Su misión incluyó enlaces de emergencia y desarrollo de contenidos educativos vía satélite. Fueron precursores de programas más avanzados como Solidaridad y Satmex.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Ambos satélites están retirados. Morelos 1 cesó operaciones a finales de los 90; Morelos 2 permaneció activo hasta principios de los 2000. Fueron reemplazados por sistemas más modernos. Su legado sentó las bases de la infraestructura satelital mexicana.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
