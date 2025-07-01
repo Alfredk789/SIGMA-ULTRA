@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MeerKAT - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>MeerKAT</h1>
+    <img src="meerkat.png" class="mission-img" alt="Imagen MeerKAT" />
+
+    <div class="info">
+      <p><b>Ubicación:</b> Northern Cape, Sudáfrica</p>
+      <p><b>Inicio de operaciones:</b> 2018 (activo)</p>
+      <p><b>Tipo de instalación:</b> Matriz de radiotelescopios</p>
+
+      <h2>Objetivo</h2>
+      <p>Realizar estudios detallados del universo en radiofrecuencias, mapeo de gas neutro (HI), púlsares, agujeros negros y galaxias activas, así como apoyo al proyecto internacional SKA (Square Kilometre Array).</p>
+
+      <h2>Principales descubrimientos</h2>
+      <p>
+        - Imagen más detallada jamás obtenida de regiones del centro galáctico.<br>
+        - Detección de numerosas nuevas radiogalaxias gigantes.<br>
+        - Observación de filamentos magnéticos desconocidos cerca del centro de la Vía Láctea.<br>
+        - Catálogo de miles de nuevas fuentes de radio.
+      </p>
+
+      <h2>Aportación histórica</h2>
+      <p>MeerKAT es el radiotelescopio más sensible de su tipo en el hemisferio sur, clave para los estudios de evolución cósmica. Sirve como prototipo y núcleo del futuro SKA, el mayor radiotelescopio del mundo. Ha impulsado el liderazgo científico de África en astronomía de vanguardia.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>MeerKAT combina la palabra afrikáans "meer" (más) con KAT (Karoo Array Telescope). También hace un guiño al animal surafricano suricata, símbolo de vigilancia y cooperación en grupo, reflejando el diseño en matriz.</p>
+
+      <h2>Estado actual</h2>
+      <p>Activo y en operación completa. Se integra progresivamente en el proyecto SKA. Continúa produciendo datos de alto impacto científico y mantiene colaboraciones internacionales para ampliar sus capacidades.</p>
+    </div>
+
+    <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
