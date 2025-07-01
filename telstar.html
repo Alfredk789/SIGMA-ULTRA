@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telstar - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+
+    .divider {
+      border-top: 2px dashed #bfa76f;
+      margin: 2rem 0;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Telstar</h1>
+    <img src="telstar.png" class="mission-img" alt="Imagen Telstar" />
+
+    <div class="info">
+      <h2>Fecha de lanzamiento</h2>
+      <p><b>Telstar 1:</b> 10 de julio de 1962</p>
+      <div class="divider"></div>
+
+      <h2>Agencia o país</h2>
+      <p>Desarrollado por Bell Telephone Laboratories (EE. UU.), con cooperación internacional (NASA lanzó el satélite).</p>
+      <div class="divider"></div>
+
+      <h2>Objetivo y actividad</h2>
+      <p>Transmitir señales de televisión, datos telefónicos y telemetría a través del Atlántico. Fue el primer satélite en enviar televisión en vivo entre América y Europa, demostrando la viabilidad de las telecomunicaciones globales vía satélite.</p>
+      <div class="divider"></div>
+
+      <h2>Estado actual</h2>
+      <p>Inactivo. Telstar 1 quedó fuera de servicio en febrero de 1963 por daños causados por la radiación tras pruebas nucleares. Sin embargo, el satélite sigue en órbita como parte del “cementerio” de satélites, sirviendo como recordatorio histórico del inicio de las comunicaciones espaciales.</p>
+    </div>
+
+    <a href="satelites.html" class="button">⬅ Regresar al Archivo de Satélites</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
