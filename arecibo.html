@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arecibo Observatory - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to { width: 100%; }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 160px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    h1, h2 {
+      color: #bfa76f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Arecibo Observatory</h1>
+    <img src="arecibo.png" class="mission-img" alt="Imagen Arecibo" />
+
+    <div class="info">
+      <p><b>Ubicación:</b> Puerto Rico, EE.UU.</p>
+      <p><b>Fecha de inauguración:</b> 1963</p>
+      <p><b>Tipo de instalación:</b> Radiotelescopio de plato único fijo de 305 m</p>
+
+      <h2>Objetivo</h2>
+      <p>Estudio de señales de radio provenientes del espacio, radar planetario, análisis de la ionosfera y búsqueda de señales extraterrestres (SETI).</p>
+
+      <h2>Principales descubrimientos</h2>
+      <p>
+        - Descubrimiento del primer púlsar binario (PSR B1913+16), crucial para confirmar la existencia de ondas gravitacionales.<br>
+        - Mediciones detalladas de rotación planetaria (Mercurio y Venus).<br>
+        - Cartografía de asteroides y cometas con radar.<br>
+        - Envío del famoso "Mensaje de Arecibo" en 1974, destinado al cúmulo de Hércules como saludo interestelar.
+      </p>
+
+      <h2>Aportación histórica</h2>
+      <p>Por más de 50 años fue uno de los radiotelescopios más poderosos del mundo. Su papel fue clave en la astronomía, la ciencia planetaria y la comunicación con el público. Fue un ícono cultural, apareciendo en películas como "Contact" y "GoldenEye", inspirando generaciones de científicos.</p>
+
+      <h2>Significado del nombre</h2>
+      <p>El observatorio toma su nombre del municipio de Arecibo en Puerto Rico, donde está ubicado. El nombre tiene origen indígena taíno y significa "río grande" o "agua grande".</p>
+
+      <h2>Estado actual</h2>
+      <p>En diciembre de 2020, su icónica antena colapsó tras fallos estructurales. La instalación fue desmantelada por razones de seguridad. Sin embargo, el centro de ciencia y educación en el sitio sigue activo para la divulgación.</p>
+    </div>
+
+    <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
