@@ -102,66 +102,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA - Voice Spectrum Bar</title>
+  <title>SIGMA ULTRA - Voice Spectrum Simulated</title>
   <style>
     body {
-      background-color: #000;
       margin: 0;
-      padding: 2rem;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    .spectrum-container {
+      background-color: #000;
       display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
-      width: 100%;
-      max-width: 600px;
-      height: 80px;
-      margin: 2rem auto;
-      background-color: #111;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    canvas {
+      background-color: #0a0a0a;
       border: 2px solid #bfa76f;
       border-radius: 8px;
-      padding: 5px;
-      box-sizing: border-box;
-    }
-
-    .bar {
-      width: 6%;
-      background-color: #bfa76f;
-      height: 30%;
-      animation: move 1.5s infinite ease-in-out;
-    }
-
-    .bar:nth-child(2) { animation-delay: 0.2s; }
-    .bar:nth-child(3) { animation-delay: 0.4s; }
-    .bar:nth-child(4) { animation-delay: 0.6s; }
-    .bar:nth-child(5) { animation-delay: 0.8s; }
-    .bar:nth-child(6) { animation-delay: 1s; }
-    .bar:nth-child(7) { animation-delay: 1.2s; }
-    .bar:nth-child(8) { animation-delay: 1.4s; }
-
-    @keyframes move {
-      0%, 100% { height: 30%; opacity: 0.7; }
-      25% { height: 90%; opacity: 1; }
-      50% { height: 50%; opacity: 0.85; }
-      75% { height: 80%; opacity: 1; }
+      width: 95%;
+      max-width: 600px;
+      height: 150px;
     }
   </style>
 </head>
 <body>
+  <canvas id="spectrum"></canvas>
 
-  <div class="spectrum-container">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
+  <script>
+    const canvas = document.getElementById('spectrum');
+    const ctx = canvas.getContext('2d');
+    let width, height;
 
+    function resize() {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const data = new Array(width).fill(height/2);
+    function randomVoiceDelta() {
+      return (Math.random() - 0.5) * 30;
+    }
+
+    function draw() {
+      // Move data left
+      for(let i = 0; i < data.length - 1; i++) {
+        data[i] = data[i+1];
+      }
+      // New value
+      let last = data[data.length - 2];
+      let next = last + randomVoiceDelta();
+      next = Math.max(height*0.3, Math.min(height*0.7, next));
+      data[data.length - 1] = next;
+
+      // Clear
+      ctx.fillStyle = "#0a0a0a";
+      ctx.fillRect(0, 0, width, height);
+
+      // Grid lines (optional)
+      ctx.strokeStyle = "#222";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let i = 0; i < height; i += 20) {
+        ctx.moveTo(0, i);
+        ctx.lineTo(width, i);
+      }
+      ctx.stroke();
+
+      // Draw wave
+      ctx.strokeStyle = "#bfa76f";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, data[0]);
+      for(let i = 1; i < data.length; i++) {
+        ctx.lineTo(i, data[i]);
+      }
+      ctx.stroke();
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
 </body>
 </html>
       
