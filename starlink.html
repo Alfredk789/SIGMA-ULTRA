@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starlink - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 2rem auto;
+      max-width: 90vw;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      margin: 1rem auto 0 auto;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Starlink</h1>
+    <img src="starlik.png" alt="Imagen del sistema Starlink" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> Primeros satélites en mayo de 2019</p>
+      <p><b>Agencia o país:</b> SpaceX / Estados Unidos</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Crear una megaconstelación de satélites en órbita baja para proporcionar Internet de alta velocidad, baja latencia y cobertura global, incluyendo zonas rurales o sin infraestructura terrestre.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Desde 2019 se han lanzado miles de satélites en múltiples misiones Falcon 9. Starlink evoluciona con versiones V1.5 y V2 Mini, integrando enlaces láser y capacidad de red en malla. Planea desplegar decenas de miles de satélites para una cobertura completa.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <img src="starlik1.png" alt="Imagen del sistema Starlink" class="satellite-img" />
+    
+    <h2>Estado actual</h2>
+    <p>
+      Activo con miles de satélites operativos brindando servicio comercial en decenas de países. Starlink continúa expandiéndose con nuevos lanzamientos y versiones más potentes. Es clave para conectividad remota, servicios de emergencia y defensa.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
