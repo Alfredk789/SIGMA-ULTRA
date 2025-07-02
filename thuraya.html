@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THURAYA - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 2rem auto;
+      max-width: 90vw;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      margin: 1rem auto 0 auto;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>THURAYA</h1>
+    <img src="thuraya.png" alt="Imagen del satélite THURAYA" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> Thuraya 1 - 21 de octubre de 2000</p>
+      <p><b>Agencia o país:</b> Thuraya Telecommunications Company / Emiratos Árabes Unidos</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Proveer servicios de telefonía satelital y comunicaciones móviles en regiones remotas. Thuraya fue diseñado para cubrir áreas extensas en Europa, África, Asia y Oriente Medio con telefonía móvil directa vía satélite.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      El sistema Thuraya incluye varios satélites geoestacionarios (Thuraya 1, 2, 3) con una red de estaciones terrestres y terminales portátiles. Ha evolucionado para incluir servicios de datos, banda ancha satelital y dispositivos híbridos GSM-satélite.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Activo. Thuraya continúa ofreciendo servicios comerciales a usuarios en más de 160 países, con planes de expansión y modernización (Thuraya 4-NGS). Es uno de los principales operadores de comunicaciones móviles satelitales del mundo.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
