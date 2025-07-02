@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telemetría ISS - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #bfa76f;
+      margin-bottom: 2rem;
+    }
+
+    .console {
+      background-color: #111;
+      padding: 1rem;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .data-line {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      border-bottom: 1px dashed #bfa76f;
+      padding-bottom: 0.3rem;
+    }
+
+    .bars {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      height: 150px;
+      align-items: flex-end;
+    }
+
+    .bar {
+      width: 20px;
+      background-color: #bfa76f;
+      animation: loadBar 2s infinite alternate;
+    }
+
+    .bar:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes loadBar {
+      0% { height: 20px; }
+      100% { height: 150px; }
+    }
+
+    .graph {
+      position: relative;
+      height: 150px;
+      background-color: #111;
+      overflow: hidden;
+      border: 1px solid #bfa76f;
+      margin-bottom: 2rem;
+    }
+
+    .line {
+      position: absolute;
+      width: 200%;
+      height: 2px;
+      background: linear-gradient(to right, transparent 20%, #bfa76f 40%, transparent 60%);
+      animation: moveLine 4s linear infinite;
+      top: 50%;
+    }
+
+    @keyframes moveLine {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .wave {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background-color: #111;
+      border: 1px solid #bfa76f;
+      overflow: hidden;
+    }
+
+    .wave-line {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to right,
+        transparent 0px,
+        transparent 10px,
+        #bfa76f 10px,
+        #bfa76f 20px
+      );
+      animation: waveMove 3s linear infinite;
+    }
+
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Telemetría - ISS SIGMA ULTRA</h1>
+
+  <div class="console">
+    <div class="data-line">
+      <span>ALTITUD</span>
+      <span>408 km</span>
+    </div>
+    <div class="data-line">
+      <span>VELOCIDAD</span>
+      <span>7.66 km/s</span>
+    </div>
+    <div class="data-line">
+      <span>MODULO ACTIVO</span>
+      <span>DESTINY LAB</span>
+    </div>
+    <div class="data-line">
+      <span>CONEXIÓN</span>
+      <span>ENLACE SEGURO</span>
+    </div>
+  </div>
+
+  <div class="bars">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div class="graph">
+    <div class="line"></div>
+  </div>
+
+  <div class="wave">
+    <div class="wave-line"></div>
+  </div>
+
+</body>
+</html>
