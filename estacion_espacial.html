@@ -3,190 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA - Mission Telemetry</title>
+  <title>Estación Espacial Internacional - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
-      padding: 20px;
+      margin: 0;
+      overflow-x: hidden;
     }
 
-    h1 {
-      text-align: center;
-      color: #bfa76f;
-      margin-bottom: 30px;
+    .fade-out {
+      opacity: 0;
+      transition: opacity 2s ease;
     }
 
-    .console-container {
+    .console-screen {
+      width: 100%;
+      height: 100vh;
+      background-color: #000;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
     }
 
     .console {
       background-color: #111;
       border: 2px solid #bfa76f;
-      border-radius: 12px;
-      padding: 20px;
-      width: 45%;
-      min-width: 300px;
-      box-sizing: border-box;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      padding: 1rem;
+      margin: 1rem;
     }
 
-    .console h2 {
-      margin-top: 0;
-      border-bottom: 1px solid #bfa76f;
-      padding-bottom: 8px;
+    .console h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+      color: #bfa76f;
       text-align: center;
-      font-size: 1.3em;
     }
 
-    .telemetry-line {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.95em;
-      margin: 6px 0;
-    }
-
-    .bars {
+    .console .telemetry {
       display: flex;
       justify-content: space-around;
-      margin: 20px 0;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
     }
 
     .bar {
-      width: 20px;
-      height: 120px;
+      width: 12px;
+      height: 50px;
       background-color: #1a1a1a;
       border: 1px solid #bfa76f;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 50%;
-      background-color: #bfa76f;
-      animation: pulse 2s infinite ease-in-out;
-    }
-
-    .bar:nth-child(2) .bar-fill {
-      animation-delay: 0.3s;
-    }
-    .bar:nth-child(3) .bar-fill {
-      animation-delay: 0.6s;
-    }
-    .bar:nth-child(4) .bar-fill {
-      animation-delay: 0.9s;
+      animation: pulse 1.5s infinite alternate;
     }
 
     @keyframes pulse {
-      0%, 100% { height: 45%; }
-      50% { height: 65%; }
+      from { height: 45px; }
+      to { height: 55px; }
     }
 
-    .graph {
-      height: 120px;
-      background: repeating-linear-gradient(
-        to right,
-        #bfa76f 0 2px,
-        transparent 2px 8px
-      );
-      position: relative;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-
-    .scan-line {
-      position: absolute;
-      top: 0;
-      width: 100%;
+    .graph-line {
       height: 2px;
       background-color: #bfa76f;
-      animation: scan 4s linear infinite;
+      margin: 8px 0;
+      animation: move 1s infinite alternate;
     }
 
-    @keyframes scan {
-      0% { top: 0; }
-      100% { top: 100%; }
+    @keyframes move {
+      from { width: 60%; }
+      to { width: 90%; }
     }
 
-    .status-indicator {
+    .ficha {
+      display: none;
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .ficha h1, .ficha h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .ficha img {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 100%;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .divider {
       display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-      font-size: 0.85em;
+      justify-content: center;
+      gap: 5px;
+      margin: 2rem auto;
     }
 
-    .status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .led {
-      width: 10px;
-      height: 10px;
+    .dot {
+      width: 14px;
+      height: 14px;
       background-color: #1a1a1a;
       border: 1px solid #bfa76f;
-      border-radius: 50%;
-      animation: blink 1.5s infinite;
+      animation: blink 1.2s infinite;
     }
+
+    .dot:nth-child(odd) { animation-delay: 0.2s; }
+    .dot:nth-child(even) { animation-delay: 0.6s; }
 
     @keyframes blink {
       0%, 100% { background-color: #1a1a1a; }
       50% { background-color: #bfa76f; }
     }
 
-    @media (max-width: 800px) {
-      .console {
-        width: 90%;
-      }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>SIGMA ULTRA - Mission Telemetry Consoles</h1>
 
-  <div class="console-container">
-    <!-- Console 1 -->
+  <div class="console-screen" id="intro">
     <div class="console">
-      <h2>MISSION DATA CONSOLE</h2>
-      <div class="telemetry-line"><span>ALTITUDE</span><span>402 km</span></div>
-      <div class="telemetry-line"><span>VELOCITY</span><span>7.66 km/s</span></div>
-      <div class="telemetry-line"><span>ACTIVE MODULE</span><span>Habitat Bay</span></div>
-      <div class="telemetry-line"><span>LINK STATUS</span><span>SECURE</span></div>
-      <div class="bars">
-        <div class="bar"><div class="bar-fill"></div></div>
-        <div class="bar"><div class="bar-fill"></div></div>
-        <div class="bar"><div class="bar-fill"></div></div>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-      <div class="status-indicator">
-        <div class="status"><div class="led"></div> SYSTEM READY</div>
-        <div class="status"><div class="led"></div> ENCRYPTED LINK</div>
+      <h3>MODULE STATUS</h3>
+      <div class="telemetry">
+        <div>
+          <div class="bar"></div>
+          <small>ALTITUDE</small>
+        </div>
+        <div>
+          <div class="bar"></div>
+          <small>VELOCITY</small>
+        </div>
+        <div>
+          <div class="bar"></div>
+          <small>ACTIVE MODULE</small>
+        </div>
+        <div>
+          <div class="bar"></div>
+          <small>SECURE LINK</small>
+        </div>
       </div>
     </div>
 
-    <!-- Console 2 -->
     <div class="console">
-      <h2>SYSTEM HEALTH SCANNER</h2>
-      <div class="telemetry-line"><span>BATTERY</span><span>92%</span></div>
-      <div class="telemetry-line"><span>FUEL PRESSURE</span><span>220 psi</span></div>
-      <div class="telemetry-line"><span>COOLANT TEMP</span><span>34 °C</span></div>
-      <div class="telemetry-line"><span>INJECTORS</span><span>NOMINAL</span></div>
-      <div class="graph">
-        <div class="scan-line"></div>
-      </div>
-      <div class="status-indicator">
-        <div class="status"><div class="led"></div> SCANNER ACTIVE</div>
-        <div class="status"><div class="led"></div> DATA FLOW</div>
-      </div>
+      <h3>SYSTEM TELEMETRY</h3>
+      <div class="graph-line"></div>
+      <div class="graph-line"></div>
+      <div class="graph-line"></div>
+      <div class="graph-line"></div>
+      <small>TEMP / FUEL / BATTERY / SYSTEM CHECK</small>
     </div>
   </div>
+
+  <div class="ficha" id="ficha">
+    <h1>Estación Espacial Internacional (ISS)</h1>
+    <img src="estacion_espacial.png" alt="Estación Espacial Internacional" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento inicial:</b> 20 de noviembre de 1998 (primer módulo Zarya)</p>
+      <p><b>Agencia o países:</b> NASA (EE. UU.), Roscosmos (Rusia), ESA (Europa), JAXA (Japón), CSA (Canadá)</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Servir como laboratorio espacial permanente para experimentos en microgravedad, biología, física, astronomía y tecnología. Facilitar la cooperación internacional en la exploración espacial.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Ensamblada en órbita mediante múltiples misiones. Alberga tripulación internacional permanente desde 2000. Continúa expandiéndose y actualizándose con módulos y experimentos.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Activa, en órbita baja terrestre (~400 km), con rotación de tripulación internacional. Prevista para operar hasta al menos 2030. Símbolo de cooperación pacífica en el espacio.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('intro').classList.add('fade-out');
+      setTimeout(() => {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('ficha').style.display = 'block';
+      }, 2000);
+    }, 3000);
+  </script>
 </body>
 </html>
