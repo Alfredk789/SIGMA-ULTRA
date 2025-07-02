@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IRIDIUM - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 2rem auto;
+      max-width: 90vw;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      margin: 1rem auto 0 auto;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>IRIDIUM</h1>
+    <img src="iridium.png" alt="Imagen del satélite IRIDIUM" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> 5 de mayo de 1997 (primer satélite Iridium)</p>
+      <p><b>Agencia o país:</b> Iridium Communications Inc. / Estados Unidos</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Crear una red global de satélites de órbita baja (LEO) para proveer servicios de telefonía y datos con cobertura mundial, incluyendo regiones polares y áreas remotas.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      La constelación original consistía en 66 satélites activos más repuestos en órbita. A pesar de dificultades financieras iniciales, Iridium se reestructuró y lanzó la nueva generación Iridium NEXT (2017-2019), mejorando la calidad de servicios de voz y datos globales.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Activo con la constelación Iridium NEXT. Proporciona telefonía satelital, mensajería, rastreo, internet básico y servicios de emergencia globales, incluyendo sistemas para aviación, marina y gobiernos.
+    </p>
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
