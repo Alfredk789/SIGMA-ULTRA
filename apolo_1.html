@@ -102,133 +102,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA - Vital Signs Console</title>
+  <title>Vitals Console - SIGMA ULTRA</title>
   <style>
     body {
-      margin: 0;
       background-color: #000;
-      font-family: 'Courier New', Courier, monospace;
       color: #bfa76f;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
       padding: 1rem;
     }
 
-    .console-container {
-      background-color: #0a0a0a;
+    .console {
       border: 2px solid #bfa76f;
       border-radius: 8px;
-      width: 95%;
-      max-width: 600px;
-      padding: 1rem;
-      box-sizing: border-box;
+      padding: 0.5rem;
+      max-width: 320px;
+      margin: 1rem auto;
+      background-color: #000;
     }
 
     canvas {
       width: 100%;
-      height: 150px;
-      display: block;
+      height: 120px;
       background-color: #000;
       border: 1px solid #bfa76f;
-      border-radius: 4px;
+      display: block;
     }
 
-    .vitals {
-      margin-top: 1rem;
+    .readouts {
       display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
-      font-size: 0.9rem;
-      color: #bfa76f;
+      justify-content: space-around;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
     }
 
-    .vital-item {
-      margin: 0.3rem 0.6rem;
+    .readouts div {
+      margin: 0.2rem 0;
     }
   </style>
 </head>
 <body>
-
-  <div class="console-container">
-    <canvas id="line"></canvas>
-    <div class="vitals">
-      <div class="vital-item">O₂ Sat: 98%</div>
-      <div class="vital-item">Blood Pressure: 120/80</div>
-      <div class="vital-item">Respiration: 16 bpm</div>
-      <div class="vital-item">Heart Rate: 72 bpm</div>
+  <div class="console">
+    <canvas id="vitalsCanvas"></canvas>
+    <div class="readouts">
+      <div>O₂ Sat: 98%</div>
+      <div>Blood Pressure: 120/80</div>
+      <div>Respiration: 16 bpm</div>
+      <div>Heart Rate: 72 bpm</div>
     </div>
   </div>
 
   <script>
-    const canvas = document.getElementById('line');
+    const canvas = document.getElementById('vitalsCanvas');
     const ctx = canvas.getContext('2d');
-    let width, height;
 
-    function resize() {
+    let width, height;
+    function resizeCanvas() {
       width = canvas.clientWidth;
       height = canvas.clientHeight;
       canvas.width = width;
       canvas.height = height;
     }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-    window.addEventListener('resize', resize);
-    resize();
-
-    const data = new Array(width).fill(height / 2);
-
-    function generateECGPoint(prev) {
-      // Simulate ECG waveform
-      let r = Math.random();
-      if (r < 0.02) return height * 0.2;
-      if (r < 0.04) return height * 0.8;
-      return prev + (Math.random() - 0.5) * 4;
-    }
-
-    function draw() {
-      // Scroll data left
-      for (let i = 0; i < data.length - 1; i++) {
-        data[i] = data[i+1];
-      }
-      data[data.length - 1] = generateECGPoint(data[data.length - 2]);
-
-      // Clear
-      ctx.fillStyle = "#000";
+    let offset = 0;
+    function drawEKG() {
+      ctx.fillStyle = '#000';
       ctx.fillRect(0, 0, width, height);
 
-      // Grid
-      ctx.strokeStyle = "#111";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let i = 0; i < height; i += 20) {
-        ctx.moveTo(0, i);
-        ctx.lineTo(width, i);
-      }
-      for (let i = 0; i < width; i += 20) {
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, height);
-      }
-      ctx.stroke();
-
-      // Draw ECG line
-      ctx.strokeStyle = "#00ff00";
       ctx.lineWidth = 2;
+      ctx.strokeStyle = '#bfa76f';
       ctx.beginPath();
-      ctx.moveTo(0, data[0]);
-      for (let i = 1; i < data.length; i++) {
-        ctx.lineTo(i, data[i]);
-      }
-      ctx.stroke();
 
-      requestAnimationFrame(draw);
+      const speed = 2;
+      const amp = height * 0.3;
+      const baseline = height / 2;
+
+      offset += speed;
+      for (let x = 0; x < width; x++) {
+        let val = Math.sin((x + offset) * 0.04) * amp;
+        if ((x + offset) % 150 < 15) val = -amp * 2;
+        ctx.lineTo(x, baseline + val);
+      }
+
+      ctx.stroke();
+      requestAnimationFrame(drawEKG);
     }
 
-    draw();
+    drawEKG();
   </script>
 </body>
 </html>
-✅ 
     
       <h2>Impacto histórico</h2>
       <p>Apolo 1 marcó un punto de inflexión en el programa espacial estadounidense. El desastre llevó a una revisión completa de los sistemas eléctricos, materiales inflamables y protocolos de seguridad de la NASA. A pesar de no haber volado, su legado fue vital para el éxito de las misiones posteriores del Programa Apolo.</p>
