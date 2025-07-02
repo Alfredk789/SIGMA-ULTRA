@@ -96,6 +96,74 @@
       
       <h2>Accidente</h2>
       <p>El 27 de enero de 1967, durante una prueba en tierra dentro del módulo de comando en la plataforma LC-34, un incendio devastador consumió la cápsula en segundos. Los astronautas Virgil "Gus" Grissom, Edward White y Roger Chaffee perdieron la vida.</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIGMA ULTRA - Voice Spectrum Bar</title>
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .spectrum-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      width: 100%;
+      max-width: 600px;
+      height: 80px;
+      margin: 2rem auto;
+      background-color: #111;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .bar {
+      width: 6%;
+      background-color: #bfa76f;
+      height: 30%;
+      animation: move 1.5s infinite ease-in-out;
+    }
+
+    .bar:nth-child(2) { animation-delay: 0.2s; }
+    .bar:nth-child(3) { animation-delay: 0.4s; }
+    .bar:nth-child(4) { animation-delay: 0.6s; }
+    .bar:nth-child(5) { animation-delay: 0.8s; }
+    .bar:nth-child(6) { animation-delay: 1s; }
+    .bar:nth-child(7) { animation-delay: 1.2s; }
+    .bar:nth-child(8) { animation-delay: 1.4s; }
+
+    @keyframes move {
+      0%, 100% { height: 30%; opacity: 0.7; }
+      25% { height: 90%; opacity: 1; }
+      50% { height: 50%; opacity: 0.85; }
+      75% { height: 80%; opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spectrum-container">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+</body>
+</html>
       
       <h2>Impacto histórico</h2>
       <p>Apolo 1 marcó un punto de inflexión en el programa espacial estadounidense. El desastre llevó a una revisión completa de los sistemas eléctricos, materiales inflamables y protocolos de seguridad de la NASA. A pesar de no haber volado, su legado fue vital para el éxito de las misiones posteriores del Programa Apolo.</p>
