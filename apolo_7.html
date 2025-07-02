@@ -97,6 +97,113 @@
       <p><b>Tipo de misión:</b> Orbital tripulada de prueba</p>
       <p><b>Tripulación:</b> Walter M. Schirra, Donn F. Eisele, Walter Cunningham</p>
       <p><b>Objetivo:</b> Probar el módulo de comando y servicio (CSM) en órbita terrestre baja</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vitals Console - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0.5rem;
+    }
+
+    .console {
+      border: 2px solid #bfa76f;
+      border-radius: 6px;
+      padding: 0.25rem;
+      max-width: 280px;
+      margin: 0.5rem auto;
+      background-color: #000;
+    }
+
+    canvas {
+      width: 100%;
+      height: 80px;
+      background-color: #000;
+      border: 1px solid #bfa76f;
+      display: block;
+    }
+
+    .readouts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 0.25rem;
+      font-size: 0.7rem;
+    }
+
+    .readouts div {
+      margin: 0.15rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="console">
+    <canvas id="vitalsCanvas"></canvas>
+    <div class="readouts">
+      <div>O₂ Sat: 98%</div>
+      <div>Blood Pressure: 120/80</div>
+      <div>Respiration: 16 bpm</div>
+      <div>Heart Rate: 72 bpm</div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('vitalsCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    function resizeCanvas() {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    let offset = 0;
+    function drawEKG() {
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#bfa76f';
+      ctx.beginPath();
+
+      const baseline = height / 2;
+      const spikeWidth = 8;
+      const spikeHeight = height * 0.4;
+      offset += 2;
+
+      for (let x = 0; x < width; x++) {
+        const pos = (x + offset) % 120;
+        let y = baseline;
+
+        if (pos > 55 && pos < 55 + spikeWidth / 2) {
+          y = baseline - spikeHeight;
+        } else if (pos >= 55 + spikeWidth / 2 && pos < 55 + spikeWidth) {
+          y = baseline + spikeHeight * 0.2;
+        }
+
+        ctx.lineTo(x, y);
+      }
+
+      ctx.stroke();
+      requestAnimationFrame(drawEKG);
+    }
+
+    drawEKG();
+  </script>
+</body>
+</html>
+      
       <p><b>Carga científica:</b> Sistema de soporte vital, comunicaciones, cámaras, procedimientos de acoplamiento</p>
       <h2>Impacto histórico</h2>
       <p>
