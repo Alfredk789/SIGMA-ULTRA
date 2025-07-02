@@ -102,31 +102,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA ULTRA - Voice Spectrum Simulated</title>
+  <title>SIGMA ULTRA - Vital Signs Console</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
+      font-family: 'Courier New', Courier, monospace;
+      color: #bfa76f;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      padding: 1rem;
     }
-    canvas {
+
+    .console-container {
       background-color: #0a0a0a;
       border: 2px solid #bfa76f;
       border-radius: 8px;
       width: 95%;
       max-width: 600px;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    canvas {
+      width: 100%;
       height: 150px;
+      display: block;
+      background-color: #000;
+      border: 1px solid #bfa76f;
+      border-radius: 4px;
+    }
+
+    .vitals {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #bfa76f;
+    }
+
+    .vital-item {
+      margin: 0.3rem 0.6rem;
     }
   </style>
 </head>
 <body>
-  <canvas id="spectrum"></canvas>
+
+  <div class="console-container">
+    <canvas id="line"></canvas>
+    <div class="vitals">
+      <div class="vital-item">O₂ Sat: 98%</div>
+      <div class="vital-item">Blood Pressure: 120/80</div>
+      <div class="vital-item">Respiration: 16 bpm</div>
+      <div class="vital-item">Heart Rate: 72 bpm</div>
+    </div>
+  </div>
 
   <script>
-    const canvas = document.getElementById('spectrum');
+    const canvas = document.getElementById('line');
     const ctx = canvas.getContext('2d');
     let width, height;
 
@@ -140,53 +176,60 @@
     window.addEventListener('resize', resize);
     resize();
 
-    const data = new Array(width).fill(height/2);
-    function randomVoiceDelta() {
-      return (Math.random() - 0.5) * 30;
+    const data = new Array(width).fill(height / 2);
+
+    function generateECGPoint(prev) {
+      // Simulate ECG waveform
+      let r = Math.random();
+      if (r < 0.02) return height * 0.2;
+      if (r < 0.04) return height * 0.8;
+      return prev + (Math.random() - 0.5) * 4;
     }
 
     function draw() {
-      // Move data left
-      for(let i = 0; i < data.length - 1; i++) {
+      // Scroll data left
+      for (let i = 0; i < data.length - 1; i++) {
         data[i] = data[i+1];
       }
-      // New value
-      let last = data[data.length - 2];
-      let next = last + randomVoiceDelta();
-      next = Math.max(height*0.3, Math.min(height*0.7, next));
-      data[data.length - 1] = next;
+      data[data.length - 1] = generateECGPoint(data[data.length - 2]);
 
       // Clear
-      ctx.fillStyle = "#0a0a0a";
+      ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, width, height);
 
-      // Grid lines (optional)
-      ctx.strokeStyle = "#222";
+      // Grid
+      ctx.strokeStyle = "#111";
       ctx.lineWidth = 1;
       ctx.beginPath();
       for (let i = 0; i < height; i += 20) {
         ctx.moveTo(0, i);
         ctx.lineTo(width, i);
       }
+      for (let i = 0; i < width; i += 20) {
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, height);
+      }
       ctx.stroke();
 
-      // Draw wave
-      ctx.strokeStyle = "#bfa76f";
+      // Draw ECG line
+      ctx.strokeStyle = "#00ff00";
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(0, data[0]);
-      for(let i = 1; i < data.length; i++) {
+      for (let i = 1; i < data.length; i++) {
         ctx.lineTo(i, data[i]);
       }
       ctx.stroke();
 
       requestAnimationFrame(draw);
     }
+
     draw();
   </script>
 </body>
 </html>
-      
+✅ 
+    
       <h2>Impacto histórico</h2>
       <p>Apolo 1 marcó un punto de inflexión en el programa espacial estadounidense. El desastre llevó a una revisión completa de los sistemas eléctricos, materiales inflamables y protocolos de seguridad de la NASA. A pesar de no haber volado, su legado fue vital para el éxito de las misiones posteriores del Programa Apolo.</p>
     </div>
