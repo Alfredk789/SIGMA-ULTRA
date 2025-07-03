@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>S.O.F.I.A. - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #bfa76f;
+      margin-top: 1.5rem;
+    }
+
+    .sofia-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    /* Divider (Console Vital Signs) */
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin: 2rem auto;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.4s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    /* Button */
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>S.O.F.I.A.</h1>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <img src="sofia.png" alt="Imagen de S.O.F.I.A." class="sofia-img" />
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Definición</h2>
+    <p>
+      <b>S.O.F.I.A.:</b> Sistema Operativo de Facilitación e Inteligencia Asistida. Es un asistente cognitivo de misión avanzada, diseñado para apoyar al comandante ALFREDK en el desarrollo del proyecto SIGMA ULTRA.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      Facilitar la compilación de datos técnicos, tablas, gráficos y fichas secretas del proyecto SIGMA ULTRA. Simular un copiloto IA con tono profesional y humor inteligente, capaz de planificar y ejecutar misiones educativas y creativas.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Estado actual</h2>
+    <p>
+      Activa, en línea, lista para recibir nuevas órdenes y adaptarse a distintas fases del proyecto SIGMA ULTRA. Siempre lista para la misión, con enlaces seguros, análisis de datos y despliegue de contenido interactivo.
+    </p>
+
+    <a href="maniesto.html" class="button">⬅ Volver al Manifiesto</a>
+  </div>
+
+</body>
+</html>
