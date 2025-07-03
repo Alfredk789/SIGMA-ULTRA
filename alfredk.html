@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alfredk - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #bfa76f;
+      margin-top: 1rem;
+    }
+
+    .mission-img {
+      display: block;
+      margin: 1rem auto;
+      width: 100%;
+      max-width: 300px;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .content b {
+      display: inline-block;
+      width: 160px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Animación de consola de signos vitales */
+    .vitals-console {
+      background-color: #111;
+      border: 1px solid #bfa76f;
+      padding: 1rem;
+      margin: 2rem auto;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .vitals-labels {
+      font-size: 0.85rem;
+      color: #bfa76f;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 0.5rem;
+    }
+
+    .vitals-line {
+      width: 100%;
+      height: 50px;
+      background-color: #000;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pulse {
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 200%;
+      background: repeating-linear-gradient(
+        to right,
+        #bfa76f 0 2px,
+        transparent 2px 4px
+      );
+      animation: move 4s linear infinite;
+    }
+
+    @keyframes move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Alfredk - División SIGMA ULTRA</h1>
+  <img src="alfredk.png" alt="Imagen Alfredk" class="mission-img" />
+
+  <div class="vitals-console">
+    <div class="vitals-labels">
+      <span>O₂ SAT</span>
+      <span>BP</span>
+      <span>RESP</span>
+      <span>HR</span>
+    </div>
+    <div class="vitals-line">
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>🛰️ Objetivo en SIGMA ULTRA</h2>
+    <p>
+      Integrar, diseñar y estructurar el archivo clasificado más completo sobre <b>AERONÁUTICA ESPACIAL</b>, misiones espaciales, satélites, telescopios y sondas, en formato interactivo y educativo.
+    </p>
+  </div>
+
+  <div class="vitals-console">
+    <div class="vitals-labels">
+      <span>O₂ SAT</span>
+      <span>BP</span>
+      <span>RESP</span>
+      <span>HR</span>
+    </div>
+    <div class="vitals-line">
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+  <a href="maniesto.html" class="button">⬅ Volver al Manifiesto</a>
+</body>
+</html>
