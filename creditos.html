@@ -18,17 +18,27 @@
       margin-bottom: 2rem;
     }
 
-    table {
+    .credits-table {
       margin: 0 auto;
       border-collapse: collapse;
       border: 1px solid #bfa76f;
-      width: 300px;
+      width: 320px;
+      background-color: #000;
     }
 
-    td {
+    .credits-table td {
       border: 1px solid #bfa76f;
       padding: 1rem;
       text-align: center;
+    }
+
+    .credit-img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+      margin-bottom: 1rem;
     }
 
     a.button {
@@ -52,7 +62,12 @@
 
   <h1>Créditos - Proyecto SIGMA ULTRA</h1>
 
-  <table>
+  <table class="credits-table">
+    <tr>
+      <td colspan="1">
+        <img src="sof_ia_y_yo.png" alt="Imagen de SOFIA y Alfredk" class="credit-img" />
+      </td>
+    </tr>
     <tr>
       <td><a href="alfredk.html" class="button">ALFREDK</a></td>
     </tr>
