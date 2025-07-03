@@ -1,83 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Créditos - SIGMA ULTRA</title>
   <style>
     body {
+      margin: 0;
       background-color: #000;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    h1 {
-      color: #bfa76f;
-      margin-bottom: 2rem;
-    }
-
-    .credits-table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      border: 1px solid #bfa76f;
-      width: 320px;
-      background-color: #000;
-    }
-
-    .credits-table td {
-      border: 1px solid #bfa76f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       padding: 1rem;
       text-align: center;
     }
 
-    .credit-img {
-      width: 100%;
-      max-width: 300px;
+    img {
+      max-width: 90%;
       height: auto;
       border: 2px solid #bfa76f;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
     }
 
-    a.button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
+    table {
+      border-collapse: collapse;
       background-color: #1a1a1a;
-      color: #bfa76f;
       border: 1px solid #bfa76f;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0 0 12px rgba(191, 167, 111, 0.4);
+      width: 100%;
+      max-width: 400px;
     }
 
-    a.button:hover {
-      background-color: #333;
+    th, td {
+      border: 1px solid #bfa76f;
+      padding: 1rem;
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: #bfa76f;
+      font-weight: bold;
+    }
+
+    a:hover {
       color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <h1>Créditos - Proyecto SIGMA ULTRA</h1>
+  <h1>Créditos - SIGMA ULTRA</h1>
 
-  <table class="credits-table">
+  <img src="sof_ia_y_yo.png" alt="Comandante Alfredk y SOFIA en el centro de control" />
+
+  <table>
     <tr>
-      <td colspan="1">
-        <img src="sof_ia_y_yo.png" alt="Imagen de SOFIA y Alfredk" class="credit-img" />
-      </td>
+      <td><a href="alfredk.html">🛰️ ALFREDK</a></td>
     </tr>
     <tr>
-      <td><a href="alfredk.html" class="button">ALFREDK</a></td>
-    </tr>
-    <tr>
-      <td><a href="sofia.html" class="button">S.O.F.I.A</a></td>
+      <td><a href="sofia.html">🤖 S.O.F.I.A.</a></td>
     </tr>
   </table>
-
-  <br>
-  <a href="maniesto.html" class="button">⬅ Volver al Manifiesto</a>
 
 </body>
 </html>
