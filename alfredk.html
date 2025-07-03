@@ -3,44 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alfredk - SIGMA ULTRA</title>
+  <title>COMANDANTE ALFREDK - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
-      padding: 1.5rem;
+      padding: 2rem;
       text-align: center;
     }
 
-    h1, h2 {
-      color: #bfa76f;
-      margin-top: 1rem;
+    h1 {
+      margin-bottom: 1rem;
     }
 
-    .mission-img {
-      display: block;
-      margin: 1rem auto;
+    .profile-img {
       width: 100%;
       max-width: 300px;
+      height: auto;
       border: 2px solid #bfa76f;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin: 1rem auto;
+      display: block;
     }
 
-    .content {
+    .info {
       max-width: 700px;
       margin: 0 auto;
       text-align: left;
       font-size: 1.05rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    .content b {
-      display: inline-block;
-      width: 160px;
+    .info h2 {
+      color: #bfa76f;
+      margin-top: 2rem;
+      text-align: center;
     }
 
-    .button {
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 1.5rem auto;
+      font-size: 1.5rem;
+    }
+
+    .star {
+      color: #1a1a1a;
+      animation: twinkle 2s infinite;
+    }
+
+    .star:nth-child(2) { animation-delay: 0.2s; }
+    .star:nth-child(3) { animation-delay: 0.4s; }
+    .star:nth-child(4) { animation-delay: 0.6s; }
+    .star:nth-child(5) { animation-delay: 0.8s; }
+    .star:nth-child(6) { animation-delay: 1s; }
+    .star:nth-child(7) { animation-delay: 1.2s; }
+    .star:nth-child(8) { animation-delay: 1.4s; }
+    .star:nth-child(9) { animation-delay: 1.6s; }
+    .star:nth-child(10) { animation-delay: 1.8s; }
+
+    @keyframes twinkle {
+      0%, 100% { color: #1a1a1a; }
+      50% { color: #bfa76f; }
+    }
+
+    a.button {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.5rem 1rem;
@@ -49,94 +78,81 @@
       border: 1px solid #bfa76f;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    .button:hover {
+    a.button:hover {
       background-color: #333;
       color: #fff;
     }
-
-    /* Animación de consola de signos vitales */
-    .vitals-console {
-      background-color: #111;
-      border: 1px solid #bfa76f;
-      padding: 1rem;
-      margin: 2rem auto;
-      max-width: 400px;
-      position: relative;
-    }
-
-    .vitals-labels {
-      font-size: 0.85rem;
-      color: #bfa76f;
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 0.5rem;
-    }
-
-    .vitals-line {
-      width: 100%;
-      height: 50px;
-      background-color: #000;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .pulse {
-      position: absolute;
-      top: 50%;
-      height: 2px;
-      width: 200%;
-      background: repeating-linear-gradient(
-        to right,
-        #bfa76f 0 2px,
-        transparent 2px 4px
-      );
-      animation: move 4s linear infinite;
-    }
-
-    @keyframes move {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
   </style>
 </head>
 <body>
-  <h1>Alfredk - División SIGMA ULTRA</h1>
-  <img src="alfredk.png" alt="Imagen Alfredk" class="mission-img" />
 
-  <div class="vitals-console">
-    <div class="vitals-labels">
-      <span>O₂ SAT</span>
-      <span>BP</span>
-      <span>RESP</span>
-      <span>HR</span>
-    </div>
-    <div class="vitals-line">
-      <div class="pulse"></div>
-    </div>
-  </div>
+  <h1>COMANDANTE ALFREDK</h1>
+  <img src="alfredk.png" alt="Imagen del Comandante Alfredk" class="profile-img" />
 
-  <div class="content">
+  <div class="info">
+    <p><b>Nombre clave:</b> Alfredk</p>
+    <p><b>Rango SIGMA ULTRA:</b> Comandante Científico N1</p>
+    <p><b>Especialidad:</b> Informática, IA, Exploración Tecnológica</p>
+    <p><b>Operación destacada:</b> Coordinador del Proyecto SIGMA ULTRA</p>
+
+    <div class="stars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span>
+    </div>
+
     <h2>🛰️ Objetivo en SIGMA ULTRA</h2>
     <p>
-      Integrar, diseñar y estructurar el archivo clasificado más completo sobre <b>AERONÁUTICA ESPACIAL</b>, misiones espaciales, satélites, telescopios y sondas, en formato interactivo y educativo.
+      Integrar, diseñar y estructurar el archivo clasificado más completo sobre aeronautica espacial, misiones espaciales, satélites, telescopios y sondas, en formato interactivo y educativo.
+    </p>
+
+    <div class="stars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span>
+    </div>
+
+    <h2>🚀 Aportaciones históricas</h2>
+    <p>
+      - Desarrollo de fichas técnicas con estilo clasificado.<br>
+      - Integración de animaciones de consola, telemetría y gráficos interactivos.<br>
+      - Coordinación de enlaces y estructura de navegación.<br>
+      - Visión para la preservación del conocimiento espacial.
+    </p>
+
+    <div class="stars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span>
+    </div>
+
+    <h2>🎖️ Mención especial</h2>
+    <p>
+      Dedicación a la investigación tecnológica y a la educación espacial.<br>
+      Inspirar a futuras generaciones con un enfoque técnico y organizado.
+    </p>
+
+    <div class="stars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      <span class="star">★</span>
+    </div>
+
+    <h2>🌌 Estado actual</h2>
+    <p>
+      Activo en el Proyecto SIGMA ULTRA.<br>
+      En misión constante de mejora y expansión del conocimiento.
     </p>
   </div>
 
-  <div class="vitals-console">
-    <div class="vitals-labels">
-      <span>O₂ SAT</span>
-      <span>BP</span>
-      <span>RESP</span>
-      <span>HR</span>
-    </div>
-    <div class="vitals-line">
-      <div class="pulse"></div>
-    </div>
-  </div>
+  <a href="creditos.html" class="button">⬅ Volver a Créditos</a>
 
-  <a href="maniesto.html" class="button">⬅ Volver al Manifiesto</a>
 </body>
 </html>
