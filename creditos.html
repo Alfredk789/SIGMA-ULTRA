@@ -72,12 +72,19 @@
     </tr>
   </table>
 
+ <a href="index.html" class="button-back">SALIR</a>
+  </div>
+
+  <script>
+    // Oculta loading y muestra contenido después de 3 segundos
+    window.onload = function () {
+      setTimeout(function () {
+        document.getElementById("loading").style.display = "none";
+        const content = document.getElementById("content");
+        content.style.display = "block";
+        setTimeout(() => content.style.opacity = "1", 100);
+      }, 3000);
+    };
+  </script>
 </body>
 </html>
-</div>
-
-
-<div>"style="text-align:center;">
-  
-  <a href="manifiesto.html" class="button">⬅ Volver al Manifiesto</a>
-</div>
