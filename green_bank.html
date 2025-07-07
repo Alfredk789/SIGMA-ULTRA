@@ -126,16 +126,26 @@
 <body>
 
   <!-- LOADING SCREEN -->
-  <div class="loading">
+  <div class="loading" id="loading">
     <div>LOADING</div>
     <div class="bar"><div class="bar-fill"></div></div>
     <div class="bar"><div class="bar-fill"></div></div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT (hidden initially) -->
   <div class="content" id="content">
     <h1>Green Bank Telescope</h1>
-  </div>
+
+    <div class="binary-container">
+      <div class="bit">1</div>
+      <div class="bit">0</div>
+      <div class="bit">0</div>
+      <div class="bit">1</div>
+      <div class="bit">1</div>
+      <div class="bit">0</div>
+      <div class="bit">0</div>
+      <div class="bit">1</div>
+    </div>
 
     <img src="green_bank.png" class="mission-img" alt="Imagen Green Bank" />
 
@@ -168,16 +178,7 @@
 
       <h2>Aportación histórica</h2>
       <p>El Green Bank Telescope es uno de los radiotelescopios más avanzados del mundo, esencial para la investigación astronómica de vanguardia, incluyendo estudios de púlsares, moléculas interestelares y la búsqueda de inteligencia extraterrestre.</p>
-    <div class="binary-container">
-      <div class="bit">1</div>
-      <div class="bit">0</div>
-      <div class="bit">0</div>
-      <div class="bit">1</div>
-      <div class="bit">1</div>
-      <div class="bit">0</div>
-      <div class="bit">0</div>
-      <div class="bit">1</div>
-    </div>
+
       <h2>Estado actual</h2>
       <p>Activo y operado por el Green Bank Observatory, con uso científico intensivo y programas educativos que promueven la radioastronomía entre nuevas generaciones.</p>
     </div>
@@ -187,7 +188,7 @@
 
   <script>
     setTimeout(() => {
-      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('loading').style.display = 'none';
       document.getElementById('content').style.display = 'block';
     }, 3000);
   </script>
