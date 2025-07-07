@@ -12,10 +12,12 @@
       padding: 2rem;
       text-align: center;
     }
+
     .loading {
       font-size: 1.5rem;
       margin-top: 2rem;
     }
+
     .bar {
       width: 80%;
       height: 8px;
@@ -23,19 +25,53 @@
       margin: 10px auto;
       overflow: hidden;
     }
+
     .bar-fill {
       height: 100%;
       width: 0;
       background-color: #bfa76f;
       animation: load 3s forwards;
     }
+
     @keyframes load {
       to { width: 100%; }
     }
+
+    .binary-container {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin: 1rem auto;
+      flex-wrap: wrap;
+    }
+
+    .bit {
+      font-family: monospace;
+      color: #1a1a1a;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      padding: 4px 8px;
+      animation: blink 2s infinite;
+    }
+
+    .bit:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .bit:nth-child(even) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; color: #1a1a1a; }
+      50% { background-color: #bfa76f; color: #000; }
+    }
+
     .content {
       display: none;
       margin-top: 2rem;
     }
+
     .mission-img {
       width: 100%;
       max-width: 400px;
@@ -43,6 +79,7 @@
       margin: 1rem auto;
       display: block;
     }
+
     .info {
       text-align: left;
       max-width: 700px;
@@ -50,10 +87,12 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .info b {
       display: inline-block;
       width: 160px;
     }
+
     a.button {
       display: inline-block;
       margin-top: 2rem;
@@ -64,10 +103,12 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     a.button:hover {
       background-color: #333;
       color: #fff;
     }
+
     h1, h2 {
       color: #bfa76f;
     }
@@ -90,24 +131,56 @@
       <p><b>Fecha de operación:</b> 1963 - 1998</p>
       <p><b>Tipo de instalación:</b> Radiotelescopio de reflexión plana con sección parabólica fija</p>
 
+      <div class="binary-container">
+        <div class="bit">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit">1</div>
+        <div class="bit">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit">1</div>
+        <div class="bit">0</div>
+      </div>
+
       <h2>Objetivo</h2>
-      <p>Escanear el cielo para señales de radio naturales y artificiales. Fue famoso por su participación en el programa SETI (Search for Extraterrestrial Intelligence), buscando emisiones no naturales del espacio profundo.</p>
+      <p>Escanear el cielo para señales de radio naturales y artificiales...</p>
+
+      <div class="binary-container">
+        <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div>
+        <div class="bit">1</div><div class="bit">1</div><div class="bit">0</div>
+        <div class="bit">0</div><div class="bit">1</div><div class="bit">0</div>
+      </div>
 
       <h2>Principales descubrimientos</h2>
-      <p>
-        - Recepción de la famosa "señal WOW!" en 1977, un pico de radio inusual que aún no tiene explicación clara.<br>
-        - Creación del Ohio Sky Survey, uno de los primeros catálogos de fuentes de radio del cielo del norte.<br>
-        - Monitoreo de emisiones cósmicas en distintas frecuencias para estudios astrofísicos.
-      </p>
+      <p>- Recepción de la famosa "señal WOW!" en 1977...</p>
+
+      <div class="binary-container">
+        <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div>
+        <div class="bit">1</div><div class="bit">1</div><div class="bit">0</div>
+        <div class="bit">0</div><div class="bit">1</div><div class="bit">0</div>
+      </div>
 
       <h2>Aportación histórica</h2>
-      <p>El Big Ear fue un pilar del SETI en la segunda mitad del siglo XX. Su arquitectura única y su dedicación a rastrear el cielo durante décadas produjeron importantes catálogos y, sobre todo, la enigmática señal WOW!, que aún alimenta la curiosidad sobre inteligencia extraterrestre.</p>
+      <p>El Big Ear fue un pilar del SETI en la segunda mitad del siglo XX...</p>
+
+      <div class="binary-container">
+        <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div>
+        <div class="bit">1</div><div class="bit">1</div><div class="bit">0</div>
+        <div class="bit">0</div><div class="bit">1</div><div class="bit">0</div>
+      </div>
 
       <h2>Significado del nombre</h2>
-      <p>"Big Ear" significa "Oreja Grande", un apodo humorístico y descriptivo dado por su forma y función: escuchar el universo como una oreja colosal, atenta a los susurros del cosmos.</p>
+      <p>"Big Ear" significa "Oreja Grande", un apodo humorístico...</p>
+
+      <div class="binary-container">
+        <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div>
+        <div class="bit">1</div><div class="bit">1</div><div class="bit">0</div>
+        <div class="bit">0</div><div class="bit">1</div><div class="bit">0</div>
+      </div>
 
       <h2>Estado actual</h2>
-      <p>El observatorio fue desmantelado en 1998. El terreno fue vendido para expandir un campo de golf, poniendo fin a sus operaciones. Sin embargo, su legado científico y cultural perdura, especialmente en la historia del SETI.</p>
+      <p>El observatorio fue desmantelado en 1998...</p>
     </div>
 
     <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
