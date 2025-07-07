@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Green Bank Observatory - SIGMA ULTRA</title>
+  <title>Big Ear Radio Observatory - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
@@ -12,10 +12,17 @@
       padding: 2rem;
       text-align: center;
     }
+
+    h1, h2 {
+      color: #bfa76f;
+    }
+
+    /* Loading animation */
     .loading {
       font-size: 1.5rem;
       margin-top: 2rem;
     }
+
     .bar {
       width: 80%;
       height: 8px;
@@ -23,26 +30,33 @@
       margin: 10px auto;
       overflow: hidden;
     }
+
     .bar-fill {
       height: 100%;
       width: 0;
       background-color: #bfa76f;
       animation: load 3s forwards;
     }
+
     @keyframes load {
       to { width: 100%; }
     }
+
+    /* Content reveal after loading */
     .content {
       display: none;
       margin-top: 2rem;
     }
+
     .mission-img {
       width: 100%;
       max-width: 400px;
       height: auto;
       margin: 1rem auto;
       display: block;
+      border: 1px solid #bfa76f;
     }
+
     .info {
       text-align: left;
       max-width: 700px;
@@ -50,10 +64,12 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
     .info b {
       display: inline-block;
       width: 160px;
     }
+
     a.button {
       display: inline-block;
       margin-top: 2rem;
@@ -64,60 +80,109 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     a.button:hover {
       background-color: #333;
       color: #fff;
     }
-    h1, h2 {
-      color: #bfa76f;
+
+    /* Binary animation */
+    .binary-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 1rem auto;
+      overflow-x: auto;
+    }
+
+    .bit {
+      font-family: monospace;
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      padding: 4px 8px;
+      animation: blink 2s infinite alternate;
+      text-align: center;
+      min-width: 24px;
+    }
+
+    .bit:nth-child(1) { animation-delay: 0.2s; }
+    .bit:nth-child(2) { animation-delay: 0.4s; }
+    .bit:nth-child(3) { animation-delay: 0.6s; }
+    .bit:nth-child(4) { animation-delay: 0.8s; }
+    .bit:nth-child(5) { animation-delay: 1s; }
+    .bit:nth-child(6) { animation-delay: 1.2s; }
+    .bit:nth-child(7) { animation-delay: 1.4s; }
+    .bit:nth-child(8) { animation-delay: 1.6s; }
+
+    @keyframes blink {
+      0%   { background-color: #1a1a1a; color: #1a1a1a; }
+      50%  { background-color: #bfa76f; color: #000; }
+      100% { background-color: #1a1a1a; color: #1a1a1a; }
     }
   </style>
 </head>
 <body>
 
+  <!-- LOADING SCREEN -->
   <div class="loading">
     <div>LOADING</div>
     <div class="bar"><div class="bar-fill"></div></div>
     <div class="bar"><div class="bar-fill"></div></div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="content" id="content">
-    <h1>Green Bank Observatory</h1>
-    <img src="green_bank.png" class="mission-img" alt="Imagen Green Bank Observatory" />
+    <h1>Big Ear Radio Observatory</h1>
+    
+    <div class="binary-container">
+      <div class="bit">1</div>
+      <div class="bit">0</div>
+      <div class="bit">0</div>
+      <div class="bit">1</div>
+      <div class="bit">1</div>
+      <div class="bit">0</div>
+      <div class="bit">0</div>
+      <div class="bit">1</div>
+    </div>
+
+    <img src="big_ear.png" class="mission-img" alt="Imagen Big Ear" />
 
     <div class="info">
-      <p><b>Ubicación:</b> West Virginia, Estados Unidos</p>
-      <p><b>Inicio de operaciones:</b> 1958 (activo hasta hoy)</p>
-      <p><b>Tipo de instalación:</b> Radiotelescopio direccional de gran apertura</p>
-      
- 
-      </div>
-          
+      <p><b>Ubicación:</b> Ohio, Estados Unidos</p>
+      <p><b>Fecha de operación:</b> 1963 - 1998</p>
+      <p><b>Tipo de instalación:</b> Radiotelescopio de reflexión plana con sección parabólica fija</p>
+
       <h2>Objetivo</h2>
-      <p>Explorar el universo en radiofrecuencias para estudiar formación estelar, galaxias, púlsares, moléculas interestelares y realizar búsquedas de inteligencia extraterrestre (SETI).</p>
+      <p>Escanear el cielo para señales de radio naturales y artificiales. Fue famoso por su participación en el programa SETI (Search for Extraterrestrial Intelligence), buscando emisiones no naturales del espacio profundo.</p>
+
+      <div class="binary-container">
+        <div class="bit">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit">1</div>
+        <div class="bit">1</div>
+        <div class="bit">0</div>
+        <div class="bit">0</div>
+        <div class="bit">1</div>
+      </div>
 
       <h2>Principales descubrimientos</h2>
       <p>
-        - Detección de moléculas complejas en nubes interestelares.<br>
-        - Estudios de púlsares y de la estructura de la Vía Láctea.<br>
-        - Participación en experimentos del programa SETI.<br>
-        - Observaciones detalladas de galaxias cercanas.
+        - Recepción de la famosa "señal WOW!" en 1977, un pico de radio inusual que aún no tiene explicación clara.<br>
+        - Creación del Ohio Sky Survey, uno de los primeros catálogos de fuentes de radio del cielo del norte.<br>
+        - Monitoreo de emisiones cósmicas en distintas frecuencias para estudios astrofísicos.
       </p>
-          
- v 
-      </div>
-          
+
       <h2>Aportación histórica</h2>
-      <p>El Green Bank Telescope (GBT) es el radiotelescopio totalmente direccionable más grande del mundo (100 m de apertura). Es un ícono de la radioastronomía moderna, con avances en astroquímica, formación estelar y la búsqueda de vida inteligente. Forma parte de la "zona de silencio de radio" en Virginia Occidental, donde se minimiza la interferencia.</p>
+      <p>El Big Ear fue un pilar del SETI en la segunda mitad del siglo XX. Su arquitectura única y su dedicación a rastrear el cielo durante décadas produjeron importantes catálogos y, sobre todo, la enigmática señal WOW!, que aún alimenta la curiosidad sobre inteligencia extraterrestre.</p>
 
       <h2>Significado del nombre</h2>
-      <p>El observatorio toma su nombre del pueblo de Green Bank, donde se encuentra ubicado. "Green Bank" alude al paisaje verde y montañoso de la región, ideal para aislar señales de radio terrestres.</p>
+      <p>"Big Ear" significa "Oreja Grande", un apodo humorístico y descriptivo dado por su forma y función: escuchar el universo como una oreja colosal, atenta a los susurros del cosmos.</p>
 
-     
-      </div>
-          
       <h2>Estado actual</h2>
-      <p>Activo y operativo. El Green Bank Observatory sigue siendo uno de los centros de radioastronomía más avanzados del mundo. Participa en proyectos internacionales como Breakthrough Listen para buscar señales de civilizaciones avanzadas.</p>
+      <p>El observatorio fue desmantelado en 1998. El terreno fue vendido para expandir un campo de golf, poniendo fin a sus operaciones. Sin embargo, su legado científico y cultural perdura, especialmente en la historia del SETI.</p>
     </div>
 
     <a href="radioastronomia.html" class="button">⬅ Regresar al Archivo de Radioastronomía</a>
