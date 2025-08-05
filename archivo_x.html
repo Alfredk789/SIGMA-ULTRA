@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Archivo X: Vida en Órbita Misiones Biologicas Espaciales- SIGMA ULTRA</title>
+  <title>Archivo X: Vida en órbita - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
@@ -13,10 +13,38 @@
       text-align: center;
     }
 
-    h1 {
-      font-size: 2rem;
+    h1, h2 {
       color: #bfa76f;
-      margin-bottom: 1rem;
+    }
+
+    /* Loading animation */
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+
+    @keyframes load {
+      to { width: 100%; }
+    }
+
+    .content {
+      display: none;
+      margin-top: 2rem;
     }
 
     table {
@@ -25,29 +53,26 @@
       margin: 2rem auto;
       border-collapse: collapse;
       font-size: 1rem;
-      background-color: #111;
-      border: 1px solid #bfa76f;
     }
 
     th, td {
       border: 1px solid #bfa76f;
-      padding: 10px;
+      padding: 0.5rem;
+      text-align: center;
     }
 
     th {
       background-color: #1a1a1a;
-    }
-
-    tr:hover {
-      background-color: #222;
-    }
-
-    a.mission-link {
       color: #bfa76f;
-      text-decoration: underline;
     }
 
-    a.mission-link:hover {
+    td a {
+      color: #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    td a:hover {
       color: #fff;
     }
 
@@ -67,122 +92,136 @@
       color: #fff;
     }
 
-    .binary-container {
+    /* Heartbeat animation */
+    .vitals {
+      margin: 2rem auto;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin: 1rem auto;
+      align-items: center;
+      flex-direction: column;
     }
 
-    .bit {
-      font-family: monospace;
-      font-size: 1.3rem;
-      color: #1a1a1a;
-      background-color: #1a1a1a;
-      border: 1px solid #bfa76f;
-      padding: 4px 8px;
-      animation: blink 2s infinite alternate;
+    .heart {
+      width: 60px;
+      height: 60px;
+      background-color: #bfa76f;
+      clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0 35%);
+      animation: beat 1.2s infinite;
     }
 
-    .bit:nth-child(1) { animation-delay: 0.2s; }
-    .bit:nth-child(2) { animation-delay: 0.4s; }
-    .bit:nth-child(3) { animation-delay: 0.6s; }
-    .bit:nth-child(4) { animation-delay: 0.8s; }
-    .bit:nth-child(5) { animation-delay: 1s; }
-    .bit:nth-child(6) { animation-delay: 1.2s; }
-    .bit:nth-child(7) { animation-delay: 1.4s; }
-    .bit:nth-child(8) { animation-delay: 1.6s; }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
 
-    @keyframes blink {
-      0%   { background-color: #1a1a1a; color: #1a1a1a; }
-      50%  { background-color: #bfa76f; color: #000; }
-      100% { background-color: #1a1a1a; color: #1a1a1a; }
+    .vital-text {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #bfa76f;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>Archivo X: Vida en órbita</h1>
-
-  <div class="binary-container">
-    <div class="bit">1</div>
-    <div class="bit">0</div>
-    <div class="bit">0</div>
-    <div class="bit">1</div>
-    <div class="bit">1</div>
-    <div class="bit">0</div>
-    <div class="bit">0</div>
-    <div class="bit">1</div>
+  <!-- LOADING SCREEN -->
+  <div class="loading" id="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Año</th>
-        <th>Misión / Animal</th>
-        <th>Agencia / País</th>
-        <th>Logro clave</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1947</td>
-        <td><a href="fruitflies.html" class="mission-link">Fruit flies</a></td>
-        <td>EE. UU.</td>
-        <td>Primeros seres vivos en alcanzar espacio</td>
-      </tr>
-      <tr>
-        <td>1949</td>
-        <td><a href="albert.html" class="mission-link">Albert II (mono)</a></td>
-        <td>EE. UU.</td>
-        <td>Primer mamífero en cruzar ~83 km (murió al reingresar)</td>
-      </tr>
-      <tr>
-        <td>1957</td>
-        <td><a href="laika.html" class="mission-link">Laika (perra)</a></td>
-        <td>URSS</td>
-        <td>Primera órbita terrestre con animal vivo (no sobrevivió)</td>
-      </tr>
-      <tr>
-        <td>1960</td>
-        <td><a href="belka_strelka.html" class="mission-link">Belka & Strelka</a></td>
-        <td>URSS</td>
-        <td>Orbitan y regresan vivos con ratones y plantas</td>
-      </tr>
-      <tr>
-        <td>1961</td>
-        <td><a href="ham_enos.html" class="mission-link">Ham / Enos (chimpancés)</a></td>
-        <td>EE. UU.</td>
-        <td>Demuestran tareas cognitivas en microgravedad</td>
-      </tr>
-      <tr>
-        <td>1966</td>
-        <td><a href="kosmos110.html" class="mission-link">Kosmos 110 (Veterok & Ugolyok)</a></td>
-        <td>URSS</td>
-        <td>Biociencia con perros y plantas por 22 días</td>
-      </tr>
-      <tr>
-        <td>1968</td>
-        <td><a href="zond5.html" class="mission-link">Zond 5 (tortugas)</a></td>
-        <td>URSS</td>
-        <td>Orbitan la Luna y regresan vivas</td>
-      </tr>
-      <tr>
-        <td>1983</td>
-        <td><a href="kosmos1514.html" class="mission-link">Kosmos 1514</a></td>
-        <td>URSS / EE. UU.</td>
-        <td>Investigación fisiológica avanzada colaborativa</td>
-      </tr>
-      <tr>
-        <td>1973</td>
-        <td><a href="kosmos605.html" class="mission-link">Kosmos 605</a></td>
-        <td>URSS</td>
-        <td>Efectos prolongados de microgravedad en varios seres</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- MAIN CONTENT -->
+  <div class="content" id="content">
+    <h1>Archivo X: Misiones Biologicas Espaciales</h1>
 
-  <a href="manifiesto.html" class="button">⬅ Volver al Manifiesto</a>
+    <!-- SIGNOS VITALES -->
+    <div class="vitals">
+      <div class="heart"></div>
+      <div class="vital-text">
+        HEART RATE: 102 bpm<br>
+        O2 LEVEL: 98%<br>
+        TEMP: 37.5°C<br>
+        STATUS: STABLE
+      </div>
+    </div>
 
+    <!-- TABLA DE MISIONES -->
+    <table>
+      <thead>
+        <tr>
+          <th>Año</th>
+          <th>Misión / Animal</th>
+          <th>Agencia / País</th>
+          <th>Logro clave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1947</td>
+          <td><a href="#">Fruit flies</a></td>
+          <td>EE. UU.</td>
+          <td>Primeros seres vivos en alcanzar espacio</td>
+        </tr>
+        <tr>
+          <td>1949</td>
+          <td><a href="#">Albert II (mono)</a></td>
+          <td>EE. UU.</td>
+          <td>Primer mamífero en cruzar ~83 km (murió al reingresar)</td>
+        </tr>
+        <tr>
+          <td>1957</td>
+          <td><a href="#">Laika (perra)</a></td>
+          <td>URSS</td>
+          <td>Primera órbita terrestre con animal vivo (no sobrevivió)</td>
+        </tr>
+        <tr>
+          <td>1960</td>
+          <td><a href="#">Belka & Strelka</a></td>
+          <td>URSS</td>
+          <td>Regresan vivos con ratones y plantas</td>
+        </tr>
+        <tr>
+          <td>1961</td>
+          <td><a href="#">Ham / Enos</a></td>
+          <td>EE. UU.</td>
+          <td>Demuestran tareas cognitivas en microgravedad</td>
+        </tr>
+        <tr>
+          <td>1966</td>
+          <td><a href="#">Kosmos 110</a></td>
+          <td>URSS</td>
+          <td>22 días en órbita con perros y plantas</td>
+        </tr>
+        <tr>
+          <td>1968</td>
+          <td><a href="#">Zond 5 (tortugas)</a></td>
+          <td>URSS</td>
+          <td>Orbitan la Luna y regresan vivas</td>
+        </tr>
+        <tr>
+          <td>1973</td>
+          <td><a href="#">Kosmos 605</a></td>
+          <td>URSS</td>
+          <td>Microgravedad prolongada en varios animales</td>
+        </tr>
+        <tr>
+          <td>1983</td>
+          <td><a href="#">Kosmos 1514</a></td>
+          <td>URSS / EE. UU.</td>
+          <td>Investigación fisiológica colaborativa</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="index.html" class="button">⬅ Volver al manifiesto</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
 </body>
 </html>
