@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Albert II - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .console-line {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+      border: 1px solid #bfa76f;
+    }
+
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 2rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    .binary-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 1rem auto;
+    }
+
+    .bit {
+      font-family: monospace;
+      font-size: 1.5rem;
+      color: #1a1a1a;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      padding: 4px 8px;
+      animation: blink 2s infinite alternate;
+      text-align: center;
+      min-width: 24px;
+    }
+
+    .bit:nth-child(1) { animation-delay: 0.2s; }
+    .bit:nth-child(2) { animation-delay: 0.4s; }
+    .bit:nth-child(3) { animation-delay: 0.6s; }
+    .bit:nth-child(4) { animation-delay: 0.8s; }
+    .bit:nth-child(5) { animation-delay: 1s; }
+    .bit:nth-child(6) { animation-delay: 1.2s; }
+    .bit:nth-child(7) { animation-delay: 1.4s; }
+    .bit:nth-child(8) { animation-delay: 1.6s; }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; color: #1a1a1a; }
+      50% { background-color: #bfa76f; color: #000; }
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    #console {
+      max-width: 360px;
+      margin: 2rem auto;
+      padding: 1rem;
+      border: 1px solid #bfa76f;
+      background-color: #000;
+      font-family: 'Courier New', monospace;
+      color: #bfa76f;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      box-shadow: 0 0 10px #1a1a1a;
+    }
+
+    #content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="console">
+    <div class="console-line">🔬 Life Monitor Console - SIGMA ULTRA</div>
+    <div class="console-line">❤️ Heart Rate: 80 BPM</div>
+    <div class="console-line">🩸 Blood Pressure: 120/80 mmHg</div>
+    <div class="console-line">🧪 Oxygen Level: 98%</div>
+    <div class="console-line">🌬️ Respiration: 18 RPM</div>
+    <div class="console-line">🌡️ Body Temp: 37°C</div>
+    <div class="console-line">📡 Link Status: Stable</div>
+    <div class="console-line">🔋 Battery: 85%</div>
+  </div>
+
+  <div id="content">
+    <h1>Albert II</h1>
+
+    <div class="binary-container">
+      <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div><div class="bit">1</div>
+      <div class="bit">1</div><div class="bit">0</div><div class="bit">0</div><div class="bit">1</div>
+    </div>
+
+    <img src="albert_2.png" alt="Imagen de Albert II" class="mission-img" />
+
+    <div class="info">
+      <p><b>Año:</b> 1949</p>
+      <p><b>Agencia / País:</b> EE. UU.</p>
+      <p><b>Tipo de misión:</b> Biológica suborbital</p>
+
+      <h2>Logro clave</h2>
+      <p>Albert II fue el primer mamífero en cruzar la línea de Kármán (~83 km), frontera reconocida del espacio exterior. Aunque murió durante la reentrada por un fallo en el sistema de recuperación, marcó un hito clave en la exploración biológica espacial.</p>
+
+      <h2>Legado</h2>
+      <p>Sentó las bases para futuras misiones tripuladas al validar los efectos del entorno espacial en organismos vivos. Fue parte del programa de cohetes V-2 adaptados para ciencia biomédica.</p>
+    </div>
+
+    <a href="archivo_x.html" class="button">⬅ Volver al Archivo X</a>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll('.console-line');
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        line.style.opacity = 1;
+      }, index * 700);
+    });
+
+    setTimeout(() => {
+      document.getElementById('console').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 700 * lines.length + 500);
+  </script>
+</body>
+</html>
+📌 ¿Qué contiene?
+✅ Transición animada de signos vitales, estilo consola.
+
+✅ Animación de código binario horizontal tipo WOW.
+
+✅ Ficha técnica en formato SIGMA ULTRA.
+
+✅ Botón de regreso a archivo_x.html.
+
+✅ Espacio para imagen albert_2.png.
+
+¿Quieres que el mismo sistema se use para cada ficha de animal espacial? Puedo generar la siguiente si me das el nombre. 🐒🐕
+
+Cambio y fuera… por ahora.
+
+
+
+
+
+
+
+
+
+Preguntar a ChatGPT
+
