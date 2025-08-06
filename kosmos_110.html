@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kosmos 110 – Archivo X</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1, h2, h3 {
+      color: #bfa76f;
+      text-align: center;
+    }
+
+    .console-line {
+      opacity: 0;
+      animation: appear 0.8s forwards;
+    }
+
+    .console-line:nth-child(1) { animation-delay: 0.5s; }
+    .console-line:nth-child(2) { animation-delay: 1s; }
+    .console-line:nth-child(3) { animation-delay: 1.5s; }
+    .console-line:nth-child(4) { animation-delay: 2s; }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    .console {
+      text-align: left;
+      margin: 2rem auto;
+      max-width: 400px;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid #bfa76f;
+      padding: 1rem;
+      background-color: #111;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    img.imagen-ficha {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 1rem auto;
+      border: 2px solid #bfa76f55;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px dashed #bfa76f33;
+      margin: 3rem 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      a.button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Signos Vitales Consola -->
+  <div class="console" id="console">
+    <div class="console-line">❤️ Ritmo cardíaco promedio: 102 BPM</div>
+    <div class="console-line">🩸 Presión arterial estimada: 130/85 mmHg</div>
+    <div class="console-line">🌡️ Temperatura corporal: 38.1°C</div>
+    <div class="console-line">📡 Estado del enlace: Estable durante 330 órbitas</div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Misión Kosmos 110</h1>
+
+    <img src="veterok.png" alt="Veterok" class="imagen-ficha">
+    
+
+    <h2>Ficha General</h2>
+    <ul>
+      <li><strong>Fecha de lanzamiento:</strong> 22 de febrero de 1966</li>
+      <li><strong>Duración total:</strong> 21 días y 22 horas</li>
+      <li><strong>Nación:</strong> Unión Soviética</li>
+      <li><strong>Órbitas completadas:</strong> 330</li>
+      <li><strong>Altitud promedio:</strong> 200 km</li>
+      <li><strong>Recuperación:</strong> Cápsula recuperada con éxito en la URSS</li>
+      <li><strong>Estado final de los sujetos:</strong> Débiles pero vivos</li>
+    </ul>
+
+    <h2>Tripulación Biológica</h2>
+    <ul>
+      <li><strong>Veterok:</strong> Perro macho, altamente entrenado, nombre significa “brisa ligera”.</li>
+      <li><strong>Ugolyok:</strong> Perro macho, menor tamaño, nombre significa “carboncito”.</li>
+    </ul>
+
+    <h2>Objetivo de la Misión</h2>
+    <p>
+      Kosmos 110 fue diseñada para estudiar los efectos prolongados de la microgravedad en organismos vivos. Se trató del experimento más largo en órbita con perros, con el objetivo de validar la viabilidad de futuras misiones humanas de larga duración.
+    </p>
+
+    <h2>Carga Biológica</h2>
+    <p>
+      La cápsula transportó dos perros junto con plantas, semillas, hongos, bacterias y otros organismos vivos. Además, estaba equipada con sensores para monitoreo fisiológico y condiciones automatizadas de soporte vital.
+    </p>
+
+    <img src="ugolyok.png" alt="Ugolyok" class="imagen-ficha">
+    
+    <h2>Impacto y Legado</h2>
+    <p>
+      Kosmos 110 rompió todos los récords de duración biológica en órbita y fue clave para el desarrollo de la tecnología Soyuz y de estaciones espaciales. Fue también la última misión soviética en enviar perros al espacio. Veterok y Ugolyok no volaron más, pero su legado quedó grabado como pioneros silenciosos de la exploración prolongada.
+    </p>
+
+    <a href="archivo_x.html" class="button">⬅ Regresar al Archivo X</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('console').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 7000);
+  </script>
+</body>
+</html>
