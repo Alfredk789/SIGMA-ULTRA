@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laika - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #bfa76f;
+    }
+
+    .console-line {
+      opacity: 0;
+      animation: appear 0.8s forwards;
+    }
+
+    .console-line:nth-child(1) { animation-delay: 0.5s; }
+    .console-line:nth-child(2) { animation-delay: 1s; }
+    .console-line:nth-child(3) { animation-delay: 1.5s; }
+    .console-line:nth-child(4) { animation-delay: 2s; }
+    .console-line:nth-child(5) { animation-delay: 2.5s; }
+    .console-line:nth-child(6) { animation-delay: 3s; }
+    .console-line:nth-child(7) { animation-delay: 3.5s; }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    .console {
+      text-align: left;
+      margin: 2rem auto;
+      max-width: 400px;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid #bfa76f;
+      padding: 1rem;
+      background-color: #111;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .mission-img {
+      width: 100%;
+      max-width: 300px;
+      margin: 1.5rem auto;
+      display: block;
+      border: 1px solid #bfa76f;
+    }
+
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 2rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .leds {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 1.5rem auto;
+    }
+
+    .led {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #333;
+      animation: blink 2s infinite alternate;
+    }
+
+    .led:nth-child(1) { animation-delay: 0.2s; background-color: red; }
+    .led:nth-child(2) { animation-delay: 0.4s; background-color: lime; }
+    .led:nth-child(3) { animation-delay: 0.6s; background-color: cyan; }
+    .led:nth-child(4) { animation-delay: 0.8s; background-color: yellow; }
+    .led:nth-child(5) { animation-delay: 1s; background-color: orange; }
+
+    @keyframes blink {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Consola de signos vitales -->
+  <div class="console" id="console">
+    <div class="console-line">❤️ Ritmo cardíaco: 105 BPM</div>
+    <div class="console-line">🩸 Presión arterial: 135/90 mmHg</div>
+    <div class="console-line">🧪 Oxígeno en sangre: 97%</div>
+    <div class="console-line">🌬️ Respiración: 24 RPM</div>
+    <div class="console-line">🌡️ Temperatura corporal: 38.3°C</div>
+    <div class="console-line">📡 Estado del enlace: Estable</div>
+    <div class="console-line">🔋 Nivel batería: 78%</div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content" id="content">
+    <h1>Laika</h1>
+    <div class="leds">
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+      <div class="led"></div>
+    </div>
+
+    <img src="laika.png" alt="Laika" class="mission-img">
+
+    <div class="info">
+      <p><b>Nombre:</b> Laika (originalmente llamada Kudryavka)</p>
+      <p><b>Fecha de lanzamiento:</b> 3 de noviembre de 1957</p>
+      <p><b>País:</b> URSS</p>
+      <p><b>Vehículo:</b> Sputnik 2</p>
+
+      <h2> Misión</h2>
+      <p>
+        Laika fue el primer ser vivo en orbitar la Tierra a bordo del Sputnik 2. Su misión buscaba comprobar si un organismo podía sobrevivir en condiciones de microgravedad y lanzamientos espaciales prolongados.
+      </p>
+
+      <h2> Relevancia</h2>
+      <p>
+        Aunque no se planeó su retorno, Laika fue equipada con sensores biométricos que transmitieron datos valiosos durante sus primeras horas en órbita. Su sacrificio impulsó la bioastronáutica y el desarrollo de futuras cápsulas tripuladas.
+      </p>
+
+      <h2> Legado</h2>
+      <p>
+        La misión de Laika demostró que un organismo vivo podía soportar el lanzamiento espacial, abrir la puerta a los vuelos tripulados y generar conciencia sobre la ética en experimentación animal. En 2008, se erigió un monumento en su honor en Moscú.
+      </p>
+    </div>
+
+    <a href="archivo_x.html" class="button">⬅ Regresar al Archivo X</a>
+  </div>
+
+  <script>
+    // Mostrar contenido después de consola
+    setTimeout(() => {
+      document.getElementById('console').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 7000);
+  </script>
+</body>
+</html>
