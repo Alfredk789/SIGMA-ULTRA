@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAM & ENOS – Archivo X</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HAM & ENOS – Archivo X SIGMA ULTRA</title>
   <style>
     body {
       background-color: #000;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
+      padding: 1.5rem;
+      text-align: center;
       margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-
-    .contenedor {
-      max-width: 900px;
-      margin: auto;
     }
 
     h1, h2, h3 {
       color: #bfa76f;
-      border-bottom: 1px solid #bfa76f33;
-      padding-bottom: 0.3rem;
+    }
+
+    .console-line {
+      opacity: 0;
+      animation: appear 0.8s forwards;
+    }
+
+    .console-line:nth-child(1) { animation-delay: 0.5s; }
+    .console-line:nth-child(2) { animation-delay: 1s; }
+    .console-line:nth-child(3) { animation-delay: 1.5s; }
+    .console-line:nth-child(4) { animation-delay: 2s; }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+
+    .console {
+      text-align: left;
+      margin: 2rem auto;
+      max-width: 400px;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid #bfa76f;
+      padding: 1rem;
+      background-color: #111;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .content {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
     }
 
     img.imagen-ficha {
@@ -38,23 +64,20 @@
       padding-left: 1.5rem;
     }
 
-    .boton-regreso {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .btn-regreso {
-      padding: 0.8rem 2rem;
-      border: 2px solid #bfa76f;
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
       color: #bfa76f;
+      border: 1px solid #bfa76f;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s, color 0.3s;
     }
 
-    .btn-regreso:hover {
-      background-color: #bfa76f;
-      color: #000;
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
     }
 
     hr {
@@ -68,19 +91,28 @@
         padding: 1rem;
       }
 
-      .btn-regreso {
-        display: inline-block;
+      a.button {
         width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="contenedor">
-    <h1> Archivo X – Expediente Biológico Doble</h1>
-    <h2>Sujeto Alfa: HAM</h2>
 
-    <img src="ham.png" alt="HAM en su cápsula" class="imagen-ficha" />
+  <h1> Archivo X – Expediente Biológico Doble</h1>
+
+  <!-- Signos Vitales HAM -->
+  <div class="console" id="console-ham">
+    <div class="console-line">❤️ Frecuencia cardíaca: 210 BPM</div>
+    <div class="console-line">🩸 Presión arterial: 160/95 mmHg</div>
+    <div class="console-line">🧠 Estado mental: Alerta, buena respuesta motora</div>
+    <div class="console-line">🤕 Lesiones: Contusiones leves</div>
+  </div>
+
+  <div class="content" id="content-ham">
+    <h2>Sujeto Alfa: HAM</h2>
+    <img src="images/ham.png" alt="HAM en su cápsula" class="imagen-ficha" />
 
     <h3> Ficha Técnica – HAM</h3>
     <ul>
@@ -101,18 +133,20 @@
       HAM fue el primer chimpancé entrenado para operar controles dentro de una cápsula espacial. Su misión demostró que los humanos podrían mantener funciones cognitivas en el espacio. Tras un vuelo exitoso, aunque con desviaciones, HAM regresó con vida y se convirtió en el precursor directo del vuelo tripulado de Alan Shepard.
     </p>
 
-    <h3> Signos Vitales – Reingreso</h3>
-    <ul>
-      <li><strong>Frecuencia cardíaca:</strong> 210 bpm</li>
-      <li><strong>Presión arterial:</strong> 160/95 mmHg</li>
-      <li><strong>Estado mental:</strong> Alerta, buena respuesta motora</li>
-      <li><strong>Lesiones:</strong> Contusiones leves</li>
-    </ul>
-
     <hr />
+  </div>
 
+  <!-- Signos Vitales ENOS -->
+  <div class="console" id="console-enos">
+    <div class="console-line">❤️ Frecuencia cardíaca: 190 BPM</div>
+    <div class="console-line">🩸 Presión arterial: 155/92 mmHg</div>
+    <div class="console-line">🧠 Estado mental: Concentrado y activo</div>
+    <div class="console-line">🩹 Lesiones: Ninguna significativa</div>
+  </div>
+
+  <div class="content" id="content-enos">
     <h2>Sujeto Beta: ENOS</h2>
-    <img src="enos2.png" alt="ENOS en órbita" class="imagen-ficha" />
+    <img src="images/enos.png" alt="ENOS en órbita" class="imagen-ficha" />
 
     <h3> Ficha Técnica – ENOS</h3>
     <ul>
@@ -132,17 +166,32 @@
       ENOS fue el primer chimpancé en completar una órbita terrestre. Durante su vuelo enfrentó fallas técnicas reales, lo que le obligó a ejecutar comandos manuales bajo presión. A pesar de los riesgos, se comportó de forma ejemplar, confirmando que un ser humano podría sobrevivir y operar eficientemente en una misión orbital.
     </p>
 
-    <h3> Signos Vitales – Reingreso</h3>
-    <ul>
-      <li><strong>Frecuencia cardíaca:</strong> 190 bpm</li>
-      <li><strong>Presión arterial:</strong> 155/92 mmHg</li>
-      <li><strong>Estado mental:</strong> Concentrado y activo</li>
-      <li><strong>Lesiones:</strong> Ninguna significativa</li>
-    </ul>
-
-    <div class="boton-regreso">
-      <a href="archivo_x.html" class="btn-regreso">⬅ Regresar al Archivo X</a>
-    </div>
+    <a href="archivo_x.html" class="button">⬅ Regresar al Archivo X</a>
   </div>
+
+  <script>
+    // Mostrar contenido HAM después de consola
+    setTimeout(() => {
+      document.getElementById('console-ham').style.display = 'none';
+      document.getElementById('content-ham').style.display = 'block';
+    }, 7000);
+
+    // Mostrar contenido ENOS después de consola
+    setTimeout(() => {
+      document.getElementById('console-enos').style.display = 'none';
+      document.getElementById('content-enos').style.display = 'block';
+    }, 14000); // inicia después de HAM
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
