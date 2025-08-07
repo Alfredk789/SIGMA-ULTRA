@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kosmos 1514 – Proyecto SIGMA ULTRA</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+    }
+    .console-line {
+      display: inline-block;
+      opacity: 0;
+      animation: typeIn 0.1s forwards;
+    }
+    @keyframes typeIn {
+      to { opacity: 1; }
+    }
+    #main-content {
+      display: none;
+    }
+    .image-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 60%;
+      border: 2px solid #bfa76f;
+      padding: 5px;
+    }
+    .back-button {
+      display: block;
+      margin-top: 50px;
+      color: #bfa76f;
+      text-decoration: none;
+      border: 1px solid #bfa76f;
+      padding: 10px 20px;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+
+<div id="console">
+  <span class="console-line" style="animation-delay: 0s">l</span>
+  <span class="console-line" style="animation-delay: 0.1s">o</span>
+  <span class="console-line" style="animation-delay: 0.2s">a</span>
+  <span class="console-line" style="animation-delay: 0.3s">d</span>
+  <span class="console-line" style="animation-delay: 0.4s">i</span>
+  <span class="console-line" style="animation-delay: 0.5s">n</span>
+  <span class="console-line" style="animation-delay: 0.6s">g</span>
+  <span class="console-line" style="animation-delay: 0.7s">.</span>
+  <span class="console-line" style="animation-delay: 0.8s">.</span>
+  <span class="console-line" style="animation-delay: 0.9s">.</span>
+</div>
+
+<div id="main-content">
+  <h1>Kosmos 1514</h1>
+
+  <div class="image-container">
+    <img src="kosmos1514.png" alt="Kosmos 1514">
+  </div>
+
+  <h2>Datos Técnicos</h2>
+  <ul>
+    <li><strong>Nombre:</strong> Kosmos 1514</li>
+    <li><strong>Fecha de lanzamiento:</strong> 7 de diciembre de 1983</li>
+    <li><strong>Vehículo de lanzamiento:</strong> Soyuz-U</li>
+    <li><strong>Tipo de satélite:</strong> Bion 6 (biológico)</li>
+    <li><strong>Duración de la misión:</strong> 5 días</li>
+    <li><strong>Órbitas completadas:</strong> 81</li>
+    <li><strong>Recuperación:</strong> Éxito total, cápsula recuperada con especímenes vivos</li>
+  </ul>
+
+  <h2>Objetivo de la Misión</h2>
+  <p>
+    Kosmos 1514, también conocido como **Bion 6**, fue parte del programa soviético de vuelos biológicos. Su objetivo fue
+    estudiar los efectos de la microgravedad en organismos complejos, como mamíferos y humanos simulados, para la preparación
+    de misiones espaciales prolongadas.
+  </p>
+
+  <h2>Carga Científica</h2>
+  <p>
+    A bordo se encontraban:
+    <ul>
+      <li>Ratas albinas (biomarcadores)</li>
+      <li>Monos rhesus con sensores fisiológicos</li>
+      <li>Ranas, insectos y cultivos celulares</li>
+      <li>Simulaciones de tejidos humanos en microgravedad</li>
+    </ul>
+  </p>
+
+  <h2>Impacto Histórico</h2>
+  <p>
+    Kosmos 1514 representó una evolución clave del programa **Bion**. Introdujo equipamiento médico más avanzado, permitió experimentación
+    neurofisiológica remota y sentó las bases para futuras colaboraciones científicas con instituciones de occidente.
+    Sus resultados fueron cruciales para el entendimiento de la degeneración muscular y ósea en entornos sin gravedad.
+  </p>
+
+  <a href="archivo_x.html" class="back-button">← Regresar al Archivo X</a>
+</div>
+
+<script>
+  // Mostrar el contenido principal tras 3 segundos
+  setTimeout(() => {
+    document.getElementById("console").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  }, 3000);
+</script>
+
+</body>
+</html>
