@@ -2,128 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Kosmos 605 – Proyecto SIGMA ULTRA</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Kosmos 605 - SIGMA ULTRA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background-color: #0a0a0a;
+      margin: 0;
+      background-color: black;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
-      padding: 20px;
-      text-align: left;
     }
-    .console-container {
-      height: 100vh;
+
+    /* Pantalla de carga */
+    #loading {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .console-line {
-      display: inline-block;
-      opacity: 0;
-      animation: typeIn 0.1s forwards;
-      font-size: 2em;
-    }
-    @keyframes typeIn {
-      to { opacity: 1; }
-    }
-    #main-content {
-      display: none;
-    }
-    .image-container {
-      margin: 30px 0;
       text-align: center;
+      height: 100vh;
+      background-color: black;
+      font-size: 3rem;
+      font-weight: bold;
     }
-    .image-container img {
-      max-width: 70%;
-      border: 2px solid #bfa76f;
-      padding: 5px;
+
+    /* Ajuste para móviles */
+    @media (max-width: 600px) {
+      #loading {
+        font-size: 2rem;
+      }
     }
-    .back-button {
+
+    /* Botón de regreso */
+    .boton-regreso {
       display: block;
-      margin: 50px auto;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #bfa76f;
       color: #bfa76f;
+      font-size: 1.1rem;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
       text-decoration: none;
-      border: 1px solid #bfa76f;
-      padding: 10px 20px;
-      width: fit-content;
-      font-size: 7em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      max-width: 200px;
+    }
+
+    .boton-regreso:hover {
+      background-color: #bfa76f;
+      color: black;
+    }
+
+    /* Contenido principal oculto inicialmente */
+    #contenido {
+      display: none;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-<div id="console" class="console-container">
-  <div>
-.console-line {
-  display: inline-block;
-  opacity: 0;
-  animation: typeIn 0.1s forwards;
-  font-size: 24px; 
-}   
-    <span class="console-line" style="animation-delay: 0s">l</span>
-    <span class="console-line" style="animation-delay: 0.1s">o</span>
-    <span class="console-line" style="animation-delay: 0.2s">a</span>
-    <span class="console-line" style="animation-delay: 0.3s">d</span>
-    <span class="console-line" style="animation-delay: 0.4s">i</span>
-    <span class="console-line" style="animation-delay: 0.5s">n</span>
-    <span class="console-line" style="animation-delay: 0.6s">g</span>
-    <span class="console-line" style="animation-delay: 0.7s">.</span>
-    <span class="console-line" style="animation-delay: 0.8s">.</span>
-    <span class="console-line" style="animation-delay: 0.9s">.</span>
-  </div>
-</div>
+  <!-- Transición tipo SIGMA ULTRA -->
+  <div id="loading">loading...</div>
 
-<div id="main-content">
-  <h1>Kosmos 605</h1>
+  <!-- Contenido de la ficha técnica -->
+  <div id="contenido">
+    <h1>Ficha Técnica: Kosmos 605</h1>
+    <img src="kosmos605.png" alt="Kosmos 605" style="width:100%; max-width:400px; display:block; margin:20px auto;">
 
-  <div class="image-container">
-    <img src="kosmos605.png" alt="Kosmos 605">
-  </div>
-
-  <h2>Datos Técnicos</h2>
-  <ul>
-    <li><strong>Nombre:</strong> Kosmos 605</li>
-    <li><strong>Fecha de lanzamiento:</strong> 30 de octubre de 1973</li>
-    <li><strong>Vehículo de lanzamiento:</strong> Soyuz-U</li>
-    <li><strong>Tipo de satélite:</strong> Bion 1 (biológico)</li>
-    <li><strong>Duración de la misión:</strong> 21 días</li>
-    <li><strong>Recuperación:</strong> Cápsula recuperada exitosamente</li>
-  </ul>
-
-  <h2>Objetivo de la Misión</h2>
-  <p>
-    Kosmos 605, el primer satélite de la serie **Bion**, marcó el inicio de los experimentos biológicos a largo plazo en órbita terrestre.
-    El propósito fue observar cómo organismos vivos reaccionaban a exposiciones prolongadas en condiciones de microgravedad.
-  </p>
-
-  <h2>Carga Científica</h2>
-  <p>
-    La cápsula transportó una variedad de organismos incluyendo:
+    <h2>Datos Técnicos</h2>
     <ul>
-      <li>Ranas Xenopus laevis</li>
-      <li>Bacterias y algas</li>
-      <li>Huevos de peces</li>
-      <li>Semillas y musgos</li>
+      <li>Nombre: Kosmos 605</li>
+      <li>Fecha de lanzamiento: 30 de septiembre de 1973</li>
+      <li>Tipo: Satélite de reconocimiento biomédico</li>
+      <li>Duración de la misión: 21 días</li>
     </ul>
-    Estos organismos fueron monitoreados para evaluar sus adaptaciones fisiológicas y estructurales en ausencia de gravedad.
-  </p>
 
-  <h2>Impacto Histórico</h2>
-  <p>
-    Como primera misión del programa Bion, Kosmos 605 demostró la viabilidad de realizar investigaciones biológicas complejas en el espacio.
-    Sus resultados contribuyeron a sentar las bases de la medicina espacial y el estudio de los ciclos celulares en condiciones extraterrestres.
-  </p>
+    <h2>Objetivo de la Misión</h2>
+    <p>
+      Kosmos 605 fue una misión biológica no tripulada soviética lanzada con el objetivo de estudiar los efectos de la microgravedad en organismos vivos. Transportó ratones, insectos, microorganismos y plantas a la órbita terrestre baja.
+    </p>
 
-  <a href="archivo_x.html" class="back-button">← Regresar al Archivo X</a>
-</div>
+    <h2>Resultados</h2>
+    <p>
+      La misión permitió recopilar datos importantes sobre la adaptación celular, el metabolismo y los efectos a largo plazo de la exposición espacial en distintos organismos vivos. Fue una de las precursoras del programa Bion.
+    </p>
 
-<script>
-  setTimeout(() => {
-    document.getElementById("console").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-  }, 3000);
-</script>
+    <a href="archivo_x.html" class="boton-regreso">⟵ Regresar al Archivo X</a>
+  </div>
 
+  <!-- Script para mostrar contenido luego de 3 segundos -->
+  <script>
+    setTimeout(function () {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    }, 3000);
+  </script>
 </body>
 </html>
+
+
