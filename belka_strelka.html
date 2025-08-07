@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archivo X | Belka & Strelka</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0d0d0d;
+      color: #bfa76f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0d0d0d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loading-text {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar {
+      width: 80%;
+      height: 10px;
+      background-color: #333;
+      overflow: hidden;
+      border: 1px solid #bfa76f;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background-color: #bfa76f;
+      animation: fillBar 3s linear forwards;
+    }
+
+    @keyframes fillBar {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    #content {
+      display: none;
+      padding: 20px;
+      max-width: 900px;
+      text-align: justify;
+    }
+
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 2px solid #bfa76f;
+    }
+
+    .back-button {
+      margin-top: 40px;
+      padding: 12px 20px;
+      background-color: transparent;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .back-button:hover {
+      background-color: #bfa76f;
+      color: #0d0d0d;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <div id="loading-text">Cargando archivo...</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <div id="content">
+    <h1>Belka & Strelka</h1>
+    <img src="belka.png" alt="Belka y Strelka">
+    
+    <p><strong>Misión:</strong> Sputnik 5</p>
+    <p><strong>Fecha de lanzamiento:</strong> 19 de agosto de 1960</p>
+    <p><strong>Duración de la misión:</strong> Aproximadamente 1 día</p>
+
+    <h2>Contexto histórico</h2>
+    <p>
+      Belka y Strelka fueron las primeras perras en regresar con vida tras un vuelo espacial orbital. 
+      Lanzadas a bordo de la nave <strong>Sputnik 5</strong>, completaron múltiples órbitas alrededor de la Tierra antes de regresar sanas y salvas, convirtiéndose en símbolos nacionales de la carrera espacial soviética.
+    </p>
+
+    <p>
+      A bordo del vehículo también viajaban un conejo, 40 ratones, dos ratas, varias plantas y hongos, como parte de un estudio integral sobre los efectos de la microgravedad. 
+      El éxito de esta misión fue un hito clave que allanó el camino para el vuelo de Yuri Gagarin en 1961.
+    </p>
+
+    <h2>Legado y curiosidades</h2>
+    <ul>
+      <li>Después de su misión, ambas fueron homenajeadas y vivieron el resto de sus vidas en condiciones especiales bajo cuidado científico.</li>
+      <li>Strelka tuvo una camada de cachorros. Uno de ellos, llamada Pushinka, fue enviada como regalo por Nikita Jrushchov a la familia del presidente estadounidense John F. Kennedy.</li>
+      <li>Sus cuerpos fueron preservados y se exhiben en el Museo de Cosmonáutica de Moscú.</li>
+      <li>El éxito de Belka y Strelka reforzó la confianza soviética en la posibilidad de enviar humanos al espacio y recuperarlos con vida.</li>
+    </ul>
+
+    <p>Belka y Strelka se convirtieron en leyendas vivientes de la biología espacial, y sus datos aún se consideran fundamentales en los archivos de estudios sobre la vida en órbita.</p>
+
+    <button class="back-button" onclick="window.location.href='archivo_x.html'">← Volver al Archivo X</button>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading-screen").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }, 3000);
+  </script>
+</body>
+</html>
