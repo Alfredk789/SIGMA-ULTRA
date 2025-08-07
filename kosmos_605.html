@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Kosmos 605 – Proyecto SIGMA ULTRA</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      text-align: left;
+    }
+    .console-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .console-line {
+      display: inline-block;
+      opacity: 0;
+      animation: typeIn 0.1s forwards;
+      font-size: 2em;
+    }
+    @keyframes typeIn {
+      to { opacity: 1; }
+    }
+    #main-content {
+      display: none;
+    }
+    .image-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 70%;
+      border: 2px solid #bfa76f;
+      padding: 5px;
+    }
+    .back-button {
+      display: block;
+      margin: 50px auto;
+      color: #bfa76f;
+      text-decoration: none;
+      border: 1px solid #bfa76f;
+      padding: 10px 20px;
+      width: fit-content;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+<div id="console" class="console-container">
+  <div>
+    <span class="console-line" style="animation-delay: 0s">l</span>
+    <span class="console-line" style="animation-delay: 0.1s">o</span>
+    <span class="console-line" style="animation-delay: 0.2s">a</span>
+    <span class="console-line" style="animation-delay: 0.3s">d</span>
+    <span class="console-line" style="animation-delay: 0.4s">i</span>
+    <span class="console-line" style="animation-delay: 0.5s">n</span>
+    <span class="console-line" style="animation-delay: 0.6s">g</span>
+    <span class="console-line" style="animation-delay: 0.7s">.</span>
+    <span class="console-line" style="animation-delay: 0.8s">.</span>
+    <span class="console-line" style="animation-delay: 0.9s">.</span>
+  </div>
+</div>
+
+<div id="main-content">
+  <h1>Kosmos 605</h1>
+
+  <div class="image-container">
+    <img src="kosmos605.png" alt="Kosmos 605">
+  </div>
+
+  <h2>Datos Técnicos</h2>
+  <ul>
+    <li><strong>Nombre:</strong> Kosmos 605</li>
+    <li><strong>Fecha de lanzamiento:</strong> 30 de octubre de 1973</li>
+    <li><strong>Vehículo de lanzamiento:</strong> Soyuz-U</li>
+    <li><strong>Tipo de satélite:</strong> Bion 1 (biológico)</li>
+    <li><strong>Duración de la misión:</strong> 21 días</li>
+    <li><strong>Recuperación:</strong> Cápsula recuperada exitosamente</li>
+  </ul>
+
+  <h2>Objetivo de la Misión</h2>
+  <p>
+    Kosmos 605, el primer satélite de la serie **Bion**, marcó el inicio de los experimentos biológicos a largo plazo en órbita terrestre.
+    El propósito fue observar cómo organismos vivos reaccionaban a exposiciones prolongadas en condiciones de microgravedad.
+  </p>
+
+  <h2>Carga Científica</h2>
+  <p>
+    La cápsula transportó una variedad de organismos incluyendo:
+    <ul>
+      <li>Ranas Xenopus laevis</li>
+      <li>Bacterias y algas</li>
+      <li>Huevos de peces</li>
+      <li>Semillas y musgos</li>
+    </ul>
+    Estos organismos fueron monitoreados para evaluar sus adaptaciones fisiológicas y estructurales en ausencia de gravedad.
+  </p>
+
+  <h2>Impacto Histórico</h2>
+  <p>
+    Como primera misión del programa Bion, Kosmos 605 demostró la viabilidad de realizar investigaciones biológicas complejas en el espacio.
+    Sus resultados contribuyeron a sentar las bases de la medicina espacial y el estudio de los ciclos celulares en condiciones extraterrestres.
+  </p>
+
+  <a href="archivo_x.html" class="back-button">← Regresar al Archivo X</a>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("console").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  }, 3000);
+</script>
+
+</body>
+</html>
