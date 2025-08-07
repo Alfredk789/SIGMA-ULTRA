@@ -2,20 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archivo X | Belka & Strelka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belka y Strelka - Archivo X</title>
   <style>
     body {
       margin: 0;
       font-family: 'Courier New', Courier, monospace;
       background-color: #0d0d0d;
       color: #bfa76f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
     }
 
     #loading-screen {
@@ -27,29 +22,29 @@
       background-color: #0d0d0d;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      z-index: 9999;
+      align-items: center;
+      z-index: 1000;
     }
 
-    #loading-text {
+    .loading-text {
       font-size: 1.5rem;
       margin-bottom: 20px;
     }
 
-    .progress-bar {
-      width: 80%;
+    .loader-bar {
+      width: 200px;
       height: 10px;
-      background-color: #333;
-      overflow: hidden;
       border: 1px solid #bfa76f;
+      position: relative;
+      overflow: hidden;
     }
 
-    .progress-fill {
-      width: 0%;
-      height: 100%;
+    .loader-fill {
       background-color: #bfa76f;
-      animation: fillBar 3s linear forwards;
+      height: 100%;
+      width: 0%;
+      animation: fillBar 3s forwards;
     }
 
     @keyframes fillBar {
@@ -61,24 +56,27 @@
       display: none;
       padding: 20px;
       max-width: 900px;
+      margin: 0 auto;
       text-align: justify;
     }
 
     img {
       max-width: 100%;
-      margin: 20px 0;
+      height: auto;
+      display: block;
+      margin: 30px auto;
       border: 2px solid #bfa76f;
     }
 
     .back-button {
-      margin-top: 40px;
-      padding: 12px 20px;
-      background-color: transparent;
-      color: #bfa76f;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
       border: 1px solid #bfa76f;
-      font-size: 1rem;
-      cursor: pointer;
-      text-transform: uppercase;
+      color: #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .back-button:hover {
@@ -88,50 +86,41 @@
   </style>
 </head>
 <body>
+
   <div id="loading-screen">
-    <div id="loading-text">Cargando archivo...</div>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
+    <div class="loading-text">Cargando archivo...</div>
+    <div class="loader-bar">
+      <div class="loader-fill"></div>
     </div>
   </div>
 
   <div id="content">
-    <h1>Belka & Strelka</h1>
+    <h1>Belka y Strelka</h1>
+
     <img src="belka.png" alt="Belka y Strelka">
-    
-    <p><strong>Misión:</strong> Sputnik 5</p>
-    <p><strong>Fecha de lanzamiento:</strong> 19 de agosto de 1960</p>
-    <p><strong>Duración de la misión:</strong> Aproximadamente 1 día</p>
 
-    <h2>Contexto histórico</h2>
-    <p>
-      Belka y Strelka fueron las primeras perras en regresar con vida tras un vuelo espacial orbital. 
-      Lanzadas a bordo de la nave <strong>Sputnik 5</strong>, completaron múltiples órbitas alrededor de la Tierra antes de regresar sanas y salvas, convirtiéndose en símbolos nacionales de la carrera espacial soviética.
-    </p>
+    <p><strong>Belka</strong> ("Ardilla") y <strong>Strelka</strong> ("Flechita") fueron dos perras soviéticas que hicieron historia al convertirse en los primeros seres vivos en orbitar la Tierra y regresar con vida a bordo de la nave <strong>Sputnik 5</strong>, el 19 de agosto de 1960.</p>
 
-    <p>
-      A bordo del vehículo también viajaban un conejo, 40 ratones, dos ratas, varias plantas y hongos, como parte de un estudio integral sobre los efectos de la microgravedad. 
-      El éxito de esta misión fue un hito clave que allanó el camino para el vuelo de Yuri Gagarin en 1961.
-    </p>
+    <p>Esta misión fue un hito crucial en la carrera espacial, ya que demostró que un organismo vivo podía sobrevivir a las condiciones extremas del espacio, al reingreso atmosférico y al aterrizaje. Belka y Strelka viajaron junto a ratones, ratas, plantas y otros organismos, en una cápsula equipada con sensores, cámaras y sistemas de soporte vital.</p>
 
-    <h2>Legado y curiosidades</h2>
-    <ul>
-      <li>Después de su misión, ambas fueron homenajeadas y vivieron el resto de sus vidas en condiciones especiales bajo cuidado científico.</li>
-      <li>Strelka tuvo una camada de cachorros. Uno de ellos, llamada Pushinka, fue enviada como regalo por Nikita Jrushchov a la familia del presidente estadounidense John F. Kennedy.</li>
-      <li>Sus cuerpos fueron preservados y se exhiben en el Museo de Cosmonáutica de Moscú.</li>
-      <li>El éxito de Belka y Strelka reforzó la confianza soviética en la posibilidad de enviar humanos al espacio y recuperarlos con vida.</li>
-    </ul>
+    <p>Durante las 24 horas que duró su misión, realizaron 17 órbitas alrededor del planeta. Se les monitoreó constantemente, y las imágenes enviadas a la Tierra mostraban que ambas permanecieron activas y en buen estado de salud.</p>
 
-    <p>Belka y Strelka se convirtieron en leyendas vivientes de la biología espacial, y sus datos aún se consideran fundamentales en los archivos de estudios sobre la vida en órbita.</p>
+    <p>Su regreso exitoso pavimentó el camino para los vuelos humanos, siendo uno de los pasos directos hacia el histórico vuelo de Yuri Gagarin en 1961.</p>
 
-    <button class="back-button" onclick="window.location.href='archivo_x.html'">← Volver al Archivo X</button>
+    <p>Tras su regreso, Belka y Strelka se convirtieron en celebridades internacionales. Strelka incluso tuvo una camada de cachorros, uno de los cuales fue regalado a la hija del presidente estadounidense John F. Kennedy como gesto diplomático durante la Guerra Fría.</p>
+
+    <p>Hoy, sus cuerpos embalsamados se encuentran en el Museo de la Cosmonáutica en Moscú, como símbolos del coraje y del avance científico en la exploración espacial.</p>
+
+    <a href="archivo_x.html" class="back-button">⬅ Regresar al Archivo X</a>
   </div>
 
   <script>
-    setTimeout(() => {
-      document.getElementById("loading-screen").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    }, 3000);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 3000);
+    });
   </script>
 </body>
 </html>
