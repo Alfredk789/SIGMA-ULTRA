@@ -1,113 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fruit Flies - Archivo X</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit Fly Lab - SIGMA ULTRA</title>
   <style>
     body {
       margin: 0;
       font-family: 'Courier New', Courier, monospace;
-      background-color: #0d0d0d;
+      background-color: #000;
       color: #bfa76f;
-    }
-
-    .loading-screen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: #0d0d0d;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
+    }
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      color: #bfa76f;
+      display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       z-index: 9999;
     }
-
-    .loading-text {
-      font-size: 1.8rem;
+    .progress-bar {
+      width: 80%;
+      height: 10px;
+      background: #333;
+      margin-top: 10px;
+      overflow: hidden;
     }
-
-    .dots::after {
-      content: '';
-      animation: dots 1s steps(3, end) infinite;
+    .progress {
+      height: 100%;
+      background: #bfa76f;
+      width: 0;
+      animation: load 3s linear forwards;
     }
-
-    @keyframes dots {
-      0%   { content: ''; }
-      33%  { content: '.'; }
-      66%  { content: '..'; }
-      100% { content: '...'; }
+    @keyframes load {
+      from { width: 0; }
+      to { width: 100%; }
     }
-
-    .content {
-      display: none;
-      padding: 20px;
+    .container {
       max-width: 800px;
-      margin: 0 auto;
+      padding: 20px;
+      display: none;
     }
-
     img {
-      display: block;
       max-width: 100%;
-      margin: 20px auto;
+      margin-bottom: 20px;
     }
-
-    .back-button {
-      display: block;
-      margin: 40px auto;
-      padding: 10px 25px;
-      background-color: #1a1a1a;
-      color: #bfa76f;
-      border: 2px solid #bfa76f;
-      font-size: 1rem;
+    .button {
+      margin-top: 30px;
+      background-color: #bfa76f;
+      color: #000;
+      padding: 10px 20px;
       text-decoration: none;
-      text-align: center;
-      width: fit-content;
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 5px;
     }
-
     @media (max-width: 600px) {
-      .loading-text {
-        font-size: 1.5rem;
-      }
-
-      .back-button {
-        font-size: 0.9rem;
-        padding: 8px 20px;
+      .container {
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="loading-screen">
-    <div class="loading-text">Cargando archivo<span class="dots"></span></div>
+  <div id="loader">
+    <h2>CARGANDO ARCHIVO...</h2>
+    <div class="progress-bar"><div class="progress"></div></div>
   </div>
 
-  <div class="content">
-    <h1>Fruit Flies (Drosophila melanogaster)</h1>
-    <img src="fruit.png" alt="Fruit Flies">
-    
-    <h2>Ficha Técnica</h2>
-    <p><strong>Nombre común:</strong> Moscas de la fruta</p>
-    <p><strong>Especie:</strong> Drosophila melanogaster</p>
-    <p><strong>Tipo de misión:</strong> Biológica</p>
-    <p><strong>Primera misión registrada:</strong> V-2 (EE.UU., 1947)</p>
-    <p><strong>Objetivo:</strong> Estudiar los efectos de la radiación cósmica y microgravedad en organismos vivos.</p>
+  <div class="container" id="content">
+    <h1>Fruit Fly Lab</h1>
+    <img src="fruit.png" alt="Moscas de la fruta">
+    <p><strong>El proyecto de moscas de la fruta</strong> (en inglés, "Fruit Fly Lab") es un programa de investigación de la NASA que utiliza la mosca de la fruta (<em>Drosophila melanogaster</em>) como un organismo modelo para estudiar los efectos del entorno espacial en la biología.</p>
 
-    <h2>Detalles de Misión</h2>
-    <p>Las moscas de la fruta fueron los primeros animales enviados al espacio exterior por Estados Unidos a bordo de un cohete V-2 el 20 de febrero de 1947. Esta misión pionera tenía como objetivo analizar los efectos de la exposición a la radiación cósmica fuera de la atmósfera terrestre.</p>
-    <p>Las moscas viajaron a una altitud de aproximadamente 109 km, superando la línea de Kármán. La cápsula fue recuperada con éxito y las muestras pudieron ser estudiadas a su retorno.</p>
+    <h3>¿Por qué moscas de la fruta?</h3>
+    <ul>
+      <li><strong>Genética compartida:</strong> el 77% de los genes humanos que causan enfermedades tienen un homólogo en la mosca.</li>
+      <li><strong>Ciclo de vida rápido:</strong> permite estudiar múltiples generaciones en poco tiempo.</li>
+      <li><strong>Facilidad de manejo:</strong> pequeñas, fáciles de transportar y mantener en hábitats compactos.</li>
+      <li><strong>Primeros pioneros:</strong> las primeras en regresar con vida del espacio en 1947.</li>
+    </ul>
 
-    <h2>Impacto Científico</h2>
-    <p>Esta misión marcó el inicio de los vuelos biológicos y sentó las bases para futuras misiones con mamíferos y humanos. Drosophila sigue siendo hasta hoy un modelo clave en estudios genéticos y biológicos espaciales.</p>
+    <h3>Objetivos y hallazgos</h3>
+    <ul>
+      <li><strong>Sistema inmune:</strong> debilitamiento en microgravedad, similar al de los humanos.</li>
+      <li><strong>Salud cardiovascular:</strong> cambios en la forma y función del corazón.</li>
+      <li><strong>Enfermedades:</strong> estudios sobre Parkinson y cáncer en microgravedad.</li>
+      <li><strong>Radiación y estrés:</strong> efectos en fisiología y genética.</li>
+    </ul>
 
-    <a class="back-button" href="archivo_x.html">Regresar al Archivo X</a>
+    <p>Hoy en día, siguen siendo clave en la EEI para preparar misiones humanas a largo plazo hacia la Luna y Marte.</p>
+
+    <a class="button" href="archivo_x.html">Regresar al Archivo X</a>
   </div>
 
   <script>
     setTimeout(() => {
-      document.querySelector('.loading-screen').style.display = 'none';
-      document.querySelector('.content').style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
     }, 3000);
   </script>
 </body>
