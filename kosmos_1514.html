@@ -3,58 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>Kosmos 1514 – Proyecto SIGMA ULTRA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
       background-color: #0a0a0a;
       color: #bfa76f;
       font-family: 'Courier New', Courier, monospace;
+      margin: 0;
       padding: 20px;
     }
+
+    #console {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
     .console-line {
       display: inline-block;
       opacity: 0;
+      font-size: 2rem;
       animation: typeIn 0.1s forwards;
     }
+
     @keyframes typeIn {
       to { opacity: 1; }
     }
+
     #main-content {
       display: none;
     }
+
     .image-container {
       margin: 30px 0;
       text-align: center;
     }
+
     .image-container img {
-      max-width: 60%;
+      max-width: 90%;
       border: 2px solid #bfa76f;
       padding: 5px;
     }
+
     .back-button {
       display: block;
-      margin-top: 50px;
+      margin: 50px auto;
       color: #bfa76f;
       text-decoration: none;
       border: 1px solid #bfa76f;
-      padding: 10px 20px;
-      width: fit-content;
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 1rem;
+      max-width: 90%;
+      border-radius: 6px;
+    }
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
 
 <div id="console">
-  <span class="console-line" style="animation-delay: 0s">l</span>
-  <span class="console-line" style="animation-delay: 0.1s">o</span>
-  <span class="console-line" style="animation-delay: 0.2s">a</span>
-  <span class="console-line" style="animation-delay: 0.3s">d</span>
-  <span class="console-line" style="animation-delay: 0.4s">i</span>
-  <span class="console-line" style="animation-delay: 0.5s">n</span>
-  <span class="console-line" style="animation-delay: 0.6s">g</span>
-  <span class="console-line" style="animation-delay: 0.7s">.</span>
-  <span class="console-line" style="animation-delay: 0.8s">.</span>
-  <span class="console-line" style="animation-delay: 0.9s">.</span>
+  <div>
+    <span class="console-line" style="animation-delay: 0s">l</span>
+    <span class="console-line" style="animation-delay: 0.1s">o</span>
+    <span class="console-line" style="animation-delay: 0.2s">a</span>
+    <span class="console-line" style="animation-delay: 0.3s">d</span>
+    <span class="console-line" style="animation-delay: 0.4s">i</span>
+    <span class="console-line" style="animation-delay: 0.5s">n</span>
+    <span class="console-line" style="animation-delay: 0.6s">g</span>
+    <span class="console-line" style="animation-delay: 0.7s">.</span>
+    <span class="console-line" style="animation-delay: 0.8s">.</span>
+    <span class="console-line" style="animation-delay: 0.9s">.</span>
+  </div>
 </div>
 
 <div id="main-content">
@@ -77,26 +103,23 @@
 
   <h2>Objetivo de la Misión</h2>
   <p>
-    Kosmos 1514, también conocido como **Bion 6**, fue parte del programa soviético de vuelos biológicos. Su objetivo fue
-    estudiar los efectos de la microgravedad en organismos complejos, como mamíferos y humanos simulados, para la preparación
-    de misiones espaciales prolongadas.
+    Kosmos 1514, también conocido como <strong>Bion 6</strong>, fue parte del programa soviético de vuelos biológicos.
+    Su objetivo fue estudiar los efectos de la microgravedad en organismos complejos, como mamíferos y humanos simulados,
+    para la preparación de misiones espaciales prolongadas.
   </p>
 
   <h2>Carga Científica</h2>
-  <p>
-    A bordo se encontraban:
-    <ul>
-      <li>Ratas albinas (biomarcadores)</li>
-      <li>Monos rhesus con sensores fisiológicos</li>
-      <li>Ranas, insectos y cultivos celulares</li>
-      <li>Simulaciones de tejidos humanos en microgravedad</li>
-    </ul>
-  </p>
+  <ul>
+    <li>Ratas albinas (biomarcadores)</li>
+    <li>Monos rhesus con sensores fisiológicos</li>
+    <li>Ranas, insectos y cultivos celulares</li>
+    <li>Simulaciones de tejidos humanos en microgravedad</li>
+  </ul>
 
   <h2>Impacto Histórico</h2>
   <p>
-    Kosmos 1514 representó una evolución clave del programa **Bion**. Introdujo equipamiento médico más avanzado, permitió experimentación
-    neurofisiológica remota y sentó las bases para futuras colaboraciones científicas con instituciones de occidente.
+    Kosmos 1514 representó una evolución clave del programa <strong>Bion</strong>. Introdujo equipamiento médico más avanzado,
+    permitió experimentación neurofisiológica remota y sentó las bases para futuras colaboraciones científicas con instituciones de occidente.
     Sus resultados fueron cruciales para el entendimiento de la degeneración muscular y ósea en entornos sin gravedad.
   </p>
 
@@ -104,7 +127,6 @@
 </div>
 
 <script>
-  // Mostrar el contenido principal tras 3 segundos
   setTimeout(() => {
     document.getElementById("console").style.display = "none";
     document.getElementById("main-content").style.display = "block";
@@ -113,3 +135,4 @@
 
 </body>
 </html>
+
