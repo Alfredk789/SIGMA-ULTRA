@@ -2,25 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Estaciones Espaciales - SIGMA ULTRA</title>
+  <title>Plataformas Orbitales - SIGMA ULTRA</title>
   <style>
     body {
       background-color: #0a0a0a;
       color: #bfa76f;
       font-family: "Courier New", monospace;
+      padding: 20px;
       text-align: center;
-      padding: 40px;
     }
     h1 {
-      font-size: 28px;
+      font-size: 2em;
       margin-bottom: 20px;
-      letter-spacing: 2px;
     }
     table {
-      width: 90%;
-      margin: auto;
+      width: 100%;
       border-collapse: collapse;
-      font-size: 16px;
+      margin: 20px 0;
+      font-size: 1em;
     }
     th, td {
       border: 1px solid #bfa76f;
@@ -28,10 +27,6 @@
     }
     th {
       background-color: #1a1a1a;
-      font-size: 18px;
-    }
-    tr:hover {
-      background-color: #222;
     }
     a {
       color: #bfa76f;
@@ -40,6 +35,25 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Botón grande */
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #bfa76f;
+      border: 2px solid #bfa76f;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+    .back-btn:hover {
+      background-color: #bfa76f;
+      color: #0a0a0a;
+    }
+
     /* Pantalla de loading */
     #loading-screen {
       position: fixed;
@@ -50,13 +64,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 5em; /* GRANDE en PC */
       font-family: "Courier New", monospace;
       z-index: 9999;
     }
     .cursor {
       display: inline-block;
-      width: 10px;
+      width: 20px;
       background-color: #bfa76f;
       animation: blink 0.8s infinite;
     }
@@ -64,6 +78,15 @@
       0% { opacity: 1; }
       50% { opacity: 0; }
       100% { opacity: 1; }
+    }
+
+    /* Ajustes móviles */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      table { font-size: 0.85em; }
+      th, td { padding: 6px; }
+      #loading-screen { font-size: 3em; } /* más grande en móvil */
+      .back-btn { font-size: 1.1em; padding: 12px 25px; }
     }
   </style>
   <script>
@@ -80,8 +103,7 @@
     LOADING<span class="cursor">&nbsp;</span>
   </div>
 
-  <h1>Archivo Clasificado: Estaciones Espaciales</h1>
-
+  <h1>Plataformas Orbitales</h1>
   <table>
     <tr>
       <th>Año</th>
@@ -90,26 +112,25 @@
       <th>Objetivo</th>
     </tr>
     <tr>
-      <td>1971</td>
+      <td>1971 - 1986</td>
       <td><a href="salyut.html">Salyut</a></td>
       <td>URSS</td>
-      <td>Primera estación espacial; investigación científica y militar</td>
+      <td>Primera serie de estaciones orbitales</td>
     </tr>
     <tr>
-      <td>1998–Actualidad</td>
-      <td><a href="estacion_espacial.html">ISS</a></td>
-      <td>NASA / Roscosmos / ESA / JAXA / CSA</td>
-      <td>Estación internacional de investigación científica en órbita baja</td>
-    </tr>
-    <tr>
-      <td>2011–Actualidad</td>
+      <td>2011 - Actualidad</td>
       <td><a href="tiangong.html">Tiangong</a></td>
-      <td>CNSA (China)</td>
-      <td>Programa de estaciones modulares para investigación y autonomía espacial</td>
+      <td>China</td>
+      <td>Laboratorio espacial y estación modular</td>
+    </tr>
+    <tr>
+      <td>1998 - Actualidad</td>
+      <td><a href="iss.html">ISS</a></td>
+      <td>NASA/Roscosmos/ESA/JAXA/CSA</td>
+      <td>Cooperación internacional en investigación espacial</td>
     </tr>
   </table>
 
-  <br>
-  <a href="manifiesto.html">⬅ Volver al Directorio</a>
+  <a href="maniesto.html" class="back-btn">⬅ Volver al Directorio</a>
 </body>
 </html>
