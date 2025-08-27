@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estaciones Espaciales - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td {
+      border: 1px solid #bfa76f;
+      padding: 10px;
+    }
+    th {
+      background-color: #1a1a1a;
+      font-size: 18px;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    a {
+      color: #bfa76f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Pantalla de loading */
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      color: #bfa76f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-family: "Courier New", monospace;
+      z-index: 9999;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #bfa76f;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none";
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <!-- Pantalla de loading -->
+  <div id="loading-screen">
+    LOADING<span class="cursor">&nbsp;</span>
+  </div>
+
+  <h1>Archivo Clasificado: Estaciones Espaciales</h1>
+
+  <table>
+    <tr>
+      <th>Año</th>
+      <th>Misión</th>
+      <th>Agencia</th>
+      <th>Objetivo</th>
+    </tr>
+    <tr>
+      <td>1971</td>
+      <td><a href="salyut.html">Salyut</a></td>
+      <td>URSS</td>
+      <td>Primera estación espacial; investigación científica y militar</td>
+    </tr>
+    <tr>
+      <td>1998–Actualidad</td>
+      <td><a href="iss.html">ISS</a></td>
+      <td>NASA / Roscosmos / ESA / JAXA / CSA</td>
+      <td>Estación internacional de investigación científica en órbita baja</td>
+    </tr>
+    <tr>
+      <td>2011–Actualidad</td>
+      <td><a href="tiangong.html">Tiangong</a></td>
+      <td>CNSA (China)</td>
+      <td>Programa de estaciones modulares para investigación y autonomía espacial</td>
+    </tr>
+  </table>
+
+  <br>
+  <a href="maniesto.html">⬅ Volver al Directorio</a>
+</body>
+</html>
