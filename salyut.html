@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salyut - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: "Courier New", monospace;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      text-align: justify;
+    }
+    img {
+      margin: 20px 0;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #bfa76f;
+    }
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #bfa76f;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Loading screen */
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      color: #bfa76f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      font-family: "Courier New", monospace;
+      z-index: 9999;
+    }
+    .cursor {
+      display: inline-block;
+      width: 12px;
+      background-color: #bfa76f;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    /* Ajustes para móviles */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      p { font-size: 0.95em; }
+      #loading-screen { font-size: 1.4em; }
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none";
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <!-- Pantalla de loading -->
+  <div id="loading-screen">
+    LOADING<span class="cursor">&nbsp;</span>
+  </div>
+
+  <h1>Estación Espacial Salyut</h1>
+  <img src="salyut.png" alt="Estación Salyut">
+
+  <p>
+    El programa <strong>Salyut</strong> fue la primera serie de estaciones espaciales
+    desarrolladas por la Unión Soviética entre 1971 y 1986. 
+    Su propósito fue doble: por un lado, servir como laboratorios científicos 
+    para estudiar la vida en el espacio y la observación terrestre; 
+    y por otro, como plataformas militares bajo la denominación secreta 
+    <em>Almaz</em>.  
+  </p>
+  <p>
+    La primera misión, <strong>Salyut 1</strong>, se lanzó en 1971, marcando un hito 
+    en la carrera espacial. Aunque enfrentó dificultades técnicas y 
+    trágicos accidentes como el de la tripulación de Soyuz 11, el programa 
+    fue clave para el desarrollo de la tecnología de larga estancia en órbita 
+    y sentó las bases para estaciones posteriores como Mir e ISS.
+  </p>
+
+  <a href="estaciones_espaciales.html">⬅ Volver a Plataformas Orbitales</a>
+</body>
+</html>
