@@ -19,11 +19,13 @@
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
-      font-size: 1em;
+      font-size: 1.1em;
+      table-layout: fixed; /* Fuerza la tabla a ocupar todo el ancho */
     }
     th, td {
       border: 1px solid #bfa76f;
-      padding: 10px;
+      padding: 12px;
+      word-wrap: break-word; /* Ajusta texto largo */
     }
     th {
       background-color: #1a1a1a;
@@ -40,8 +42,8 @@
     .back-btn {
       display: inline-block;
       margin-top: 30px;
-      padding: 15px 30px;
-      font-size: 1.3em;
+      padding: 18px 35px;
+      font-size: 1.4em;
       font-weight: bold;
       color: #bfa76f;
       border: 2px solid #bfa76f;
@@ -64,13 +66,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 5em; /* GRANDE en PC */
+      font-size: 6em; /* más grande en PC */
       font-family: "Courier New", monospace;
       z-index: 9999;
     }
     .cursor {
       display: inline-block;
-      width: 20px;
+      width: 22px;
       background-color: #bfa76f;
       animation: blink 0.8s infinite;
     }
@@ -82,11 +84,11 @@
 
     /* Ajustes móviles */
     @media (max-width: 600px) {
-      h1 { font-size: 1.5em; }
-      table { font-size: 0.85em; }
-      th, td { padding: 6px; }
-      #loading-screen { font-size: 3em; } /* más grande en móvil */
-      .back-btn { font-size: 1.1em; padding: 12px 25px; }
+      h1 { font-size: 1.6em; }
+      table { font-size: 1em; }
+      th, td { padding: 10px; }
+      #loading-screen { font-size: 4em; } /* bien grande en móvil */
+      .back-btn { font-size: 1.2em; padding: 15px 28px; }
     }
   </style>
   <script>
