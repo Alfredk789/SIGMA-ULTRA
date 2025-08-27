@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiangong - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Pantalla de Loading */
+    #loading {
+      font-size: 2rem; /* mucho más grande */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+    #cursor {
+      display: inline-block;
+      width: 12px;
+      background-color: #bfa76f;
+      margin-left: 8px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { background-color: #bfa76f; }
+      51%, 100% { background-color: transparent; }
+    }
+
+    /* Contenido */
+    #content {
+      display: none;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .image {
+      margin: 20px 0;
+    }
+    .image img {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+    }
+
+    /* Tabla responsiva */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: auto;
+      font-size: 1rem;
+      min-width: 300px;
+    }
+    th, td {
+      border: 1px solid #bfa76f;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #111;
+    }
+
+    /* Botón de regreso */
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      font-size: 1.2rem;
+      color: #bfa76f;
+      border: 2px solid #bfa76f;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background: #bfa76f;
+      color: #000;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }, 3000);
+  </script>
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading">
+    Loading<span id="cursor">&nbsp;</span>
+  </div>
+
+  <!-- Contenido -->
+  <div id="content">
+    <h1>Estación Espacial Tiangong</h1>
+
+    <div class="image">
+      <img src="tiangong.png" alt="Estación Espacial Tiangong">
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Año</th>
+          <th>Misión</th>
+          <th>Agencia</th>
+          <th>Objetivo</th>
+        </tr>
+        <tr>
+          <td>2011</td>
+          <td>Tiangong-1</td>
+          <td>CNSA (China)</td>
+          <td>Probar tecnologías de acoplamiento orbital y soporte vital</td>
+        </tr>
+        <tr>
+          <td>2016</td>
+          <td>Tiangong-2</td>
+          <td>CNSA (China)</td>
+          <td>Experimentos científicos y sistemas de soporte de larga duración</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>Tiangong (estación modular)</td>
+          <td>CNSA (China)</td>
+          <td>Estación espacial permanente en órbita baja terrestre</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="plataformas.html" class="back-button">Volver a Plataformas Orbitales</a>
+  </div>
+</body>
+</html>
