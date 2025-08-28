@@ -3,63 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programa Mercury - SIGMA ULTRA</title>
+  <title>Programa Mercury</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Courier New", monospace;
-      background-color: ##bfa76f;
-      color: ##bfa76f;
-      overflow-x: hidden;
-    }
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: black;
+      background-color: #000000;
       color: #bfa76f;
-      font-size: 1.5rem;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      color: #bfa76f;
       animation: blink 1s infinite;
     }
+
     @keyframes blink {
-      50% { opacity: 0; }
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
     }
+
     .content {
       display: none;
       padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 1px solid #bfa76f;
+      padding-bottom: 10px;
+    }
+
+    p {
+      text-align: justify;
       line-height: 1.6;
     }
-    h1 {
-      text-align: center;
-      color: #bfa76f;
-    }
-    h2 {
-      color: ##bfa76f;
-      margin-top: 20px;
-    }
+
     img {
-      display: block;
+      width: 100%;
+      max-width: 500px;
       margin: 20px auto;
-      max-width: 300px;
+      display: block;
       border: 2px solid #bfa76f;
       border-radius: 8px;
     }
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
       padding: 10px 20px;
-      background-color: #1a1a1a;
+      border: 2px solid #bfa76f;
       color: #bfa76f;
-      border: 1px solid #bfa76f;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
+      border-radius: 5px;
       transition: background 0.3s;
     }
-    .back-btn:hover {
-      background-color: #333;
+
+    .back-button:hover {
+      background: #bfa76f;
+      color: #000000;
     }
   </style>
 </head>
@@ -67,31 +76,39 @@
   <div class="loading">CARGANDO ARCHIVOS...</div>
 
   <div class="content">
-    <h1>Programa Mercury (EE. UU.) – 1958 a 1963</h1>
-    <p>El Programa Mercury fue la primera iniciativa espacial tripulada de Estados Unidos, desarrollado por la NASA con el objetivo principal de poner a un ser humano en órbita alrededor de la Tierra y retornarlo sano y salvo.</p>
+    <h2>Programa Mercury (NASA, 1958–1963)</h2>
 
-    <h2>Mercury-Redstone 3 (1961) – Alan Shepard</h2>
-    <p>Primer estadounidense en el espacio. Vuelo suborbital de 15 minutos a bordo de la cápsula <strong>Freedom 7</strong>. Objetivo: demostrar que un ser humano podía pilotar en microgravedad.</p>
-    <img src="mercury1.png" alt="Mercury Redstone 3">
+    <p>
+      El <strong>Programa Mercury</strong> fue la primera iniciativa espacial tripulada de Estados Unidos, 
+      administrada por la NASA entre 1958 y 1963. Su objetivo principal fue poner a un ser humano en órbita y 
+      traerlo de regreso sano y salvo, sentando las bases para las futuras misiones Gemini y Apolo.
+    </p>
 
-    <h2>Mercury-Redstone 4 (1961) – Virgil “Gus” Grissom</h2>
-    <p>Segundo vuelo suborbital con la cápsula <strong>Liberty Bell 7</strong>. Objetivo: perfeccionar procedimientos de lanzamiento y recuperación. La cápsula se perdió tras el amerizaje.</p>
+    <img src="mercury1.png" alt="Programa Mercury">
 
-    <h2>Mercury-Atlas 6 (1962) – John Glenn</h2>
-    <p>Primer estadounidense en órbita. Tres vueltas alrededor de la Tierra en la cápsula <strong>Friendship 7</strong>. Objetivo: evaluar resistencia física y psicológica de un vuelo orbital.</p>
-    <img src="mercury2.png" alt="Mercury Atlas 6">
+    <h3>Mercury-Redstone 3 (1961) – Alan Shepard</h3>
+    <p>Primer estadounidense en el espacio. Vuelo suborbital de 15 minutos abordo de la capsula FREEDOM 7. Objetivo: Demostrar que un ser humano podia pilotar en microgravedad.</p>
 
-    <h2>Mercury-Atlas 7 (1962) – Scott Carpenter</h2>
-    <p>Vuelo orbital de tres órbitas en la cápsula <strong>Aurora 7</strong>. Objetivo: realizar experimentos científicos y probar control manual de la nave.</p>
+    <h3>Mercury-Redstone 4 (1961) – Gus Grissom</h3>
+    <p>Segundo vuelo suborbital tripulado. La cápsula LIBERTY BELL 7 Objetivo: Perfeccionar procedimientosde lanzamiento y recuperacion. La capsula se hundió tras el amerizaje.</p>
 
-    <h2>Mercury-Atlas 8 (1962) – Walter Schirra</h2>
-    <p>Vuelo de seis órbitas en la cápsula <strong>Sigma 7</strong>. Objetivo: demostrar precisión en el pilotaje y la gestión de recursos durante un vuelo prolongado.</p>
-    <img src="mercury3.png" alt="Mercury Atlas 8">
+    <img src="mercury2.png" alt="Mercury Redstone">
 
-    <h2>Mercury-Atlas 9 (1963) – Gordon Cooper</h2>
-    <p>Última misión Mercury. Vuelo de 34 horas y 22 órbitas en la cápsula <strong>Faith 7</strong>. Objetivo: evaluar efectos de un vuelo prolongado y comprobar sistemas de soporte vital.</p>
+    <h3>Mercury-Atlas 6 (1962) – John Glenn</h3>
+    <p>Primer estadounidense en órbita. Realizó 3 vueltas alrededor de la Tierra. En la capsula FRIENDSHIP 7 Objetivo: Evaluar l aresistencia fisica y psicologica del vuelo orbital .</p>
 
-    <a href="primeros_astronautas.html" class="back-btn">⟵ Regresar a Primeros Astronautas</a>
+    <h3>Mercury-Atlas 7 (1962) – Scott Carpenter</h3>
+    <p>Repitió el vuelo de Glenn, Capsula AURORA 7, con experimentos científicos adicionales.</p>
+
+    <img src="mercury3.png" alt="Mercury Atlas">
+
+    <h3>Mercury-Atlas 8 (1962) – Wally Schirra</h3>
+    <p>Vuelo de 9 horas, Capsula SIGMA 7 considerado el más preciso en maniobras y reentrada.</p>
+
+    <h3>Mercury-Atlas 9 (1963) – Gordon Cooper</h3>
+    <p>Última misión del programa. 22 órbitas en 34 horas, Capsula FAITH 7. primera misión de larga duración, Objetivo: Evaluar efectos de un vuelo prolongado y comprobar sistemas de soporte vital.</p>
+
+    <a href="primeros_astronautas.html" class="back-button">⟵ Regresar a Primeros Astronautas</a>
   </div>
 
   <script>
