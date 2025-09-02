@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gemini - SIGMA ULTRA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Pantalla de carga */
+    #loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background-color: black;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 600px) {
+      #loading {
+        font-size: 2rem;
+      }
+    }
+
+    /* Botón de regreso */
+    .boton-regreso {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: transparent;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      font-size: 1.1rem;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      max-width: 200px;
+    }
+
+    .boton-regreso:hover {
+      background-color: #bfa76f;
+      color: black;
+    }
+
+    /* Contenido principal oculto inicialmente */
+    #contenido {
+      display: none;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Transición tipo SIGMA ULTRA -->
+  <div id="loading">Cargando Archivo...</div>
+
+  <!-- Contenido de la ficha técnica -->
+  <div id="contenido">
+    <h1>Ficha Técnica: Programa Gemini</h1>
+    <img src="gemini.png" alt="Gemini" style="width:100%; max-width:400px; display:block; margin:20px auto;">
+
+    <h2>Datos Técnicos</h2>
+    <ul>
+      <li>Nombre: Gemini</li>
+      <li>Fecha de lanzamiento: Entre 1961 y 1966</li>
+      <li>Tipo:fue diseñado para lograr varios objetivos críticos antes de intentar un alunizaje. A diferencia de las cápsulas Mercury, las naves Gemini tenían capacidad para dos astronautas y una duración de vuelo mucho mayor. </li>
+      <li>Duración de la misión: </li>
+    </ul>
+
+    <h2>Objetivo de la Misión</h2>
+    <p>
+Encuentro y Acoplamiento Orbital: Por primera vez, los astronautas practicaron maniobras para encontrarse y acoplarse a otra nave en órbita. Esta habilidad era esencial para las misiones Apolo, donde el módulo lunar tenía que acoplarse con la nave de mando.
+    </p>
+
+    <h2> Actividad Extravehicular (EVA):</h2
+
+    Los astronautas de Gemini realizaron los primeros "paseos espaciales" de Estados Unidos. Estas caminatas fuera de la nave, conocidas como EVA, permitieron a los ingenieros evaluar la capacidad de los astronautas para trabajar en el entorno hostil del espacio.
+    </p>
+
+     <h2>Vuelos de Larga duracion:</h2
+ Las misiones de Gemini probaron la resistencia de los astronautas a la ingravidez durante períodos prolongados, con la misión más larga durando casi 14 días. Esto proporcionó datos vitales sobre cómo el cuerpo humano reacciona a los vuelos de larga duración.
+       </p>
+
+ <img src="gemini2.png" alt="Gemini" style="width:100%; max-width:400px; display:block; margin:20px auto;">
+
+    
+ <h2>Misiones Famosas:</h2
+           Gemini IV (1965): Edward White realizó el primer "paseo espacial" de Estados Unidos, flotando fuera de la cápsula durante 20 minutos.
+
+Gemini V (1965): Los astronautas Gordon Cooper y Pete Conrad batieron el récord de duración en el espacio con un vuelo de casi 8 días, demostrando que los humanos podían sobrevivir al tiempo de un viaje a la Luna.
+
+Gemini XII (1966): Fue la última misión y sirvió para perfeccionar las técnicas de acoplamiento y EVA, allanando el camino para el éxito del programa Apolo.             
+        </p>
+
+    
+
+    <a href="archivo_x.html" class="boton-regreso">⟵ Regresar al Archivo X</a>
+  </div>
+
+  <!-- Script para mostrar contenido luego de 3 segundos -->
+  <script>
+    setTimeout(function () {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("contenido").style.display = "block";
+    }, 3000);
+  </script>
+</body>
+</html>
+
+
 
