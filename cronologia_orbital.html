@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea de Tiempo de Programas Espaciales - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #bfa76f;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8em;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      position: relative;
+      width: 95%;
+      margin: 20px auto;
+      border-left: 2px solid #444;
+      padding-left: 20px;
+    }
+
+    .program {
+      margin: 30px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .bar {
+      height: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    /* Programas con colores */
+    .mercury { background-color: #0275d8; }
+    .vostok { background-color: #d9534f; }
+    .gemini { background-color: #5bc0de; }
+    .apolo { background-color: #5cb85c; }
+    .salyut { background-color: #f0ad4e; }
+    .skylab { background-color: #9370DB; }
+    .soyuz { background-color: #ff6347; }
+    .mir { background-color: #20c997; }
+    .iss { background-color: #17a2b8; }
+    .tiangong { background-color: #ffc107; }
+
+    /* Escala de tiempo (1958–2025) */
+    .axis {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px auto;
+      width: 95%;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    /* Barra de duración calculada en CSS inline */
+    .back-btn {
+      display: block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      background: none;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      font-size: 1em;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #bfa76f;
+      color: #0d0d0d;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .bar { height: 15px; }
+      h1 { font-size: 1.3em; }
+      .axis { font-size: 0.7em; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Línea de Tiempo de Programas Espaciales</h1>
+
+  <div class="timeline">
+
+    <div class="program">
+      <div class="label">Mercury (1958–1963, NASA)</div>
+      <div class="bar mercury" style="width: calc((1963 - 1958 + 1) * 20px); left: calc((1958 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Vostok (1961–1963, URSS)</div>
+      <div class="bar vostok" style="width: calc((1963 - 1961 + 1) * 20px); left: calc((1961 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Gemini (1965–1966, NASA)</div>
+      <div class="bar gemini" style="width: calc((1966 - 1965 + 1) * 20px); left: calc((1965 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Apolo (1966–1972, NASA)</div>
+      <div class="bar apolo" style="width: calc((1972 - 1966 + 1) * 20px); left: calc((1966 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Salyut (1971–1986, URSS)</div>
+      <div class="bar salyut" style="width: calc((1986 - 1971 + 1) * 20px); left: calc((1971 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Skylab (1973–1979, NASA)</div>
+      <div class="bar skylab" style="width: calc((1979 - 1973 + 1) * 20px); left: calc((1973 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Soyuz (1967–Presente, Rusia)</div>
+      <div class="bar soyuz" style="width: calc((2025 - 1967 + 1) * 20px); left: calc((1967 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Mir (1986–2001, URSS/Rusia)</div>
+      <div class="bar mir" style="width: calc((2001 - 1986 + 1) * 20px); left: calc((1986 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Estación Espacial Internacional (1998–Presente)</div>
+      <div class="bar iss" style="width: calc((2025 - 1998 + 1) * 20px); left: calc((1998 - 1958) * 20px);"></div>
+    </div>
+
+    <div class="program">
+      <div class="label">Tiangong (2011–Presente, China)</div>
+      <div class="bar tiangong" style="width: calc((2025 - 2011 + 1) * 20px); left: calc((2011 - 1958) * 20px);"></div>
+    </div>
+
+  </div>
+
+  <div class="axis">
+    <span>1958</span>
+    <span>1965</span>
+    <span>1975</span>
+    <span>1985</span>
+    <span>1995</span>
+    <span>2005</span>
+    <span>2015</span>
+    <span>2025</span>
+  </div>
+
+  <a href="manifiesto.html" class="back-btn">Regresar al Manifiesto</a>
+</body>
+</html>
