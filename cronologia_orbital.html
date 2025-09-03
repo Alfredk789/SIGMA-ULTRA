@@ -1,94 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gráfica SIGMA ULTRA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cronología de Programas Espaciales — SIGMA ULTRA</title>
   <style>
-    :root {
-      --mercury: #007bff;   /* azul */
-      --vostok: #ff0000;    /* rojo */
-      --gemini: #28a745;    /* verde */
-      --apollo: #bfa76f;    /* dorado */
-      --salyut: #ff7f50;    /* coral */
-      --skylab: #8a2be2;    /* violeta */
-      --mir: #00ced1;       /* turquesa */
-      --tiangong: #ffffff;  /* blanco */
-      --iss: #ffa500;       /* naranja */
+    :root{
+      --bg:#0d0d0d;
+      --fg:#bfa76f;          /* Dorado opaco SIGMA ULTRA */
+      --grid:#5a5a5a55;      /* rejilla tenue */
+      --axis:#bfa76f;
+      --mercury:#4da3ff;
+      --vostok:#ff6b6b;
+      --gemini:#77d9ff;
+      --apolo:#77d977;
+      --salyut:#f0b25c;
+      --skylab:#9b87ff;
+      --mir:#20c997;
+      --iss:#17a2b8;
+      --tiangong:#ffffff;    /* ¡BLANCO para que destaque en fondo oscuro! */
     }
-
-    body {
-      background: #000;
-      color: #bfa76f;
-      font-family: Courier, monospace;
-      text-align: center;
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:"Courier New", Courier, monospace;
     }
-
-    canvas {
-      width: 100%;
-      height: auto;
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px;
     }
+    h1{
+      text-align:center;
+      text-transform:uppercase;
+      font-weight:700;
+      margin:18px 0 6px;
+      letter-spacing:1px;
+    }
+    .sub{
+      text-align:center;
+      opacity:.85;
+      margin-bottom:14px;
+      font-size:.95rem;
+    }
+    .canvas-box{
+      border:1px solid var(--fg);
+      border-radius:10px;
+      padding:10px;
+      background:#0a0a0a;
+    }
+    canvas{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .legend{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:8px 18px;
+      margin:12px 2px 2px;
+      font-size:.95rem;
+    }
+    .key{
+      display:flex; align-items:center; gap:8px;
+      white-space:nowrap;
+    }
+    .swatch{
+      width:18px; height:4px; border-radius:2px; display:inline-block;
+    }
+    .back-btn{
+      display:inline-block;
+      margin:22px auto 8px;
+      padding:10px 18px;
+      border:2px solid var(--fg);
+      color:var(--fg);
+      text-decoration:none;
+      border-radius:8px;
+      transition:.25s ease;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+    .center{ text-align:center; }
+    .back-btn:hover{ background:var(--fg); color:#0d0d0d; }
   </style>
 </head>
 <body>
-  <h1>Programas Espaciales - Línea Temporal</h1>
-  <canvas id="grafica" width="900" height="500"></canvas>
+  <div class="wrap">
+    <h1>Cronología de Programas Espaciales</h1>
+    <div class="sub">1958–2025 · Escala horizontal por año · Estilo SIGMA ULTRA</div>
+
+    <div class="canvas-box">
+      <canvas id="timeline" aria-label="Cronología de programas espaciales"></canvas>
+    </div>
+
+    <div class="legend" aria-label="Leyenda">
+      <div class="key"><span class="swatch" style="background:var(--mercury)"></span> Mercury (1958–63)</div>
+      <div class="key"><span class="swatch" style="background:var(--vostok)"></span> Vostok (1961–63)</div>
+      <div class="key"><span class="swatch" style="background:var(--gemini)"></span> Gemini (1965–66)</div>
+      <div class="key"><span class="swatch" style="background:var(--apolo)"></span> Apolo (1961–72)</div>
+      <div class="key"><span class="swatch" style="background:var(--salyut)"></span> Salyut (1971–86)</div>
+      <div class="key"><span class="swatch" style="background:var(--skylab)"></span> Skylab (1973–79)</div>
+      <div class="key"><span class="swatch" style="background:var(--mir)"></span> Mir (1986–2001)</div>
+      <div class="key"><span class="swatch" style="background:var(--iss)"></span> ISS (1998–Pres.)</div>
+      <div class="key"><span class="swatch" style="background:var(--tiangong)"></span> Tiangong (2011–Pres.)</div>
+    </div>
+
+    <div class="center">
+      <a class="back-btn" href="manifiesto.html">Regresar al Manifiesto</a>
+    </div>
+  </div>
 
   <script>
-    const estilos = getComputedStyle(document.documentElement);
-
+    // Datos de programas: [inicio, fin, color CSS var, etiqueta]
     const programas = [
-      [1958, 1963, estilos.getPropertyValue('--mercury').trim(), 'Mercury'],
-      [1961, 1963, estilos.getPropertyValue('--vostok').trim(), 'Vostok'],
-      [1965, 1966, estilos.getPropertyValue('--gemini').trim(), 'Gemini'],
-      [1967, 1975, estilos.getPropertyValue('--apollo').trim(), 'Apolo'],
-      [1971, 1986, estilos.getPropertyValue('--salyut').trim(), 'Salyut'],
-      [1973, 1979, estilos.getPropertyValue('--skylab').trim(), 'Skylab'],
-      [1986, 2001, estilos.getPropertyValue('--mir').trim(), 'Mir'],
-      [1999, 2025, estilos.getPropertyValue('--tiangong').trim(), 'Tiangong'],
-      [1998, 2025, estilos.getPropertyValue('--iss').trim(), 'ISS']
+      [1958, 1963, 'var(--mercury)',  'Mercury'],
+      [1961, 1963, 'var(--vostok)',   'Vostok'],
+      [1965, 1966, 'var(--gemini)',   'Gemini'],
+      [1961, 1972, 'var(--apolo)',    'Apolo'],
+      [1971, 1986, 'var(--salyut)',   'Salyut'],
+      [1973, 1979, 'var(--skylab)',   'Skylab'],
+      [1986, 2001, 'var(--mir)',      'Mir'],
+      [1998, 2025, 'var(--iss)',      'ISS'],
+      [2011, 2025, 'var(--tiangong)', 'Tiangong'] // BLANCO
     ];
 
-    const canvas = document.getElementById("grafica");
-    const ctx = canvas.getContext("2d");
+    // Configuración de eje temporal
+    const minYear = 1958, maxYear = 2025;
 
-    const minYear = 1955;
-    const maxYear = 2030;
-    const padding = 60;
-    const scaleX = (canvas.width - 2 * padding) / (maxYear - minYear);
-    const yStart = 100;
+    const canvas = document.getElementById('timeline');
+    const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = "#fff";
-    ctx.font = "14px Courier";
-    ctx.beginPath();
-    for (let y = 1960; y <= 2025; y += 5) {
-      let x = padding + (y - minYear) * scaleX;
-      ctx.moveTo(x, yStart - 10);
-      ctx.lineTo(x, yStart + 220);
-      ctx.fillText(y, x - 15, yStart + 240);
-    }
-    ctx.strokeStyle = "#333";
-    ctx.stroke();
+    function draw() {
+      // Escalado HiDPI
+      const dpr = window.devicePixelRatio || 1;
+      const cssWidth = canvas.clientWidth || 900;
+      const rowHeight = 44;                 // altura por programa (CSS px)
+      const topPad = 40, rightPad = 24, leftPad = 60, bottomPad = 40;
 
-    programas.forEach((prog, index) => {
-      const [inicio, fin, color, nombre] = prog;
-      const y = yStart + index * 20;
-      const x1 = padding + (inicio - minYear) * scaleX;
-      const x2 = padding + (fin - minYear) * scaleX;
+      canvas.width  = Math.floor(cssWidth * dpr);
+      canvas.height = Math.floor((topPad + bottomPad + rowHeight * programas.length) * dpr);
+      canvas.style.height = (topPad + bottomPad + rowHeight * programas.length) + 'px';
 
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 4;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+      // Fondo
+      ctx.fillStyle = '#0d0d0d';
+      ctx.fillRect(0,0,canvas.width/dpr,canvas.height/dpr);
+
+      const width = cssWidth - leftPad - rightPad;
+      const height = canvas.height/dpr - topPad - bottomPad;
+
+      // Función de mapeo año->x
+      const xForYear = y => leftPad + ( (y - minYear) / (maxYear - minYear) ) * width;
+
+      // Rejilla y eje X
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--grid');
+      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(x1, y);
-      ctx.lineTo(x2, y);
+      for (let y = 0; y <= programas.length; y++) {
+        const yy = topPad + y * rowHeight;
+        ctx.moveTo(leftPad, yy);
+        ctx.lineTo(leftPad + width, yy);
+      }
       ctx.stroke();
 
-      ctx.fillStyle = color;
-      ctx.fillText(nombre, x1, y - 5);
-    });
-  </script>
+      // Ticks de años (cada 5)
+      ctx.strokeStyle = '#6e6e6e';
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg');
+      ctx.font = '12px "Courier New", monospace';
+      for (let yr = minYear; yr <= maxYear; yr += 5) {
+        const x = xForYear(yr);
+        ctx.beginPath();
+        ctx.moveTo(x, topPad - 6);
+        ctx.lineTo(x, topPad + height + 6);
+        ctx.stroke();
+        ctx.fillText(String(yr), x - 14, topPad - 12);
+      }
 
-  <br>
-  <a href="maniesto.html" style="color:#bfa76f;">⟵ Regresar al Manifiesto</a>
+      // Etiqueta eje Y
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg');
+      ctx.font = '16px "Courier New", monospace';
+      ctx.fillText('Programas', 10, 20);
+
+      // Dibujar barras (líneas gruesas) por programa
+      programas.forEach((p, i) => {
+        const [ini, fin, color, label] = p;
+        const yMid = topPad + i * rowHeight + rowHeight/2;
+
+        // Línea
+        ctx.strokeStyle = color.trim();
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.moveTo(xForYear(ini), yMid);
+        ctx.lineTo(xForYear(fin), yMid);
+        ctx.stroke();
+
+        // Puntos en extremos
+        ctx.fillStyle = color.trim();
+        ctx.beginPath();
+        ctx.arc(xForYear(ini), yMid, 3.5, 0, Math.PI*2);
+        ctx.arc(xForYear(fin), yMid, 3.5, 0, Math.PI*2);
+        ctx.fill();
+
+        // Etiqueta a la izquierda
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--fg');
+        ctx.font = '14px "Courier New", monospace';
+        ctx.fillText(label, 8, yMid + 4);
+      });
+
+      // Marco
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--axis');
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(8, 8, cssWidth - 16, topPad + height + 24);
+    }
+
+    // Dibuja y vuelve a dibujar al redimensionar (responsive)
+    draw();
+    window.addEventListener('resize', draw, { passive:true });
+  </script>
 </body>
 </html>
