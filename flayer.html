@@ -102,12 +102,12 @@
     const lines = [
       "Invitación Clasificada de Aeronautica Espacial",
       "",
-      "Explora los Archivos Secretos",
-      "Misiones No Tripuladas",
-      "Todas las Misiones Apolo",
-      "Sondas Espaciales",
-      "Satélites y Plataformas Orbitales",
-      "Telescopios Cosmicos",
+      "Explora los Archivos Secretos...",
+      "Misiones No Tripuladas...",
+      "Todas las Misiones Apolo...",
+      "Sondas Espaciales...",
+      "Satélites y Plataformas Orbitales...",
+      "Telescopios Cosmicos...",
       "Radioastronomia y mucho mas!",
       "",
       "La invitación está abierta...",
@@ -129,13 +129,13 @@
           currentLine += lines[lineIndex][charIndex];
           consoleElement.innerHTML = currentLine + '<span class="cursor"></span>';
           charIndex++;
-          setTimeout(typeLine, 60);
+          setTimeout(typeLine, 120);
         } else {
           consoleElement.innerHTML += "<br>";
           charIndex = 0;
           currentLine = "";
           lineIndex++;
-          setTimeout(typeLine, 400);
+          setTimeout(typeLine, 800);
         }
       } else {
         cursor.remove();
