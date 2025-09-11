@@ -14,7 +14,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      text-align: center;
+      text-align: left;
     }
     .container {
       border: 2px solid #bfa76f;
@@ -22,18 +22,63 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(191, 167, 111, 0.3);
       max-width: 800px;
+      width: 90%;
+      min-height: 500px;
+      position: relative;
     }
     .logo {
       max-width: 200px;
       margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+    .console-line {
+      white-space: pre;
+      font-size: 1.1rem;
+      margin: 5px 0;
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 1.5;
+    .cursor {
+      display: inline-block;
+      width: 12px;
+      background: #bfa76f;
+      margin-left: 5px;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { background: transparent; }
+    }
+    .hidden {
+      display: none;
+    }
+    .qr {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .qr img {
+      width: 150px;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+      padding: 5px;
+      background: #111;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 15px;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+      color: #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+    .button:hover {
+      background: #bfa76f;
+      color: #0a0a0a;
+    }
+    .center {
+      text-align: center;
     }
   </style>
 </head>
@@ -41,14 +86,64 @@
   <div class="container">
     <!-- 🔻 AQUÍ CAMBIAS EL EMBLEMA POR EL TUYO 🔻 -->
     <img src="escudo_sigma_ultra.png" alt="Escudo SIGMA ULTRA" class="logo">
-    <!-- 🔺 Reemplaza "emblema.png" por el nombre exacto de tu archivo guardado -->
+    <!-- 🔺 Reemplaza "emblema.png" por tu archivo guardado -->
 
-    <h1>Operación SIGMA ULTRA</h1>
-    <p>
-      Archivo Clasificado<br>
-      División Científica – Misión Especial<br>
-      Coordinadas disponibles próximamente...
-    </p>
+    <div id="console"></div>
+
+    <div id="finalContent" class="hidden center">
+      <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://alfredk789.github.io/SIGMA-ULTRA/&size=150x150" alt="QR Dossier SIGMA ULTRA">
+      </div>
+      <a href="https://alfredk789.github.io/SIGMA-ULTRA/" class="button">Acceder al Sistema Clasificado</a>
+    </div>
   </div>
+
+  <script>
+    const lines = [
+      "Invitación Clasificada de Aeronautica Espacial",
+      "",
+      "Explora los Archivos Secretos",
+      "Misiones No Tripuladas",
+      "Todas las Misiones Apolo",
+      "Sondas Espaciales",
+      "Satélites y Plataformas Orbitales",
+      "Telescopios Cosmicos",
+      "Radioastronomia y mucho mas!",
+      "",
+      "La invitación está abierta...",
+      "¿Te atreves a entrar?"
+    ];
+
+    let consoleElement = document.getElementById("console");
+    let finalContent = document.getElementById("finalContent");
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentLine = "";
+    let cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    consoleElement.appendChild(cursor);
+
+    function typeLine() {
+      if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+          currentLine += lines[lineIndex][charIndex];
+          consoleElement.innerHTML = currentLine + '<span class="cursor"></span>';
+          charIndex++;
+          setTimeout(typeLine, 60);
+        } else {
+          consoleElement.innerHTML += "<br>";
+          charIndex = 0;
+          currentLine = "";
+          lineIndex++;
+          setTimeout(typeLine, 400);
+        }
+      } else {
+        cursor.remove();
+        finalContent.classList.remove("hidden");
+      }
+    }
+
+    typeLine();
+  </script>
 </body>
 </html>
