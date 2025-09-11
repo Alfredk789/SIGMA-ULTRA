@@ -131,15 +131,12 @@
           charIndex++;
           setTimeout(typeLine, 120);
         } else {
-          consoleElement.innerHTML += "<br>";
+          lineIndex = 0;
           charIndex = 0;
-          currentLine = "";
-          lineIndex++;
-          setTimeout(typeLine, 800);
-        }
-      } else {
-        cursor.remove();
-        finalContent.classList.remove("hidden");
+         currentLine = "";
+         consoleElement.innerHTML = "";
+   setTimeout(typeLine, 1500); // espera 1.5s antes de reiniciar
+}
       }
     }
 
