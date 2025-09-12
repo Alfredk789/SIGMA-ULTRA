@@ -130,17 +130,18 @@
           consoleElement.innerHTML = currentLine + '<span class="cursor"></span>';
           charIndex++;
           setTimeout(typeLine, 120);
-        } else {
-          lineIndex = 0;
-          charIndex = 0;
-         currentLine = "";
-         consoleElement.innerHTML = "";
-   setTimeout(typeLine, 1500); // espera 1.5s antes de reiniciar
-}
-      }
-    }
+          
+        } else {  
+  // Reiniciar para bucle completo
+  lineIndex = 0;
+  charIndex = 0;
+  currentLine = "";
+  consoleElement.innerHTML = "";
 
-    typeLine();
-  </script>
-</body>
-</html>
+  // volver a poner el cursor
+  cursor = document.createElement("span");
+  cursor.classList.add("cursor");
+  consoleElement.appendChild(cursor);
+
+  setTimeout(typeLine, 1500); // pausa antes de reiniciar
+}
