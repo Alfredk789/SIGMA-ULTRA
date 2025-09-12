@@ -113,35 +113,43 @@
       "La invitación está abierta...",
       "¿Te atreves a entrar?"
     ];
-
-    let consoleElement = document.getElementById("console");
-    let finalContent = document.getElementById("finalContent");
-    let lineIndex = 0;
-    let charIndex = 0;
-    let currentLine = "";
-    let cursor = document.createElement("span");
-    cursor.classList.add("cursor");
-    consoleElement.appendChild(cursor);
-
-    function typeLine() {
-      if (lineIndex < lines.length) {
-        if (charIndex < lines[lineIndex].length) {
-          currentLine += lines[lineIndex][charIndex];
-          consoleElement.innerHTML = currentLine + '<span class="cursor"></span>';
-          charIndex++;
-          setTimeout(typeLine, 120);
-          
-        } else {  
-  // Reiniciar para bucle completo
-  lineIndex = 0;
-  charIndex = 0;
-  currentLine = "";
-  consoleElement.innerHTML = "";
-
-  // volver a poner el cursor
-  cursor = document.createElement("span");
+ let consoleElement = document.getElementById("console");
+  let lineIndex = 0;
+  let charIndex = 0;
+  let currentLine = "";
+  let cursor = document.createElement("span");
   cursor.classList.add("cursor");
   consoleElement.appendChild(cursor);
 
-  setTimeout(typeLine, 1500); // pausa antes de reiniciar
-}
+  function typeLine() {
+    if (lineIndex < lines.length) {
+      if (charIndex < lines[lineIndex].length) {
+        currentLine += lines[lineIndex][charIndex];
+        consoleElement.innerHTML = currentLine + '<span class="cursor"></span>';
+        charIndex++;
+        setTimeout(typeLine, 120); // velocidad letras
+      } else {
+        consoleElement.innerHTML += "<br>";
+        charIndex = 0;
+        currentLine = "";
+        lineIndex++;
+        setTimeout(typeLine, 800); // pausa entre líneas
+      }
+    } else {
+      // 🔄 Reiniciar el ciclo completo
+      lineIndex = 0;
+      charIndex = 0;
+      currentLine = "";
+      consoleElement.innerHTML = "";
+
+      cursor = document.createElement("span");
+      cursor.classList.add("cursor");
+      consoleElement.appendChild(cursor);
+
+      setTimeout(typeLine, 1500); // espera antes de reiniciar
+    }
+  }
+
+  typeLine();
+</script>
+   
