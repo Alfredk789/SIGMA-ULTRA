@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SIGMA ULTRA —  Space X</title>
+  <style>
+    :root{--gold:#bfa76f;--bg:#070709;--card:#0f0f10;--muted:#9b9b9b}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#050506 0%, #0c0c0d 100%);font-family: 'Courier New', Courier, monospace;color:var(--gold)}
+    .app{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#1b1b1c, #0e0e0f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.6)}
+    .logo h1{font-size:12px;margin:0;color:var(--gold);letter-spacing:1px}
+    h2{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    /* Botón directorio */
+    .dir-btn{display:inline-block;background:transparent;border:2px solid var(--gold);padding:10px 18px;border-radius:8px;color:var(--gold);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+    .dir-btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(191,167,111,.08)}
+
+    /* Tabla de misiones */
+    .controls{display:flex;gap:12px;align-items:center;margin:18px 0}
+    .search{flex:1}
+    input[type=search]{width:100%;padding:10px;border-radius:8px;border:1px solid #222;background:#0b0b0b;color:var(--gold);outline:none}
+
+    .missions{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.01),transparent);border:1px solid rgba(191,167,111,.06);padding:12px;border-radius:12px;backdrop-filter:blur(2px)}
+    .thumb{width:100%;height:150px;border-radius:8px;background:#030303;display:block;object-fit:cover}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .mission-title{font-size:14px}
+    .mission-sub{font-size:11px;color:var(--muted)}
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.85));z-index:50}
+    .modal.open{display:flex}
+    .modal .sheet{width:92%;max-width:920px;background:var(--card);border-radius:10px;padding:18px;color:#ddd;border:1px solid rgba(191,167,111,.06)}
+    .modal img{width:100%;height:auto;border-radius:6px}
+    .close{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(191,167,111,.08);background:transparent;color:var(--gold);cursor:pointer}
+
+    footer{margin-top:20px;color:var(--muted);font-size:12px}
+
+    /* Responsive */
+    @media (max-width:520px){.thumb{height:120px}.logo{width:64px;height:64px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo" aria-hidden>
+        <h1>COMANDANTE CIENTÍFICO<br>DIV. EDUCATIVA</h1>
+      </div>
+      <div>
+        <h2>Dossier X: Operaciones SpaceX</h2>
+        <p class="lead">Directorio clasificado — índice de misiones. Pulsa el botón para acceder a la tabla completa.</p>
+      </div>
+      <div style="margin-left:auto">
+        <button class="dir-btn" id="openTable">Directorio — Misiones SpaceX</button>
+      </div>
+    </header>
+
+    <main id="tableArea" style="margin-top:18px;display:none">
+      <div class="controls">
+        <input class="search" type="search" id="q" placeholder="Buscar misión, año o tipo (ej.: Starlink, Crew, Falcon Heavy)">
+        <select id="filterYear" style="background:#0b0b0b;border:1px solid rgba(191,167,111,.06);color:var(--gold);padding:10px;border-radius:8px">
+          <option value="all">Todos los años</option>
+          <option value="2006">2006–2010</option>
+          <option value="2011">2011–2015</option>
+          <option value="2016">2016–2020</option>
+          <option value="2021">2021–2025</option>
+        </select>
+      </div>
+
+      <section class="missions" id="missionsList">
+        <!-- Ejemplos de fichas. Reemplazar src por imágenes reales en /images/ -->
+
+        <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
+          <img class="thumb" src="images/falcon1_demo.jpg" alt="Falcon 1 - primera órbita"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">Falcon 1 — Demo orbital (2008)</div>
+              <div class="mission-sub">Primer éxito orbital de SpaceX</div>
+            </div>
+            <div><button class="dir-btn" data-image="images/falcon1_demo.jpg" data-title="Falcon 1 — Demo orbital (2008)">Ficha</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-year="2012" data-keywords="falcon9 comercio ses cargo iss crs">
+          <img class="thumb" src="images/falcon9_crs.jpg" alt="CRS - reabastecimiento ISS"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">CRS — Reabastecimiento ISS (varias)</div>
+              <div class="mission-sub">Serie de misiones Cargo Dragon</div>
+            </div>
+            <div><button class="dir-btn" data-image="images/falcon9_crs.jpg" data-title="CRS — Reabastecimiento ISS">Ficha</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-year="2020" data-keywords="crew dragon tripulada demo-2 crew-1 iss astronautas">
+          <img class="thumb" src="images/crew_demo2.jpg" alt="Crew Dragon Demo-2"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">Crew Dragon — Demo-2 (2020)</div>
+              <div class="mission-sub">Primer vuelo tripulado comercial a la ISS</div>
+            </div>
+            <div><button class="dir-btn" data-image="images/crew_demo2.jpg" data-title="Crew Dragon — Demo-2 (2020)">Ficha</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-year="2018" data-keywords="starlink constelación internet satélites batch">
+          <img class="thumb" src="images/starlink_batch.jpg" alt="Starlink batch"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">Starlink — Lanzamiento por lotes</div>
+              <div class="mission-sub">Despliegue de constelación de internet</div>
+            </div>
+            <div><button class="dir-btn" data-image="images/starlink_batch.jpg" data-title="Starlink — Batch">Ficha</button></div>
+          </div>
+        </article>
+
+        <article class="card" data-year="2018" data-keywords="falconheavy heavy arabsat vehículo">
+          <img class="thumb" src="images/falcon_heavy.jpg" alt="Falcon Heavy"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">Falcon Heavy — Misiones pesadas</div>
+              <div class="mission-sub">Carga pesada y misiones especiales</div>
+            </div>
+            <div><button class="dir-btn" data-image="images/falcon_heavy.jpg" data-title="Falcon Heavy — Misiones pesadas">Ficha</button></div>
+          </div>
+        </article>
+
+        <!-- Añadir más fichas con la misma estructura -->
+
+      </section>
+
+    </main>
+
+    <!-- Modal ficha detallada -->
+    <div class="modal" id="modal">
+      <div class="sheet">
+        <h3 id="mTitle">Título Misión</h3>
+        <img id="mImage" src="" alt="Imagen misión"/>
+        <p id="mDesc" style="color:var(--muted);margin-top:10px">Descripción técnica breve de la misión. Reemplazar por datos reales: fecha, carga útil, vehículo, notas de reutilización, resultados.</p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="close" id="closeModal">Cerrar</button>
+          <a id="moreLink" class="close" href="#">Ficha completa</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>SIGMA ULTRA — módulo SpaceX · estilo clasificado · paleta oscura y texto dorado.</footer>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openTable');
+    const tableArea = document.getElementById('tableArea');
+    openBtn.addEventListener('click', ()=>{ tableArea.style.display='block'; openBtn.style.display='none'; window.scrollTo({top:0,behavior:'smooth'}) });
+
+    // Modal handling
+    document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
+      const img = e.currentTarget.dataset.image;
+      const title = e.currentTarget.dataset.title;
+      document.getElementById('mImage').src = img;
+      document.getElementById('mTitle').textContent = title;
+      document.getElementById('modal').classList.add('open');
+    }));
+    document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
+
+    // Search + filter (básico)
+    const q = document.getElementById('q');
+    const filter = document.getElementById('filterYear');
+    const missions = Array.from(document.querySelectorAll('.missions .card'));
+    function refresh(){
+      const term = q.value.toLowerCase();
+      const fy = filter.value;
+      missions.forEach(m=>{
+        const ky = m.dataset.keywords || '';
+        const yr = m.dataset.year || '';
+        const matchTerm = term === '' || (ky+" "+m.querySelector('.mission-title').textContent.toLowerCase()).includes(term);
+        const matchYear = fy === 'all' || (fy==='2006' && yr<=2010) || (fy==='2011' && yr>2010 && yr<=2015) || (fy==='2016' && yr>2015 && yr<=2020) || (fy==='2021' && yr>2020);
+        m.style.display = (matchTerm && matchYear) ? 'block' : 'none';
+      })
+    }
+    q.addEventListener('input', refresh); filter.addEventListener('change', refresh);
+  </script>
+</body>
+</html>
