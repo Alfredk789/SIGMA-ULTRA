@@ -210,6 +210,33 @@ A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evoluci
     ⬅ Regresar al Manifiesto
   </a>
 </div>
+/* --- Ajustes para la ficha modal --- */
+
+/* Permitir scroll vertical dentro del contenido */
+.modal-content {
+  max-height: 90vh;         /* que no pase de la altura de pantalla */
+  overflow-y: auto;         /* activa scroll si el texto se pasa */
+  margin: auto;             /* centra el contenido en la pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #111;   /* estilo oscuro SIGMA ULTRA */
+  color: #bfa76f;
+  font-family: Courier, monospace;
+  border-radius: 12px;
+  border: 1px solid #bfa76f;
+}
+
+/* Centrado de la imagen dentro del modal */
+.modal-content img {
+  display: block;
+  margin: 0 auto 20px auto; /* centrado horizontal + separación inferior */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
 </body>
 </html>
