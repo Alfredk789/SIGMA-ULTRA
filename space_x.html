@@ -33,8 +33,8 @@
     /* Modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.85));z-index:50}
     .modal.open{display:flex}
-    .modal .sheet{width:92%;max-width:920px;background:var(--card);border-radius:10px;padding:18px;color:#ddd;border:1px solid rgba(191,167,111,.06)}
-    .modal img{width:70%;height:auto;border-radius:6px}
+    .modal-content{width:92%;max-width:920px;background:var(--card);border-radius:10px;padding:18px;color:#ddd;border:1px solid rgba(191,167,111,.06);max-height:90vh;overflow-y:auto;display:flex;flex-direction:column;align-items:center}
+    .modal-content img{display:block;margin:0 auto 20px auto;max-width:100%;height:auto;border-radius:8px}
     .close{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(191,167,111,.08);background:transparent;color:var(--gold);cursor:pointer}
 
     footer{margin-top:20px;color:var(--muted);font-size:12px}
@@ -71,8 +71,7 @@
       </div>
 
       <section class="missions" id="missionsList">
-        <!-- Ejemplos de fichas. Reemplazar src por imágenes reales en /images/ -->
-
+        <!-- Ejemplo de ficha -->
         <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
           <img class="thumb" src="falcon1.png" alt="Falcon 1 - primera órbita"/>
           <div class="meta">
@@ -83,96 +82,45 @@
             <div><button class="dir-btn" data-image="falcon1.png" data-title="Falcon 1 — Demo orbital (2008)">Ficha</button></div>
           </div>
         </article>
-
-        <article class="card" data-year="2012" data-keywords="falcon9 comercio ses cargo iss crs">
-          <img class="thumb" src="images/falcon9_crs.jpg" alt="CRS - reabastecimiento ISS"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">CRS — Reabastecimiento ISS (varias)</div>
-              <div class="mission-sub">Serie de misiones Cargo Dragon</div>
-            </div>
-            <div><button class="dir-btn" data-image="images/falcon9_crs.jpg" data-title="CRS — Reabastecimiento ISS">Ficha</button></div>
-          </div>
-        </article>
-
-        <article class="card" data-year="2020" data-keywords="crew dragon tripulada demo-2 crew-1 iss astronautas">
-          <img class="thumb" src="images/crew_demo2.jpg" alt="Crew Dragon Demo-2"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">Crew Dragon — Demo-2 (2020)</div>
-              <div class="mission-sub">Primer vuelo tripulado comercial a la ISS</div>
-            </div>
-            <div><button class="dir-btn" data-image="images/crew_demo2.jpg" data-title="Crew Dragon — Demo-2 (2020)">Ficha</button></div>
-          </div>
-        </article>
-
-        <article class="card" data-year="2018" data-keywords="starlink constelación internet satélites batch">
-          <img class="thumb" src="images/starlink_batch.jpg" alt="Starlink batch"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">Starlink — Lanzamiento por lotes</div>
-              <div class="mission-sub">Despliegue de constelación de internet</div>
-            </div>
-            <div><button class="dir-btn" data-image="images/starlink_batch.jpg" data-title="Starlink — Batch">Ficha</button></div>
-          </div>
-        </article>
-
-        <article class="card" data-year="2018" data-keywords="falconheavy heavy arabsat vehículo">
-          <img class="thumb" src="images/falcon_heavy.jpg" alt="Falcon Heavy"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">Falcon Heavy — Misiones pesadas</div>
-              <div class="mission-sub">Carga pesada y misiones especiales</div>
-            </div>
-            <div><button class="dir-btn" data-image="images/falcon_heavy.jpg" data-title="Falcon Heavy — Misiones pesadas">Ficha</button></div>
-          </div>
-        </article>
-
-        <!-- Añadir más fichas con la misma estructura -->
-
+        <!-- Duplica este bloque para más misiones -->
       </section>
-
     </main>
 
     <!-- Modal ficha detallada -->
     <div class="modal" id="modal">
-      <div class="card">
+      <div class="modal-content">
         <h3 id="mTitle">Título Misión</h3>
-        <img id="mImage" src="falcon1.png" alt="Imagen misión"/>
-        <p id="mDesc" style="color:var(--muted);margin-top:10px">Falcon 1 – Misión inaugural de SpaceX
-
-<p><b>Fecha de lanzamiento:</b> 
-</b>24 de marzo de 2006 (primer intento desde la Base de Kwajalein Atoll, Islas Marshall).</p>
-
-<p><b>Vehículo de lanzamiento:</b>
-</b>Falcon 1 – Cohete de dos etapas a queroseno (RP-1) y oxígeno líquido.
-Primera etapa con motor Merlin 1A.</p>
-
-<p><b>Carga útil:</b>
-</b>Un nanosatélite llamado FalconSat-2 (desarrollado por la Academia de la Fuerza Aérea de EE.UU.).</p>
-
-<p><b>Notas de reutilización:</b>
-</b>El Falcon 1 no era reutilizable. Se diseñó como un lanzador de bajo costo para cargas pequeñas, con potencial de evolución hacia cohetes más grandes.</p>
-
-<p><b>Resultados:</b>
-
-</b>El primer lanzamiento falló a los 25 segundos debido a una fuga de combustible y un incendio en la línea de propelente.</p>
-
-A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evolución hacia el Falcon 1 exitoso (2008) y, posteriormente, al Falcon 9.</p>
+        <img id="mImage" src="" alt="Imagen misión"/>
+        <p id="mDesc" style="color:var(--muted);margin-top:10px">
+          Aquí aparecerá la descripción técnica detallada de la misión seleccionada.
+        </p>
         <div style="display:flex;gap:8px;margin-top:10px">
           <button class="close" id="closeModal">Cerrar</button>
-          
         </div>
       </div>
     </div>
 
     <footer>SIGMA ULTRA — Módulo Space X · Archivos clasificados·</footer>
+
+    <!-- Botón de regreso al manifiesto -->
+    <div style="text-align:center; margin: 40px 0;">
+      <a href="manifiesto.html" 
+         style="display:inline-block; padding:12px 24px; font-family:Courier, monospace;
+                background-color:#111; color:#bfa76f; text-decoration:none; 
+                border:1px solid #bfa76f; border-radius:12px; transition:all 0.3s;">
+        ⬅ Regresar al Manifiesto
+      </a>
+    </div>
   </div>
 
   <script>
     const openBtn = document.getElementById('openTable');
     const tableArea = document.getElementById('tableArea');
-    openBtn.addEventListener('click', ()=>{ tableArea.style.display='block'; openBtn.style.display='none'; window.scrollTo({top:0,behavior:'smooth'}) });
+    openBtn.addEventListener('click', ()=>{ 
+      tableArea.style.display='block'; 
+      openBtn.style.display='none'; 
+      window.scrollTo({top:0,behavior:'smooth'}) 
+    });
 
     // Modal handling
     document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
@@ -180,11 +128,18 @@ A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evoluci
       const title = e.currentTarget.dataset.title;
       document.getElementById('mImage').src = img;
       document.getElementById('mTitle').textContent = title;
+
+      // Ejemplo: descripción automática básica (puedes reemplazar por tu texto técnico)
+      document.getElementById('mDesc').innerHTML = `
+        <b>Descripción técnica breve:</b><br>
+        Información detallada de <i>${title}</i> pendiente de completar.
+      `;
+
       document.getElementById('modal').classList.add('open');
     }));
     document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
 
-    // Search + filter (básico)
+    // Search + filter
     const q = document.getElementById('q');
     const filter = document.getElementById('filterYear');
     const missions = Array.from(document.querySelectorAll('.missions .card'));
@@ -199,44 +154,8 @@ A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evoluci
         m.style.display = (matchTerm && matchYear) ? 'block' : 'none';
       })
     }
-    q.addEventListener('input', refresh); filter.addEventListener('change', refresh);
+    q.addEventListener('input', refresh); 
+    filter.addEventListener('change', refresh);
   </script>
-  <!-- Botón de regreso al manifiesto -->
-<div style="text-align:center; margin: 40px 0;">
-  <a href="manifiesto.html" 
-     style="display:inline-block; padding:12px 24px; font-family:Courier, monospace;
-            background-color:#111; color:#bfa76f; text-decoration:none; 
-            border:1px solid #bfa76f; border-radius:12px; transition:all 0.3s;">
-    ⬅ Regresar al Manifiesto
-  </a>
-</div>
-/* --- Ajustes para la ficha modal --- */
-
-/* Permitir scroll vertical dentro del contenido */
-.modal-content {
-  max-height: 90vh;         /* que no pase de la altura de pantalla */
-  overflow-y: auto;         /* activa scroll si el texto se pasa */
-  margin: auto;             /* centra el contenido en la pantalla */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
-  background-color: #111;   /* estilo oscuro SIGMA ULTRA */
-  color: #bfa76f;
-  font-family: Courier, monospace;
-  border-radius: 12px;
-  border: 1px solid #bfa76f;
-}
-
-/* Centrado de la imagen dentro del modal */
-.modal-content img {
-  display: block;
-  margin: 0 auto 20px auto; /* centrado horizontal + separación inferior */
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
 </body>
 </html>
