@@ -1,194 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SIGMA ULTRA —  Space X</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA ULTRA - SpaceX</title>
   <style>
-    :root{--gold:#bfa76f;--bg:#070709;--card:#0f0f10;--muted:#9b9b9b}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#050506 0%, #0c0c0d 100%);font-family: 'Courier New', Courier, monospace;color:var(--gold)}
-    .app{max-width:1100px;margin:28px auto;padding:20px}
-    header{display:flex;align-items:center;gap:16px}
-    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#1b1b1c, #0e0e0f);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.6)}
-    .logo h1{font-size:12px;margin:0;color:var(--gold);letter-spacing:1px}
-    h2{margin:0;font-size:20px}
-    p.lead{color:var(--muted);margin-top:6px}
-
-    /* Botón directorio */
-    .dir-btn{display:inline-block;background:transparent;border:2px solid var(--gold);padding:10px 18px;border-radius:8px;color:var(--gold);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
-    .dir-btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(191,167,111,.08)}
-
-    /* Tabla de misiones */
-    .controls{display:flex;gap:12px;align-items:center;margin:18px 0}
-    .search{flex:1}
-    input[type=search]{width:100%;padding:10px;border-radius:8px;border:1px solid #222;background:#0b0b0b;color:var(--gold);outline:none}
-
-    .missions{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.01),transparent);border:1px solid rgba(191,167,111,.06);padding:12px;border-radius:12px;backdrop-filter:blur(2px)}
-    .thumb{width:100%;height:150px;border-radius:8px;background:#030303;display:block;object-fit:cover}
-    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-    .mission-title{font-size:14px}
-    .mission-sub{font-size:11px;color:var(--muted)}
-
+    body {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #bfa76f;
+      margin: 20px 0;
+    }
+    .missions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #bfa76f;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .card h2 {
+      color: #bfa76f;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    .dir-btn {
+      background: #bfa76f;
+      color: #0a0a0a;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .dir-btn:hover {
+      background: #e0c77d;
+    }
     /* Modal */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.85));z-index:50}
-    .modal.open{display:flex}
-    .modal-content{width:92%;max-width:920px;background:var(--card);border-radius:10px;padding:18px;color:#ddd;border:1px solid rgba(191,167,111,.06);max-height:90vh;overflow-y:auto;display:flex;flex-direction:column;align-items:center}
-    .modal-content img{display:block;margin:0 auto 20px auto;max-width:100%;height:auto;border-radius:8px}
-    .close{display:inline-block;margin-top:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(191,167,111,.08);background:transparent;color:var(--gold);cursor:pointer}
-
-    footer{margin-top:20px;color:var(--muted);font-size:12px}
-
-    /* Responsive */
-    @media (max-width:520px){.thumb{height:120px}.logo{width:64px;height:64px}}
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0,0,0,0.85);
+    }
+    .modal-content {
+      background: #121212;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #bfa76f;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 15px auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .close {
+      color: #bfa76f;
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #fff;
+    }
+    #mDesc {
+      text-align: left;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
-  <div class="app">
-    <header>
-      <div class="logo" aria-hidden>
-        <h1>COMANDANTE CIENTÍFICO<br>DIV. EDUCATIVA</h1>
-      </div>
-      <div>
-        <h2>SIGMA ULTRA: Operaciones Space X</h2>
-        <p class="lead">Directorio clasificado — índice de misiones. Pulsa el botón para acceder a la tabla completa en horizontal.</p>
-      </div>
-      <div style="margin-left:auto">
-        <button class="dir-btn" id="openTable">Directorio — Misiones SpaceX</button>
-      </div>
-    </header>
 
-    <main id="tableArea" style="margin-top:18px;display:none">
-      <div class="controls">
-        <input class="search" type="search" id="q" placeholder="Buscar misión, año o tipo (ej.: Starlink, Crew, Falcon Heavy)">
-        <select id="filterYear" style="background:#0b0b0b;border:1px solid rgba(191,167,111,.06);color:var(--gold);padding:10px;border-radius:8px">
-          <option value="all">Todos los años</option>
-          <option value="2006">2006–2010</option>
-          <option value="2011">2011–2015</option>
-          <option value="2016">2016–2020</option>
-          <option value="2021">2021–2025</option>
-        </select>
-      </div>
+  <h1>SIGMA ULTRA - Archivo SpaceX</h1>
 
-      <section class="missions" id="missionsList">
-        <!-- Ejemplo de ficha -->
-        <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
-          <img class="thumb" src="falcon1.png" alt="Falcon 1 - primera órbita"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">Falcon 1 — Demo orbital (2008)</div>
-              <div class="mission-sub">Primer éxito orbital de SpaceX</div>
-            </div>
-            <div><button class="dir-btn" data-image="falcon1.png" data-title="Falcon 1 — Demo orbital (2008)">Ficha</button></div>
-          </div>
-        </article>
+  <section class="missions">
+    <!-- Misión Falcon 1 -->
+    <article class="card">
+      <img src="falcon1.png" alt="Falcon 1">
+      <h2>Falcon 1</h2>
+      <button class="dir-btn" 
+        data-title="Falcon 1" 
+        data-image="falcon1.png">Ver ficha</button>
+    </article>
 
-         <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
-          <img class="thumb" src="falcon9.png" alt="Falcon 9 - primera órbita"/>
-          <div class="meta">
-            <div>
-              <div class="mission-title">Falcon 9 — Demo orbital (2010)</div>
-              <div class="mission-sub">Primer éxito orbital de SpaceX</div>
-            </div>
-            <div><button class="dir-btn" data-image="falcon9.png" data-title="Falcon 9 — Demo orbital (2008)">Ficha</button></div>
-          </div>
-        </article>
-        <!-- Duplica este bloque para más misiones -->
-      </section>
-    </main>
+    <!-- Misión Falcon 9 -->
+    <article class="card">
+      <img src="falcon9.png" alt="Falcon 9">
+      <h2>Falcon 9</h2>
+      <button class="dir-btn" 
+        data-title="Falcon 9" 
+        data-image="falcon9.png">Ver ficha</button>
+    </article>
 
-    <!-- Modal ficha detallada -->
-    <div class="modal" id="modal">
-      <div class="modal-content">
-        <h3 id="mTitle">Título Misión</h3>
-        <img id="mImage" src="" alt="Imagen misión"/>
-        <p id="mDesc" style="color:var(--muted);margin-top:10px">
-          Falcon 1 – Misión inaugural de SpaceX
+    <!-- 🔽 Aquí vas agregando nuevas misiones (ejemplo Falcon Heavy, Dragon, etc.) -->
+    <!-- Copia y pega este bloque y cambia datos -->
+    <!--
+    <article class="card">
+      <img src="falconheavy.png" alt="Falcon Heavy">
+      <h2>Falcon Heavy</h2>
+      <button class="dir-btn" 
+        data-title="Falcon Heavy" 
+        data-image="falconheavy.png">Ver ficha</button>
+    </article>
+    -->
 
-
-        </p>
-        <div style="display:flex;gap:8px;margin-top:10px">
-          <button class="close" id="closeModal">Cerrar</button>
-        </div>
-      </div>
-    </div>
   </section>
-    </main>
 
-    
-    <footer>SIGMA ULTRA — Módulo Space X · Archivos clasificados·</footer>
-
-    <!-- Botón de regreso al manifiesto -->
-    <div style="text-align:center; margin: 40px 0;">
-      <a href="manifiesto.html" 
-         style="display:inline-block; padding:12px 24px; font-family:Courier, monospace;
-                background-color:#111; color:#bfa76f; text-decoration:none; 
-                border:1px solid #bfa76f; border-radius:12px; transition:all 0.3s;">
-        ⬅ Regresar al Manifiesto
-      </a>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="mTitle"></h2>
+      <img id="mImage" src="" alt="Misión">
+      <div id="mDesc"></div>
     </div>
   </div>
 
   <script>
-    const openBtn = document.getElementById('openTable');
-    const tableArea = document.getElementById('tableArea');
-    openBtn.addEventListener('click', ()=>{ 
-      tableArea.style.display='block'; 
-      openBtn.style.display='none'; 
-      window.scrollTo({top:0,behavior:'smooth'}) 
+    const modal = document.getElementById('modal');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('.card .dir-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const img = e.currentTarget.dataset.image;
+        const title = e.currentTarget.dataset.title;
+
+        document.getElementById('mImage').src = img;
+        document.getElementById('mTitle').textContent = title;
+
+        // ✅ Aquí van las fichas técnicas
+        if(title.includes("Falcon 1")) {
+          document.getElementById('mDesc').innerHTML = `
+            <p><b>Fecha de lanzamiento:</b> 24 de marzo de 2006 — Atolón de Kwajalein.</p>
+            <p><b>Vehículo:</b> Falcon 1, cohete de dos etapas con motor Merlin.</p>
+            <p><b>Carga útil:</b> FalconSat-2 (satélite USAF Academy).</p>
+            <p><b>Notas de reutilización:</b> No reutilizable.</p>
+            <p><b>Resultados:</b> Fallo en el primer vuelo, pero sentó las bases del programa SpaceX.</p>
+          `;
+        }
+        else if(title.includes("Falcon 9")) {
+          document.getElementById('mDesc').innerHTML = `
+            <p><b>Fecha de lanzamiento:</b> 4 de junio de 2010 — Cabo Cañaveral.</p>
+            <p><b>Vehículo:</b> Falcon 9 v1.0, cohete de dos etapas con 9 motores Merlin 1C en primera etapa.</p>
+            <p><b>Carga útil:</b> Dragon Qual Unit (simulador de cápsula Dragon).</p>
+            <p><b>Notas de reutilización:</b> No reutilizable aún. Fue el inicio de la arquitectura actual de Falcon 9.</p>
+            <p><b>Resultados:</b> Inserción orbital exitosa. Validación del sistema para futuras misiones comerciales a la ISS.</p>
+          `;
+        }
+        /* 🔽 Aquí irán las demás fichas */
+        /*
+        else if(title.includes("Falcon Heavy")) {
+          document.getElementById('mDesc').innerHTML = `
+            <p><b>Fecha de lanzamiento:</b> ...</p>
+            <p><b>Vehículo:</b> ...</p>
+            <p><b>Carga útil:</b> ...</p>
+            <p><b>Notas de reutilización:</b> ...</p>
+            <p><b>Resultados:</b> ...</p>
+          `;
+        }
+        */
+        modal.style.display = "block";
+      });
     });
 
-    // Modal handling
-    document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
-      const img = e.currentTarget.dataset.image;
-      const title = e.currentTarget.dataset.title;
-      document.getElementById('mImage').src = img;
-      document.getElementById('mTitle').textContent = title;
-
-      // Ejemplo: descripción automática básica (puedes reemplazar por tu texto técnico)
-      document.getElementById('mDesc').innerHTML = `
-        <b>Fecha de lanzamiento:
-24 de marzo de 2006 (primer intento desde la Base de Kwajalein Atoll, Islas Marshall).
-
-Vehículo de lanzamiento:
-Falcon 1 – Cohete de dos etapas a queroseno (RP-1) y oxígeno líquido.
-Primera etapa con motor Merlin 1A.
-
-Carga útil:
-Un nanosatélite llamado FalconSat-2 (desarrollado por la Academia de la Fuerza Aérea de EE.UU.).
-
-Notas de reutilización:
-El Falcon 1 no era reutilizable. Se diseñó como un lanzador de bajo costo para cargas pequeñas, con potencial de evolución hacia cohetes más grandes.
-
-Resultados:
-
-El primer lanzamiento falló a los 25 segundos debido a una fuga de combustible y un incendio en la línea de propelente.
-
-A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evolución hacia el Falcon 1 exitoso (2008) y, posteriormente, al Falcon 9.</b><br>
-        Información detallada de <i>${title}</i> pendiente de completar.
-      `;
-
-      document.getElementById('modal').classList.add('open');
-    }));
-    document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
-
-    // Search + filter
-    const q = document.getElementById('q');
-    const filter = document.getElementById('filterYear');
-    const missions = Array.from(document.querySelectorAll('.missions .card'));
-    function refresh(){
-      const term = q.value.toLowerCase();
-      const fy = filter.value;
-      missions.forEach(m=>{
-        const ky = m.dataset.keywords || '';
-        const yr = m.dataset.year || '';
-        const matchTerm = term === '' || (ky+" "+m.querySelector('.mission-title').textContent.toLowerCase()).includes(term);
-        const matchYear = fy === 'all' || (fy==='2006' && yr<=2010) || (fy==='2011' && yr>2010 && yr<=2015) || (fy==='2016' && yr>2015 && yr<=2020) || (fy==='2021' && yr>2020);
-        m.style.display = (matchTerm && matchYear) ? 'block' : 'none';
-      })
-    }
-    q.addEventListener('input', refresh); 
-    filter.addEventListener('change', refresh);
+    closeBtn.onclick = ()=> modal.style.display = "none";
+    window.onclick = (e)=> { if(e.target==modal) modal.style.display="none"; }
   </script>
+
 </body>
 </html>
+
