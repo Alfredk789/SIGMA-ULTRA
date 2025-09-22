@@ -115,16 +115,7 @@
     <img id="mImage" src="" alt="Imagen misión"/>
     <p id="mDesc" style="color:var(--muted);margin-top:10px">
       Aquí aparecerá la ficha técnica según la misión seleccionada.
-}
-else if(title.includes("Dragon C1")){
-  document.getElementById('mDesc').innerHTML = `
-    <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
-    <b>Vehículo:</b> Falcon 9 v1.0.<br>
-    <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
-    <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
-    <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
-  `;
-      
+
     </p>
     <div style="display:flex;gap:8px;margin-top:10px">
       <button class="close" id="closeModal">Cerrar</button>
@@ -159,70 +150,62 @@ else if(title.includes("Dragon C1")){
       window.scrollTo({top:0,behavior:'smooth'}) 
     });
 
-    // Modal handling
-    document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
-      const img = e.currentTarget.dataset.image;
-      const title = e.currentTarget.dataset.title;
-      document.getElementById('mImage').src = img;
-      document.getElementById('mTitle').textContent = title;
+   // Modal handling
+document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
+  const img = e.currentTarget.dataset.image;
+  const title = e.currentTarget.dataset.title;
+  document.getElementById('mImage').src = img;
+  document.getElementById('mTitle').textContent = title;
+
+  // Aquí van las condiciones por misión:
+  if(title.includes("Falcon 1")){
+    document.getElementById('mDesc').innerHTML = `
+      <b>Fecha de lanzamiento:</b> 24 de marzo de 2006 (Kwajalein Atoll, Islas Marshall).<br>
+      <b>Vehículo:</b> Falcon 1 – dos etapas, RP-1 y LOX.<br>
+      <b>Carga útil:</b> FalconSat-2.<br>
+      <b>Notas de reutilización:</b> No reutilizable.<br>
+      <b>Resultados:</b> Falló a los 25 segundos por fuga de combustible.
+    `;
+  }
+  else if(title.includes("Falcon 9")){
+    document.getElementById('mDesc').innerHTML = `
+      <b>Fecha de lanzamiento:</b> 4 de junio de 2010 (Cabo Cañaveral, Florida).<br>
+      <b>Vehículo:</b> Falcon 9 v1.0 – primera etapa con 9 motores Merlin 1C.<br>
+      <b>Carga útil:</b> Cápsula Dragon C1 simulada (masa inerte).<br>
+      <b>Notas de reutilización:</b> No recuperado en este vuelo, pero inicio del concepto de reutilización.<br>
+      <b>Resultados:</b> Éxito total, validación del sistema Falcon 9.
+    `;
+  }
+  else if(title.includes("Dragon C1")){
+    document.getElementById('mDesc').innerHTML = `
+      <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
+      <b>Vehículo:</b> Falcon 9 v1.0.<br>
+      <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
+      <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
+      <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
+    `;
+  }
+  else {
+    // Texto por defecto si aún no hay ficha
+    document.getElementById('mDesc').innerHTML = `
+      Información detallada de <i>${title}</i> pendiente de completar.
+    `;
+  }
+
+  document.getElementById('modal').classList.add('open');
+}));
+
 
       // Ejemplo: descripción automática básica (puedes reemplazar por tu texto técnico)
       document.getElementById('mDesc').innerHTML = `
         <b>Fecha de lanzamiento:
-24 de marzo de 2006 (primer intento desde la Base de Kwajalein Atoll, Islas Marshall).
-
-Vehículo de lanzamiento:
-Falcon 1 – Cohete de dos etapas a queroseno (RP-1) y oxígeno líquido.
-Primera etapa con motor Merlin 1A.
-
-Carga útil:
-Un nanosatélite llamado FalconSat-2 (desarrollado por la Academia de la Fuerza Aérea de EE.UU.).
-
-Notas de reutilización:
-El Falcon 1 no era reutilizable. Se diseñó como un lanzador de bajo costo para cargas pequeñas, con potencial de evolución hacia cohetes más grandes.
-
-Resultados:
-
-El primer lanzamiento falló a los 25 segundos debido a una fuga de combustible y un incendio en la línea de propelente.
-
-A pesar del fracaso, SpaceX obtuvo experiencia crítica que permitió la evolución hacia el Falcon 1 exitoso (2008) y, posteriormente, al Falcon 9.</b><br>
-        Información detallada de <i>${title}</i> pendiente de completar.
+Información detallada de <i>${title}</i> pendiente de completar.
       `;
 
       document.getElementById('modal').classList.add('open');
     }));
     document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
-
-if(title.includes("Falcon 1")){
-  document.getElementById('mDesc').innerHTML = `
-    <b>Fecha de lanzamiento:</b> 24 de marzo de 2006 (Kwajalein Atoll, Islas Marshall).<br>
-    <b>Vehículo:</b> Falcon 1 – dos etapas, RP-1 y LOX.<br>
-    <b>Carga útil:</b> FalconSat-2.<br>
-    <b>Notas de reutilización:</b> No reutilizable.<br>
-    <b>Resultados:</b> Falló a los 25 segundos por fuga de combustible.
-  `;
-}
-else if(title.includes("Falcon 9")){
-  document.getElementById('mDesc').innerHTML = `
-    <b>Fecha de lanzamiento:</b> 4 de junio de 2010 (Cabo Cañaveral, Florida).<br>
-    <b>Vehículo:</b> Falcon 9 v1.0 – primera etapa con 9 motores Merlin 1C.<br>
-    <b>Carga útil:</b> Cápsula Dragon C1 simulada (masa inerte).<br>
-    <b>Notas de reutilización:</b> No recuperado en este vuelo, pero inicio del concepto de reutilización.<br>
-    <b>Resultados:</b> Éxito total, validación del sistema Falcon 9.
-  `;
-}
-else if(title.includes("Dragon C1")){
-  document.getElementById('mDesc').innerHTML = `
-    <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
-    <b>Vehículo:</b> Falcon 9 v1.0.<br>
-    <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
-    <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
-    <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
-  `;
-}
-
-
-    
+   
     // Search + filter
     const q = document.getElementById('q');
     const filter = document.getElementById('filterYear');
