@@ -115,6 +115,16 @@
     <img id="mImage" src="" alt="Imagen misión"/>
     <p id="mDesc" style="color:var(--muted);margin-top:10px">
       Aquí aparecerá la ficha técnica según la misión seleccionada.
+}
+else if(title.includes("Dragon C1")){
+  document.getElementById('mDesc').innerHTML = `
+    <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
+    <b>Vehículo:</b> Falcon 9 v1.0.<br>
+    <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
+    <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
+    <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
+  `;
+      
     </p>
     <div style="display:flex;gap:8px;margin-top:10px">
       <button class="close" id="closeModal">Cerrar</button>
@@ -123,21 +133,7 @@
 </div>
 
 
-        </p>
-        <div style="display:flex;gap:8px;margin-top:10px">
-          <button class="close" id="closeModal">Cerrar</button>
-        </div>
-
-
-
-        </p>
-        <div style="display:flex;gap:8px;margin-top:10px">
-          <button class="close" id="closeModal">Cerrar</button>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+      
     </main>
 
     
