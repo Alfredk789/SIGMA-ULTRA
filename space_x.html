@@ -71,7 +71,7 @@
       </div>
 
       <section class="missions" id="missionsList">
-        <!-- Ejemplo de ficha -->
+        <!-- Falcon 1 -->
         <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
           <img class="thumb" src="falcon1.png" alt="Falcon 1 - primera órbita"/>
           <div class="meta">
@@ -83,51 +83,46 @@
           </div>
         </article>
 
-         <article class="card" data-year="2008" data-keywords="falcon1 demo1 satélite">
+        <!-- Falcon 9 -->
+        <article class="card" data-year="2010" data-keywords="falcon9 vuelo inaugural cohete">
           <img class="thumb" src="falcon9.png" alt="Falcon 9 - primera órbita"/>
           <div class="meta">
             <div>
-              <div class="mission-title">Falcon 9 — Vuelo inagural (2010)</div>
-              <div class="mission-sub">Lanzamiento de Exitoso SpaceX</div>
+              <div class="mission-title">Falcon 9 — Vuelo inaugural (2010)</div>
+              <div class="mission-sub">Lanzamiento exitoso</div>
             </div>
-            <div><button class="dir-btn" data-image="falcon9.png" data-title="Falcon 9 — Demo orbital (2008)">Ficha</button></div>
+            <div><button class="dir-btn" data-image="falcon9.png" data-title="Falcon 9 — Vuelo inaugural (2010)">Ficha</button></div>
           </div>
         </article>
- <article class="card" data-year="2008" data-keywords="dragon c1 Mision de carga">
-          <img class="thumb" src="dragon_c1.png" alt="Dragon C1 - Mision de Carga"/>
+
+        <!-- Dragon C1 -->
+        <article class="card" data-year="2010" data-keywords="dragon c1 carga iss">
+          <img class="thumb" src="dragon_c1.png" alt="Dragon C1 - Misión de carga"/>
           <div class="meta">
             <div>
-              <div class="mission-title">Dragon C1 — Demo orbital (2010)</div>
-              <div class="mission-sub">Primera Mision de Carga de ISS</div>
+              <div class="mission-title">Dragon C1 — Misión de carga (2010)</div>
+              <div class="mission-sub">Primera misión de prueba a la ISS</div>
             </div>
-            <div><button class="dir-btn" data-image="dragon_c1.png" data-title="Dragon C1 — Mision De carga (2010)">Ficha</button></div>
+            <div><button class="dir-btn" data-image="dragon_c1.png" data-title="Dragon C1 — Misión de carga (2010)">Ficha</button></div>
           </div>
         </article>
-        
-        <!-- Duplica este bloque para más misiones -->
       </section>
     </main>
 
-   <!-- Modal ficha detallada -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <h3 id="mTitle">Título Misión</h3>
-    <img id="mImage" src="" alt="Imagen misión"/>
-    <p id="mDesc" style="color:var(--muted);margin-top:10px">
-      Aquí aparecerá la ficha técnica según la misión seleccionada.
-
-    </p>
-    <div style="display:flex;gap:8px;margin-top:10px">
-      <button class="close" id="closeModal">Cerrar</button>
+    <!-- Modal ficha detallada -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h3 id="mTitle">Título Misión</h3>
+        <img id="mImage" src="" alt="Imagen misión"/>
+        <p id="mDesc" style="color:var(--muted);margin-top:10px">
+          Aquí aparecerá la ficha técnica según la misión seleccionada.
+        </p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="close" id="closeModal">Cerrar</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-
-      
-    </main>
-
-    
     <footer>SIGMA ULTRA — Módulo Space X · Archivos clasificados·</footer>
 
     <!-- Botón de regreso al manifiesto -->
@@ -150,62 +145,52 @@
       window.scrollTo({top:0,behavior:'smooth'}) 
     });
 
-   // Modal handling
-document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
-  const img = e.currentTarget.dataset.image;
-  const title = e.currentTarget.dataset.title;
-  document.getElementById('mImage').src = img;
-  document.getElementById('mTitle').textContent = title;
+    // Modal handling
+    document.querySelectorAll('.card .dir-btn').forEach(b=>b.addEventListener('click', (e)=>{
+      const img = e.currentTarget.dataset.image;
+      const title = e.currentTarget.dataset.title;
+      document.getElementById('mImage').src = img;
+      document.getElementById('mTitle').textContent = title;
 
-  // Aquí van las condiciones por misión:
-  if(title.includes("Falcon 1")){
-    document.getElementById('mDesc').innerHTML = `
-      <b>Fecha de lanzamiento:</b> 24 de marzo de 2006 (Kwajalein Atoll, Islas Marshall).<br>
-      <b>Vehículo:</b> Falcon 1 – dos etapas, RP-1 y LOX.<br>
-      <b>Carga útil:</b> FalconSat-2.<br>
-      <b>Notas de reutilización:</b> No reutilizable.<br>
-      <b>Resultados:</b> Falló a los 25 segundos por fuga de combustible.
-    `;
-  }
-  else if(title.includes("Falcon 9")){
-    document.getElementById('mDesc').innerHTML = `
-      <b>Fecha de lanzamiento:</b> 4 de junio de 2010 (Cabo Cañaveral, Florida).<br>
-      <b>Vehículo:</b> Falcon 9 v1.0 – primera etapa con 9 motores Merlin 1C.<br>
-      <b>Carga útil:</b> Cápsula Dragon C1 simulada (masa inerte).<br>
-      <b>Notas de reutilización:</b> No recuperado en este vuelo, pero inicio del concepto de reutilización.<br>
-      <b>Resultados:</b> Éxito total, validación del sistema Falcon 9.
-    `;
-  }
-  else if(title.includes("Dragon C1")){
-    document.getElementById('mDesc').innerHTML = `
-      <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
-      <b>Vehículo:</b> Falcon 9 v1.0.<br>
-      <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
-      <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
-      <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
-    `;
-  }
-  else {
-    // Texto por defecto si aún no hay ficha
-    document.getElementById('mDesc').innerHTML = `
-      Información detallada de <i>${title}</i> pendiente de completar.
-    `;
-  }
-
-  document.getElementById('modal').classList.add('open');
-}));
-
-
-      // Ejemplo: descripción automática básica (puedes reemplazar por tu texto técnico)
-      document.getElementById('mDesc').innerHTML = `
-        <b>Fecha de lanzamiento:
-Información detallada de <i>${title}</i> pendiente de completar.
-      `;
+      // Fichas técnicas por misión
+      if(title.includes("Falcon 1")){
+        document.getElementById('mDesc').innerHTML = `
+          <b>Fecha de lanzamiento:</b> 24 de marzo de 2006 (Kwajalein Atoll, Islas Marshall).<br>
+          <b>Vehículo:</b> Falcon 1 – dos etapas, RP-1 y LOX.<br>
+          <b>Carga útil:</b> FalconSat-2.<br>
+          <b>Notas de reutilización:</b> No reutilizable.<br>
+          <b>Resultados:</b> Falló a los 25 segundos por fuga de combustible.
+        `;
+      }
+      else if(title.includes("Falcon 9")){
+        document.getElementById('mDesc').innerHTML = `
+          <b>Fecha de lanzamiento:</b> 4 de junio de 2010 (Cabo Cañaveral, Florida).<br>
+          <b>Vehículo:</b> Falcon 9 v1.0 – primera etapa con 9 motores Merlin 1C.<br>
+          <b>Carga útil:</b> Cápsula Dragon C1 simulada (masa inerte).<br>
+          <b>Notas de reutilización:</b> No recuperado en este vuelo, pero inicio del concepto de reutilización.<br>
+          <b>Resultados:</b> Éxito total, validación del sistema Falcon 9.
+        `;
+      }
+      else if(title.includes("Dragon C1")){
+        document.getElementById('mDesc').innerHTML = `
+          <b>Fecha de lanzamiento:</b> 8 de diciembre de 2010 (Cabo Cañaveral).<br>
+          <b>Vehículo:</b> Falcon 9 v1.0.<br>
+          <b>Carga útil:</b> Cápsula Dragon C1, primera misión de prueba de carga hacia la ISS.<br>
+          <b>Notas de reutilización:</b> La cápsula fue recuperada con éxito tras reentrada.<br>
+          <b>Resultados:</b> Primer vuelo exitoso de Dragon, estableciendo a SpaceX como la primera empresa privada en recuperar una cápsula espacial.
+        `;
+      }
+      else {
+        document.getElementById('mDesc').innerHTML = `
+          Información detallada de <i>${title}</i> pendiente de completar.
+        `;
+      }
 
       document.getElementById('modal').classList.add('open');
     }));
+
     document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
-   
+
     // Search + filter
     const q = document.getElementById('q');
     const filter = document.getElementById('filterYear');
