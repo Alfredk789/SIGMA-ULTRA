@@ -117,6 +117,18 @@
             <div><button class="dir-btn" data-image="dragon_c2.png" data-title="Dragon C2+ — Misión de carga (2012)">Ficha</button></div>
           </div>
         </article>
+
+        <article class="card" data-year="2018" data-keywords="Lanzamiento inaugural y prueba de capacidad heavy-lift">
+          <img class="thumb" src="falcon_heavy.png" alt="Falcon Heavy - Misión de carga"/>
+          <div class="meta">
+            <div>
+              <div class="mission-title">Falcon Heavy — Misión de carga (2018)</div>
+              <div class="mission-sub">Lanzamiento inaugural y prueba de capacidad heavy-lift</div>
+            </div>
+            <div><button class="dir-btn" data-image="falcon_heavy.png" data-title="Falcon Heavy — Misión de carga (2018)">Ficha</button></div>
+          </div>
+        </article>
+        
       </section>
     </main>
   
@@ -202,7 +214,18 @@
     Marcó el inicio de la era privada de transporte orbital.
   `;
 }
+else if(title.includes("Falcon Heavy")) {
+  document.getElementById('mDesc').innerHTML = `
+    <b>Fecha de lanzamiento:</b> 6 de febrero de 2018 (Cabo Cañaveral, SLC-40).<br>
+    <b>Vehículo:</b> Falcon Heavy (configuración con tres núcleos, 27 motores Merlin en primera etapa).<br>
+    <b>Carga útil (demostración):</b> Tesla Roadster de Elon Musk + \"Starman\" (dummy) + carga de prueba al heliocéntrico de demostración.<br>
+    <b>Notas de reutilización:</b> Los boosters laterales (dos núcleos) intentaron y lograron el aterrizaje controlado en tierra (Landing Zones) — primera recuperación exitosa parcial de etapas de un heavy-lift; el núcleo central falló al intentar el aterrizaje en plataforma marítima.<br>
+    <b>Resultados:</b> Lanzamiento exitoso y demostración de la capacidad heavy-lift de SpaceX; validó arquitectura para cargas pesadas (satélites grandes, misiones interplanetarias) y visibles progresos en técnicas de recuperación de etapas. Evento mediático notable (Roadster en heliocéntrica).<br>
+    <b>Notas SIGMA ULTRA:</b> Alta prioridad para la sección \"Capacidades pesadas\". Incluir imágenes de boosters y telemetría de aterrizaje para el dossier.
+  `;
+}
 
+          
       else {
         document.getElementById('mDesc').innerHTML = `
           Información detallada de <i>${title}</i> pendiente de completar.
