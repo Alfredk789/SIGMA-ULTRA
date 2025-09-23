@@ -226,14 +226,7 @@
        `;
     }
 
-          
-      else {
-        document.getElementById('mDesc').innerHTML = `
-          Información detallada de <i>${title}</i> pendiente de completar.
-        `;
-      }
-
-      document.getElementById('modal').classList.add('open');
+     document.getElementById('modal').classList.add('open');
     }));
 
     document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('modal').classList.remove('open'));
