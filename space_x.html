@@ -235,7 +235,23 @@
     <b>Notas SIGMA ULTRA:</b> Alta prioridad para la sección \"Capacidades pesadas\"
        `;
     }
+else if(title.includes("Dragon C3")){
+  document.getElementById('mDesc').innerHTML = `
+    <b>Fecha de lanzamiento:</b> 8 de octubre de 2012 (Cabo Cañaveral, SLC-40).<br>
+    <b>Vehículo:</b> Falcon 9 v1.0.<br>
+    <b>Carga útil:</b> Dragon C3 (CRS-1), primera misión de carga comercial contratada por la NASA hacia la ISS.<br>
+    <b>Notas de reutilización:</b> La cápsula fue recuperada exitosamente tras reentrada controlada.<br>
+    <b>Resultados:</b> Entrega exitosa de carga a la Estación Espacial Internacional; inicio formal del programa CRS de SpaceX con NASA.
+    El Dragon C3 (CRS-1, 2012) fue recuperado en el océano Pacífico, frente a la costa de California.
 
+    <b>Detalle técnico:</b>Tras separarse de la ISS y reingresar a la atmósfera, desplegó sus paracaídas.
+    Aterrizó en el mar, donde un equipo de SpaceX lo recuperó con barcos especializados.
+    Fue llevado de regreso al puerto de Los Ángeles para su inspección y descarga de la carga retornada.
+  `;
+}
+
+
+      
      document.getElementById('modal').classList.add('open');
     }));
 
