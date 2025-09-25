@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #bfa76f;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Pantalla de Loading */
+    #loading {
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+    #cursor {
+      display: inline-block;
+      width: 12px;
+      background-color: #bfa76f;
+      margin-left: 8px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 50% { background-color: #bfa76f; }
+      51%, 100% { background-color: transparent; }
+    }
+
+    /* Contenido */
+    #content {
+      display: none;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .image {
+      margin: 20px 0;
+    }
+    .image img {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+    }
+
+    /* Tabla responsiva */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: auto;
+      font-size: 1rem;
+      min-width: 320px;
+    }
+    th, td {
+      border: 1px solid #bfa76f;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #111;
+    }
+    tr.group-title td {
+      background-color: #1a1a1a;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Botón de regreso */
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      font-size: 1.2rem;
+      color: #bfa76f;
+      border: 2px solid #bfa76f;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background: #bfa76f;
+      color: #000;
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }, 3000);
+  </script>
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading">
+    LOADING...<span id="cursor">&nbsp;</span>
+  </div>
+
+  <!-- Contenido -->
+  <div id="content">
+    <h1>SpaceX Dragon — Carga y Tripulación</h1>
+
+    <div class="image">
+      <img src="dragon.png" alt="Cápsula Dragon acoplada a la ISS">
+    </div>
+
+    <div class="table-container">
+      <table>
+        <tr class="group-title"><td colspan="4">Dragon 1 — CRS (Cargo Resupply Services)</td></tr>
+        <tr>
+          <th>Año</th>
+          <th>Misión</th>
+          <th>Vehículo</th>
+          <th>Objetivo</th>
+        </tr>
+        <tr>
+          <td>2010</td>
+          <td>Dragon C1</td>
+          <td>Falcon 9 v1.0</td>
+          <td>Primera prueba orbital de Dragon, reentrada y recuperación exitosa</td>
+        </tr>
+        <tr>
+          <td>2012</td>
+          <td>Dragon C2+</td>
+          <td>Falcon 9 v1.0</td>
+          <td>Primera nave comercial en atracar en la ISS</td>
+        </tr>
+        <tr>
+          <td>2012–2020</td>
+          <td>Dragon CRS-1 a CRS-20</td>
+          <td>Falcon 9</td>
+          <td>20 misiones de abastecimiento a la ISS bajo contrato NASA</td>
+        </tr>
+
+        <tr class="group-title"><td colspan="4">Dragon 2 — Crew Dragon (Tripulaciones)</td></tr>
+        <tr>
+          <th>Año</th>
+          <th>Misión</th>
+          <th>Tripulación</th>
+          <th>Objetivo</th>
+        </tr>
+        <tr>
+          <td>2020</td>
+          <td>Demo-2</td>
+          <td>Hurley / Behnken</td>
+          <td>Primera misión tripulada privada a la ISS</td>
+        </tr>
+        <tr>
+          <td>2020–2025</td>
+          <td>Crew-1 a Crew-9</td>
+          <td>Rotaciones de 4 astronautas</td>
+          <td>Transporte operativo regular a la ISS</td>
+        </tr>
+        <tr>
+          <td>2021</td>
+          <td>Inspiration4</td>
+          <td>Tripulación civil</td>
+          <td>Primera misión orbital totalmente civil</td>
+        </tr>
+        <tr>
+          <td>2022</td>
+          <td>Axiom-1</td>
+          <td>Privada</td>
+          <td>Primera misión privada a la ISS (con Axiom Space)</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="space_x.html" class="back-button">⬅ Volver a Misiones SpaceX</a>
+  </div>
+</body>
+</html>
