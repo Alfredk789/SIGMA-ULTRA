@@ -139,6 +139,20 @@
             <div><button class="dir-btn" data-image="dragon_c3.png" data-title="Dragon C3">Ficha</button></div>
           </div>
         </article>
+
+       <article class="card" data-year="2010-2025" data-keywords="Dragon CRS Tripuladas">
+         <img class="thumb" src="dragon_crs.png" alt="Dragon CRS y Tripuladas - SpaceX"/>
+         <div class="meta">
+         <div>
+        <div class="mission-title">Dragon CRS & Crew</div>
+        <div class="mission-sub">SpaceX – ISS Abastecimiento y Tripulación</div>
+        </div>
+        <div>
+        <button class="dir-btn" data-image="dragon_crs.png" data-title="Dragon CRS & Crew">Ficha</button>
+    </div>
+  </div>
+</article>
+
         
       </section>
     </main>
@@ -248,7 +262,48 @@ else if(title.includes("Dragon C3")){
     Fue llevado de regreso al puerto de Los Ángeles para su inspección y descarga de la carga retornada.
       `;
     }
-
+else if(title.includes("Dragon CRS & Crew")) {
+  document.getElementById('mDesc').innerHTML = `
+    <b>Resumen de misiones Dragon CRS y Tripuladas:</b>
+    <div class="table-container" style="margin-top:12px;overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-family:Courier, monospace;color:#bfa76f;">
+        <tr style="background:#111;">
+          <th>Año</th>
+          <th>Misión</th>
+          <th>Tipo</th>
+          <th>Objetivo / Notas</th>
+        </tr>
+        <tr>
+          <td>2010</td>
+          <td>Dragon C1</td>
+          <td>CRS</td>
+          <td>Primera cápsula comercial de prueba a la ISS. Recuperada con éxito tras reentrada.</td>
+        </tr>
+        <tr>
+          <td>2012</td>
+          <td>Dragon C2+</td>
+          <td>CRS</td>
+          <td>Primera nave comercial en atracar con éxito en la ISS.</td>
+        </tr>
+        <tr>
+          <td>2013-2020</td>
+          <td>Dragon CRS-1 a CRS-20</td>
+          <td>CRS</td>
+          <td>Abastecimiento regular de la ISS. Varias cápsulas reutilizadas.</td>
+        </tr>
+        <tr>
+          <td>2020-2025</td>
+          <td>Dragon Crew-1 a Crew-7</td>
+          <td>Tripulada</td>
+          <td>Transporte de astronautas hacia y desde la ISS. Capsulas reutilizables.</td>
+        </tr>
+      </table>
+    </div>
+    <p style="margin-top:12px;color:#9b9b9b;">
+      Todas las cápsulas Dragon CRS y Crew fueron recuperadas principalmente en el océano Atlántico o Pacífico, según la misión.
+    </p>
+  `;
+}
 
       
      document.getElementById('modal').classList.add('open');
