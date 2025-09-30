@@ -318,7 +318,20 @@ else if(title.includes("Dragon CRS & Crew")) {
     </p>
   `;
 }
-
+else if(title.includes("Misiones Comerciales y Pesadas SpaceX")) {
+  document.getElementById('mDesc').innerHTML = `
+    <b>Período:</b> 2019 – presente<br>
+    <b>Vehículos:</b> Falcon 9, Falcon Heavy, Starship (en pruebas)<br>
+    <b>Objetivos:</b> 
+      <ul style="margin:4px 0 0 14px;text-align:left">
+        <li>Lanzamientos de constelación Starlink</li>
+        <li>Satélites comerciales (SES, Iridium, Telstar, etc.)</li>
+        <li>Misiones gubernamentales y de defensa</li>
+        <li>Pruebas de Starship para vuelos suborbitales y orbitales</li>
+      </ul>
+    <b>Notas SIGMA ULTRA:</b> Este bloque agrupa todas las capacidades pesadas y experimentales recientes de SpaceX.
+  `;
+}
       
      document.getElementById('modal').classList.add('open');
     }));
