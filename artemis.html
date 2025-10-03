@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MISIÓN ARTEMIS II - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Courier, monospace;
+      background-color: #0a0a0a;
+      color: #bfa76f;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    .console-line {
+      color: #00ff99;
+      font-size: 1.2rem;
+      margin: 5px 0;
+      white-space: pre;
+    }
+    .content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      max-width: 320px;
+      margin: 15px;
+      border: 2px solid #bfa76f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(191,167,111,0.4);
+    }
+    .desc {
+      margin-top: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #111;
+      border: 1px solid #bfa76f;
+      border-radius: 8px;
+      color: #bfa76f;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #bfa76f;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla Loading estilo SIGMA ULTRA -->
+  <div class="loading-screen" id="loading">
+    <div>
+      <div class="console-line">[ ACCESO AUTORIZADO — CARGANDO ARCHIVO ARTEMIS II ]</div>
+      <div class="console-line">[ ESPERE... ]</div>
+    </div>
+  </div>
+
+  <!-- Contenido de la misión -->
+  <div class="content" id="content">
+    <h1>🌑 MISIÓN ARTEMIS II</h1>
+    <p>Tarjetas de embarque oficiales</p>
+    <div>
+      <img src="boarding_pass1.png" alt="Boarding Pass Comandante Alfredk">
+      <img src="boarding_pass2.png" alt="Boarding Pass SOFIA">
+    </div>
+    <div class="desc">
+      Artemis II será la primera misión tripulada del Programa Artemis de la NASA.  
+      Programada para <b>2026</b>, llevará a cuatro astronautas —junto a la nave espacial <b>Orion</b> y el cohete <b>SLS</b>— en un vuelo alrededor de la Luna, abriendo el camino hacia la colonización lunar y las futuras misiones a Marte.  
+      <br><br>
+      Este será el primer viaje humano más allá de la órbita baja de la Tierra desde la era Apolo, marcando un nuevo capítulo en la exploración espacial.
+    </div>
+    <a href="maniesto.html" class="back-btn">⟵ Volver al Directorio</a>
+  </div>
+
+  <script>
+    // Simula carga estilo consola
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 2500);
+  </script>
+</body>
+</html>
