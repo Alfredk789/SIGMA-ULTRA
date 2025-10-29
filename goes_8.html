@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GOES-8 - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 2rem auto;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #bfa76f;
+      animation: blink 1.2s infinite;
+    }
+
+    .dot:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      0%, 100% { background-color: #1a1a1a; }
+      50% { background-color: #bfa76f; }
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .content h1, h2 {
+      text-align: center;
+      color: #bfa76f;
+    }
+
+    .satellite-img {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border: 2px solid #bfa76f;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #1a1a1a;
+      color: #bfa76f;
+      border: 1px solid #bfa76f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Satelite Meteorologico GOES-8</h1>
+    <img src="goes_8.png" alt="Imagen del satelite goes_8" class="satellite-img" />
+
+    <div class="info">
+      <p><b>Fecha de lanzamiento:</b> 13 De Abril de 1994 </p>
+      <p><b>Agencia o país:</b> EEUU NASA / NOAA</p>
+    </div>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Objetivo</h2>
+    <p>
+      El GOES-8 Fue el primero de una nueva generacion de satelites Meteorologicos estacionarios estadounidenses su tarea principal proporcionar vijilancia continiua al emisferio occidental, observando Huracanes Tormentas y frentes frios y actividad atmosferica en tiempo real.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <h2>Actividad y evolución</h2>
+    <p>
+      Fue el primero en implementar sensores digitales avanzados, lo que permitio obtener imagenes multiespectrales y datos mas precisos de temperatura humedad y nubosidad.
+    </p>
+
+    <div class="divider">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <img src="goes_82.png" alt="Imagen de satelite goes_82" class="satellite-img" />
+
+    
+    <h2>Estado actual</h2>
+    <p>
+      Desactivado el 5 de Mayo de 2004, Traslado a orbita de cementerio geoestacionaria.Actualmente GOES-8 descansa silencioso sobre el ecuador un guardian jubilado que alguna vez observo cada nuve sobre america.
+    </p>
+
+    <h2>Dato histórico destacado</h2>
+    <p>
+      El GOES-8 Trasmitia imagenes completas en tiempo real, fue vital en la prediccion del huracan ANDREW en 1994, y el segimiento de tormentas tropicales en los años 90,sento las bases para satelites posteriores GOES S, GOES R Y GOES T Que hoy continual en operacion con sensores hiperespectrales y comunicacion cuantica incipiente.
+    </p>
+
+
+    <a href="satelites.html" class="button">⬅ Volver al Archivo de Satélites</a>
+  </div>
+
+</body>
+</html>
