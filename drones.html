@@ -1,5 +1,129 @@
-<!-- Tabla de drones clave -->
-<table>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLATAFORMAS AÉREAS NO TRIPULADAS - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Courier, monospace;
+      background-color: #0a0a0a;
+      color: #00ff99;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      text-align: center;
+      padding: 0 10px;
+      font-size: 1.4rem;
+      flex-direction: column;
+      letter-spacing: 2px;
+    }
+    .console-line {
+      color: #00ff99;
+      font-size: 1.2rem;
+      margin: 5px 0;
+      white-space: pre;
+    }
+    .content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      max-width: 320px;
+      margin: 15px;
+      border: 2px solid #bfa76f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(191,167,111,0.4);
+    }
+    .desc {
+      margin-top: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #00ff99;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #111;
+    }
+    tr:hover {
+      background-color: #111;
+    }
+    a {
+      color: #00ff99;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #111;
+      border: 1px solid #00ff99;
+      border-radius: 8px;
+      color: #00ff99;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #00ff99;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla Loading estilo SIGMA ULTRA -->
+  <div class="loading-screen" id="loading">
+    <div>
+      <div class="console-line">ACCESO AUTORIZADO...</div>
+      <div class="console-line">PLATAFORMAS AÉREAS NO TRIPULADAS</div>
+      <div class="console-line">CARGANDO ARCHIVO ESTRATOSFÉRICO...</div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content" id="content">
+    <h1>✈ PLATAFORMAS AÉREAS NO TRIPULADAS</h1>
+    <p>Dominio atmosférico persistente</p>
+
+    <div>
+      <img src="zerphyr.png" alt="Zephyr HAPS">
+      <img src="controlador.png" alt="Controlador">
+    </div>
+
+    <div class="desc">
+      Las plataformas aéreas no tripuladas representan la evolución intermedia entre la aviación convencional 
+      y los satélites orbitales. Desde sistemas HALE y MALE hasta pseudo-satélites estratosféricos (HAPS), 
+      estas aeronaves permiten vigilancia persistente, comunicaciones estratégicas y monitoreo de alta precisión.  
+      <br><br>
+      A diferencia de los satélites, pueden reubicarse, actualizarse y adaptarse en tiempo real. 
+      Constituyen una capa crítica dentro del dominio aeroespacial moderno, operando entre la superficie 
+      terrestre y la órbita baja.
+    </div>
+
+    <!-- Tabla de drones clave -->
+    <table>
   <tr>
     <th>Plataforma</th>
     <th>País</th>
@@ -45,4 +169,17 @@
     <td>EE.UU.</td>
     <td>Naval Autónomo</td>
   </tr>
-</table>
+    </table>
+
+    <a href="manifiesto.html" class="back-btn">⟵ Volver al Directorio</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+
+</body>
+</html>
