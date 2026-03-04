@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ODYSSEUS - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Courier, monospace;
+      background-color: #0a0a0a;
+      color: #00ff99;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      text-align: center;
+      padding: 0 10px;
+      font-size: 1.4rem;
+      flex-direction: column;
+      letter-spacing: 2px;
+    }
+    .console-line {
+      color: #00ff99;
+      font-size: 1.2rem;
+      margin: 5px 0;
+      white-space: pre;
+    }
+    .content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      display: block;
+      max-width: 350px;
+      width: 100%;
+      margin: 20px auto;
+      border: 2px solid #bfa76f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(191,167,111,0.4);
+    }
+    .desc {
+      margin-top: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+    .telemetria {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #00ff99;
+      background-color: #111;
+      letter-spacing: 2px;
+      animation: blink 1.8s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.1; }
+      100% { opacity: 1; }
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background: #111;
+      border: 1px solid #00ff99;
+      border-radius: 8px;
+      color: #00ff99;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #00ff99;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div class="loading-screen" id="loading">
+    <div>
+      <div class="console-line">ACCESO AUTORIZADO...</div>
+      <div class="console-line">INICIALIZANDO ENLACE...</div>
+      <div class="console-line">ODYSSEUS...</div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content" id="content">
+
+    <div class="telemetria">
+      TELEMETRÍA ACTIVA // PLATAFORMA ISR // ENLACE SEGURO
+    </div>
+
+    <h1>🛰 ODYSSEUS</h1>
+    <p>UAV Estratosférico de Alta Persistencia</p>
+
+    <div>
+      <img src="odysseus.png" alt="Odysseus UAV">
+    </div>
+
+    <div class="desc">
+
+      <b>Desarrollador:</b> Aurora Flight Sciences (Boeing)  
+      <br>
+      <b>Tipo:</b> UAV solar de ultra larga duración  
+      <br>
+      <b>Envergadura:</b> ~74 metros  
+      <br>
+      <b>Peso estimado:</b> ~1,000 kg  
+      <br>
+      <b>Altitud operativa:</b> 18 – 20 km  
+      <br>
+      <b>Propulsión:</b> Motores eléctricos distribuidos  
+      <br>
+      <b>Fuente energética:</b> Paneles solares + almacenamiento de energía avanzado  
+      <br><br>
+
+      <b>Capacidades Técnicas:</b>  
+      - Vuelo continuo de larga duración en estratosfera.  
+      - Plataforma modular para carga útil científica o estratégica.  
+      - Cobertura persistente sobre áreas específicas.  
+      - Operación como pseudo-satélite reconfigurable.  
+      <br><br>
+
+      <b>Funciones Estratégicas:</b>  
+      - Observación de frontera y vigilancia marítima.  
+      - Nodo de comunicaciones de respaldo.  
+      - Investigación atmosférica de alta altitud.  
+      - Soporte en operaciones de emergencia y monitoreo climático.  
+      <br><br>
+
+      <b>Estado Actual:</b>  
+      Plataforma en fase de pruebas y validación tecnológica avanzada.  
+      Se considera un demostrador clave en el desarrollo de sistemas HAPS de próxima generación.
+
+    </div>
+
+    <a href="drones.html" class="back-btn">⟵ Volver a Plataformas UAV</a>
+
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+
+</body>
+</html>
