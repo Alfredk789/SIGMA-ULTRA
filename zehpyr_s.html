@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEPHYR S - SIGMA ULTRA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Courier, monospace;
+      background-color: #0a0a0a;
+      color: #00ff99;
+    }
+    .loading-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      text-align: center;
+      padding: 0 10px;
+      font-size: 1.4rem;
+      flex-direction: column;
+      letter-spacing: 2px;
+    }
+    .console-line {
+      color: #00ff99;
+      font-size: 1.2rem;
+      margin: 5px 0;
+      white-space: pre;
+    }
+    .content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+    }
+    img {
+      max-width: 350px;
+      margin: 20px;
+      border: 2px solid #bfa76f;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(191,167,111,0.4);
+    }
+    .desc {
+      margin-top: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+    .telemetria {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #00ff99;
+      background-color: #111;
+      letter-spacing: 2px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background: #111;
+      border: 1px solid #00ff99;
+      border-radius: 8px;
+      color: #00ff99;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #00ff99;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div class="loading-screen" id="loading">
+    <div>
+      <div class="console-line">ACCESO AUTORIZADO...</div>
+      <div class="console-line">INICIALIZANDO ENLACE HAPS...</div>
+      <div class="console-line">ZEPHYR S</div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content" id="content">
+
+    <div class="telemetria">
+      TELEMETRÍA ACTIVA // NODO ESTRATOSFÉRICO // ENLACE ESTABLE
+    </div>
+
+    <h1>✈ ZEPHYR S</h1>
+    <p>Plataforma HAPS (High Altitude Pseudo-Satellite)</p>
+
+    <div>
+      <img src="zephyr_s.png" alt="Zephyr S HAPS">
+    </div>
+
+    <div class="desc">
+
+      <b>Fabricante:</b> Airbus Defence and Space  
+      <br>
+      <b>Tipo:</b> HAPS – Pseudo-Satélite Estratosférico  
+      <br>
+      <b>Envergadura:</b> ~25 metros  
+      <br>
+      <b>Peso aproximado:</b> ~75 kg  
+      <br>
+      <b>Altitud operativa:</b> 20 – 23 km (estratosfera)  
+      <br>
+      <b>Propulsión:</b> Motores eléctricos alimentados por energía solar  
+      <br>
+      <b>Fuente energética:</b> Paneles solares + baterías de alta densidad  
+      <br><br>
+
+      <b>Capacidades Técnicas:</b>  
+      - Vuelo continuo de larga duración (récord superior a 60 días).  
+      - Operación por encima del tráfico aéreo comercial.  
+      - Plataforma de sensores ISR (Intelligence, Surveillance & Reconnaissance).  
+      - Enlaces de comunicación de alta persistencia.  
+      - Capacidad de actuar como nodo pseudo-satelital reubicable.  
+      <br><br>
+
+      <b>Funciones Estratégicas:</b>  
+      - Vigilancia fronteriza y marítima.  
+      - Monitoreo ambiental y climático.  
+      - Plataforma temporal de telecomunicaciones.  
+      - Apoyo en zonas de desastre donde la infraestructura está dañada.  
+      <br><br>
+
+      <b>Estado Actual:</b>  
+      El Zephyr S continúa en fase operativa y de pruebas avanzadas, con despliegues estratégicos
+      bajo contratos gubernamentales y aplicaciones duales (civil y defensa).  
+      Se considera una de las plataformas HAPS más avanzadas del mundo.
+
+    </div>
+
+    <a href="drones.html" class="back-btn">⟵ Volver a Plataformas UAV</a>
+
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+
+</body>
+</html>
