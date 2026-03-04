@@ -50,18 +50,6 @@
       margin-right: auto;
       text-align: justify;
     }
-    .telemetria {
-      margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #00ff99;
-      background-color: #111;
-      letter-spacing: 2px;
-      @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.2; }
-  100% { opacity: 1; }
-}
-
 .telemetria {
   margin-top: 20px;
   padding: 10px;
@@ -69,8 +57,13 @@
   background-color: #111;
   letter-spacing: 2px;
   animation: blink 1.8s infinite;
+  @keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+animation: blink 1.8s infinite;
 }
-    }
+    
     .back-btn {
       display: inline-block;
       margin-top: 40px;
