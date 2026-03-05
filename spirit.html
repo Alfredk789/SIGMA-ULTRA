@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spirit - SIGMA ULTRA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #bfa76f;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+      text-align: center;
+    }
+    .loading {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .bar {
+      width: 80%;
+      height: 8px;
+      background-color: #1a1a1a;
+      margin: 10px auto;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background-color: #bfa76f;
+      animation: load 3s forwards;
+    }
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      margin-top: 2rem;
+    }
+    .mission-img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 1rem auto;
+      display: block;
+    }
+    .info {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .info b {
+      display: inline-block;
+      width: 180px;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    a.button:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #bfa76f;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading">
+    <div>LOADING</div>
+    <div class="bar"><div class="bar-fill"></div></div>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div class="content" id="content">
+    <h1>Spirit</h1>
+
+    <img src="spirit.png" alt="Rover Spirit en Marte" class="mission-img" />
+
+    <div class="info">
+
+      <p><b>Agencia:</b> NASA</p>
+      <p><b>Fecha de lanzamiento:</b> 10 de junio de 2003</p>
+      <p><b>Aterrizaje en Marte:</b> 4 de enero de 2004</p>
+      <p><b>Duración prevista:</b> 90 soles (días marcianos)</p>
+      <p><b>Duración real:</b> 2004 – 2010</p>
+      <p><b>Tipo de misión:</b> Rover de exploración planetaria</p>
+      <p><b>Zona de aterrizaje:</b> Cráter Gusev, Marte</p>
+
+      <p><b>Objetivo:</b> Buscar evidencias de agua pasada en Marte, analizar rocas y suelo marciano, y estudiar la geología del planeta.</p>
+
+      <p><b>Carga científica:</b> Cámara panorámica, espectrómetro Mössbauer, espectrómetro de rayos X APXS, microscopio de imágenes, herramienta abrasiva de rocas (RAT), sensores atmosféricos y cámaras de navegación.</p>
+
+      <h2>Impacto histórico</h2>
+
+      <p>Spirit fue uno de los dos rovers de la misión **Mars Exploration Rover** enviados para estudiar la superficie de Marte. Aunque su misión inicial estaba diseñada para durar solo 90 días marcianos, el rover continuó operando durante más de **seis años**, superando ampliamente las expectativas.</p>
+
+      <p>Durante su exploración del cráter Gusev, Spirit encontró **minerales formados en presencia de agua**, evidencias de actividad volcánica antigua y depósitos de sílice que sugieren posibles ambientes hidrotermales en el pasado de Marte.</p>
+
+      <p>En 2009 el rover quedó atrapado en arena blanda y dejó de moverse, pero continuó funcionando como **estación científica fija** hasta que finalmente se perdió contacto en marzo de 2010.</p>
+
+      <p>La misión Spirit cambió profundamente nuestra comprensión del pasado geológico de Marte y abrió el camino para futuras misiones robóticas de exploración planetaria.</p>
+
+      <a href="misiones_no_tripuladas.html" class="button">⬅ Regresar a Misiones No Tripuladas</a>
+
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 3000);
+  </script>
+
+</body>
+</html>
