@@ -89,6 +89,16 @@
       border-top: 1px solid #bfa76f;
       padding-top: 1rem;
     }
+    .alerta {
+  animation: parpadeo 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
   </style>
 </head>
 
@@ -173,10 +183,12 @@ Aunque ninguna de las dos sondas completó plenamente sus objetivos, estas misio
 en la exploración de Marte y sentaron las bases para futuras misiones robóticas internacionales.
 </p>
 
-ARCHIVO DESCLASIFICADO
-PROGRAMA PHOBOS
-ÚLTIMA SEÑAL REGISTRADA: 27 MARZO 1989
-ESTADO: CONTACTO PERDIDO
+<h2>Registro de misión</h2>
+
+<p>ARCHIVO DESCLASIFICADO</p>
+<p>PROGRAMA PHOBOS</p>
+<p>ÚLTIMA SEÑAL REGISTRADA: 27 MARZO 1989</p>
+<p>ESTADO: <span class="alerta">CONTACTO PERDIDO</span></p>
   
 
 <a href="misiones_no_tripuladas.html" class="button">⬅ Regresar a Misiones No Tripuladas</a>
